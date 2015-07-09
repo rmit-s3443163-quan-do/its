@@ -35,7 +35,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quan Do <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Admin CP</a></li>
+                        <li><a href="admin.php">Admin CP</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">Querries</a></li>
                         <li><a href="#">Past Questions</a></li>
@@ -50,12 +50,12 @@
 </nav>
 <div class="clear-top"></div>
 <div class="container">
-        <div class="jumbotron">
-            <h1>Sequence Diagrams</h1>
-            <p>It shows much the same information as a communication
-                diagram, but they emphasise ordering.</p>
-            <p><a class="btn btn-primary btn-lg" href="question1.php" role="button">Start test</a></p>
-        </div>
+    <div class="jumbotron">
+        <h1>Sequence Diagrams</h1>
+        <p>It shows much the same information as a communication
+            diagram, but they emphasise ordering.</p>
+        <p><a class="btn btn-primary btn-lg" href="question1.php" role="button">Start test</a></p>
+    </div>
 </div>
 <footer class="footer">
     <div class="container">
