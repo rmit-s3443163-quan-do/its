@@ -1,0 +1,37 @@
+#logo {
+
+    display: none;
+
+}
+
+#main {
+    margin-top: 15px;
+}
+
+#login {
+    float: none;
+    margin: auto;
+
+    width: 100%;
+    text-align: center;
+    padding: 0;
+}
+
+#login-panel input, .btCoral {
+    float: none;
+    margin: auto;
+    clear: both;
+    margin-top: 10px;
+}
+
+#login-panel {
+    margin-top: 5px;
+}
+
+#pn-title {
+    font-size: 13px;
+}
+
+#login-panel input, .btCoral {
+    width: 260px;
+}
