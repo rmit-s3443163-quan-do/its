@@ -36,7 +36,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quan Do <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Homepage</a></li>
+                        <li><a href="index.php">Homepage</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">Querries</a></li>
                         <li><a href="#">Past Questions</a></li>
@@ -116,9 +116,37 @@
                 </tbody>
             </table>
         </div>
-        <div id="preview">Preview</div>
-        <div id="summernote">Hello Summernote</div>
+<!--        <div id="preview">Preview</div>-->
+<!--        <div id="summernote">Hello Summernote</div>-->
+        <h2 class="sub-header">Question Editor</h2>
+        <form>
+            <div class="form-group">
+                <label for="question">Question</label>
+                <input type="text" class="form-control" id="question" placeholder="Question content"/>
+            </div>
+            <div class="form-group">
+                <label for="option1">Option 1</label> <input type="checkbox"/> is correct answer
+                <input type="text" class="form-control" id="option1" placeholder="Option 1"/>
 
+            </div>
+            <div class="form-group">
+                <label for="option2">Option 2</label> <input type="checkbox"/> is correct answer
+                <input type="text" class="form-control" id="option2" placeholder="Option 2"/>
+
+            </div>
+            <div class="form-group">
+                <label for="option3">Option 3</label> <input type="checkbox"/> is correct answer
+                <input type="text" class="form-control" id="option3" placeholder="Option 3"/>
+
+            </div>
+            <div class="form-group">
+                <label for="option4">Option 4</label> <input type="checkbox"/> is correct answer
+                <input type="text" class="form-control" id="option4" placeholder="Option 4"/>
+
+            </div>
+            <button type="reset" class="btn btn-default">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
     </div>
 </div>
 
@@ -131,22 +159,18 @@
             $(this).addClass('selected');
         }
     });
-    $('#summernote').summernote({
+    $('input.form-control').summernote({
         onChange: function(e) {
-            $('#preview').html($('#summernote').code());
+//            $('#preview').html($('#summernote').code());
+            // do something
         },
 
-        height: 500,                 // set editor height
-
-        minHeight: null,             // set minimum height of editor
-        maxHeight: null,             // set maximum height of editor
-
+        minHeight: 200,                 // set editor height
         focus: true,                 // set focus to editable area after initializing summernote
         toolbar: [
             //[groupname, [button list]]
 
             ['style', ['bold', 'italic', 'underline', 'clear']],
-            ['font', ['strikethrough', 'superscript', 'subscript']],
             ['fontsize', ['fontsize']],
             ['color', ['color']],
             ['para', ['ul', 'ol', 'paragraph']],
@@ -155,6 +179,8 @@
         ]
 
     });
+
+
 
 </script>
 </body>

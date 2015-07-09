@@ -35,7 +35,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quan Do <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Admin CP</a></li>
+                        <li><a href="admin.php">Admin CP</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">Querries</a></li>
                         <li><a href="#">Past Questions</a></li>
