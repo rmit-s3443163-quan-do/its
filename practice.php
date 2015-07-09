@@ -17,7 +17,7 @@ require_once('view/nav.php');
 <div class="clear-top"></div>
 <div class="container">
     <div class="jumbotron">
-        <h1>Java Application Embed here</h1>
+        <h1>Embed System here</h1>
 <!--        <object type="application/x-java-applet">-->
 <!--            <param name="code" value="qq/Main.class" />-->
 <!--            <param name="archive" value="qq/Its.jar" />-->
