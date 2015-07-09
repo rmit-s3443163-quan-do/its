@@ -23,9 +23,11 @@ require_once('view/nav.php');
         <p><a class="btn btn-primary btn-lg" href="question1.php" role="button">Start test</a></p>
     </div>
 </div>
-<?php
-require_once('view/footer.php');
-?>
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> QuanDo &copy; 2015 RMIT</p>
+    </div>
+</footer>
 <script>
     $('.answer').click(function () {
         if ($(this).hasClass('selected')) {
