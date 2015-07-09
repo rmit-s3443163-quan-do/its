@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Pre-Question <span class="sr-only">(current)</span></a></li>
-                <li><a href="practice.php">Practice</a></li>
+                <li><a href="#">Practice</a></li>
                 <li><a href="#">Post-Question</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -51,10 +51,7 @@
 <div class="clear-top"></div>
 <div class="container">
     <div class="jumbotron">
-        <h1>Sequence Diagrams</h1>
-        <p>It shows much the same information as a communication
-            diagram, but they emphasise ordering.</p>
-        <p><a class="btn btn-primary btn-lg" href="question1.php" role="button">Start test</a></p>
+        <<applet code="java/its_v1.class" archive="java/its_v1.jar" width="1000" height="800"></applet>
     </div>
 </div>
 <footer class="footer">
