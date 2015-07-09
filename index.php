@@ -1,6 +1,6 @@
 <?php
 
-    $b = ($_COOKIE['uid']!='');
+    $b = (isset($_COOKIE['uid']) && $_COOKIE['uid']!='');
 
     if (!$b)
         echo '<script>window.location.href = "login.php";</script>';
@@ -24,7 +24,7 @@ require_once('view/nav.php');
         <h1>Sequence Diagrams</h1>
         <p>It shows much the same information as a communication
             diagram, but they emphasise ordering.</p>
-        <p><a class="btn btn-primary btn-lg" href="question1.php" role="button">Start test</a></p>
+        <p><a class="btn btn-primary btn-lg" href="question1.php" role="button">Start pre-test</a></p>
     </div>
 </div>
 <?php

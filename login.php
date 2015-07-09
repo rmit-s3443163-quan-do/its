@@ -56,12 +56,12 @@
                         <div class="row">
                             <div class="right input-group">
                                 <div class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span> </div>
-                                <input id="user" name="user" type="text" aria-describedby="basic-addon1" placeholder="username" pattern=".{5,}" required title="Minimum 6 characters" />
+                                <input id="user" type="text" placeholder="username" title="i.e: quando" />
                             </div>
 
                             <div class="right input-group">
                                 <div class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-lock"></span></div>
-                                <input id="pass" name="pass" type="password" aria-describedby="basic-addon2" placeholder="password" pattern=".{6,}" required title="Minimum 6 characters" />
+                                <input id="pass" type="password" placeholder="password" title="i.e: qwerty" />
                             </div>
                         </div>
                         <div class="down row">
@@ -80,20 +80,39 @@
         </div>
     </div>
     <script>
-        $('.btn-login').click(function() {
-            $(this).removeClass('btn-success').addClass('btn-primary');
-            $(this).children('.glyphicon').removeClass('glyphicon-chevron-right').addClass('glyphicon-refresh').addClass('glyphicon-refresh-animate');
-            $(this).children('.bt-text').html('verifying..');
+        $(document).keypress(function(e) {
+            if(e.which == 13) {
+                $( ".btn-login" ).trigger( "click" );
+            }
+        });
 
+        $('.btn-login').click(function() {
             var u = $("#user").val();
             var p = $("#pass").val();
 
-            var dataString = 'u='+ u + '&p=' + p;
+            if(u=='') {
+                $('input:text').focus();
+                snabbt($('input:text'), 'attention', {
+                    position: [50, 0, 0],
+                    springConstant: 2.4,
+                    springDeceleration: 0.9
+                });
+            } else if (p=='') {
+                $('input:password').focus();
+                snabbt($('input:password'), 'attention', {
+                    position: [50, 0, 0],
+                    springConstant: 2.4,
+                    springDeceleration: 0.9
+                });
+            } else {
+                $(this).removeClass('btn-success').addClass('btn-primary');
+                $(this).children('.glyphicon').removeClass('glyphicon-chevron-right').addClass('glyphicon-refresh').addClass('glyphicon-refresh-animate');
+                $(this).children('.bt-text').html('verifying..');
+                setTimeout(function() {
+                }, 800);
 
-            if(u=='' || p=='')
-                alert('cant be empty!');
-            else
-            {
+                var dataString = 'u='+ u + '&p=' + p;
+
                 $.ajax({
                     type: "POST",
                     url: "login.php",
@@ -105,6 +124,7 @@
                                 $.cookie('uid',u, { expires : 7 });
                             else
                                 $.cookie('uid',u);
+
                             snabbt($('.right'), {
                                 fromPosition: [0, 0, 0],
                                 position: [1000, 0, 0],
@@ -133,14 +153,29 @@
                                 duration: 700
                             });
 
-                            setTimeout(
-                                function()
-                                {
+                            setTimeout(function() {
                                     window.location.href = 'index.php';
                                 }, 800);
 
-                        } else
-                            alert('wrong user/pass!');
+                        } else {
+                            $('input:text, input:password').val('');
+                            $('input:text').focus();
+                            snabbt($('.btn-login'), 'attention', {
+                                position: [50, 0, 0],
+                                springConstant: 2.4,
+                                springDeceleration: 0.9
+                            });
+                            $('.btn-login').addClass('btn-danger').removeClass('btn-primary');
+                            $('.btn-login').children('.glyphicon').addClass('glyphicon-remove').removeClass('glyphicon-refresh').removeClass('glyphicon-refresh-animate');
+                            $('.btn-login').children('.bt-text').html('incorrect!');
+
+                            setTimeout(function() {
+                                $('.btn-login').addClass('btn-success').removeClass('btn-danger');
+                                $('.btn-login').children('.glyphicon').addClass('glyphicon-chevron-right').removeClass('glyphicon-remove');
+                                $('.btn-login').children('.bt-text').html('let me in');
+                            }, 2000);
+
+                        }
                     },
                     error: function(xhr){
                         alert("An error occured: " + xhr.status + " " + xhr.statusText);

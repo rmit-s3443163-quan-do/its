@@ -77,6 +77,11 @@ input:hover {
     border: 1px solid lightyellow;
 }
 
+input:focus {
+    outline: none;
+    border: 1px solid lightyellow
+}
+
 #login-pn {
     padding: 0;
     background-color: rgba(255, 255, 255, 0.1);
