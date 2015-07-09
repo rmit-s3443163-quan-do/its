@@ -14,3 +14,7 @@
 
 <link href="./css/style.css" media="screen" rel="stylesheet" />
 <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+<script src="./js/star-rating.js" type="text/javascript"></script>
+<link rel="stylesheet" href="./css/star-rating.css" media="all" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">

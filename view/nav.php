@@ -6,6 +6,28 @@
  * Time: 12:28 PM
  */
 
+    if (isset($_GET['p']) && $_GET['p']!='') {
+        $page = $_GET['p'];
+        switch ($page) {
+            case '0':
+                $index = 'class="active"';
+                break;
+            case '1':
+                $pre = 'class="active"';
+                break;
+            case '2':
+                $pra = 'class="active"';
+                break;
+            case '3':
+                $pos = 'class="active"';
+                break;
+            case '4':
+                $sur = 'class="active"';
+                break;
+        }
+    } else {
+        $index = 'class="active"';
+    }
 ?>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -17,17 +39,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php">ITS</a>
+            <a class="navbar-brand" href="?p=0">ITS</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li id="index"><a href="index.php">Home</a></li>
-                <li id="question1"><a href="question1.php">Pre-Question <span class="sr-only">(current)</span></a></li>
-                <li id="practice"><a href="practice.php">Practice</a></li>
-                <li><a href="question1.php">Post-Question</a></li>
-                <li id="survey"><a href="survey.php">Survey</a></li>
+                <li <?=$index?>><a href="?p=0">Home</a></li>
+                <li <?=$pre?>><a href="?p=1">Pre-Question <span class="sr-only">(current)</span></a></li>
+                <li <?=$pra?>><a href="?p=2">Practice</a></li>
+                <li <?=$pos?>><a href="?p=3">Post-Question</a></li>
+                <li <?=$sur?>><a href="?p=4">Survey</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
@@ -46,8 +68,3 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-
-<script>
-    var cl = location.pathname.split("/")[3].split(".")[0];
-    $('#' + cl).addClass('active');
-</script>
