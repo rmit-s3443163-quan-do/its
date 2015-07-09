@@ -9,10 +9,6 @@
 ?>
 <div class="col-xs-3 col-sm-2 sidebar">
     <ul class="nav nav-sidebar">
-        <li><a href="#">Overview</a></li>
-        <li><a href="#">Querries</a></li>
-    </ul>
-    <ul class="nav nav-sidebar">
         <li id="admin"><a href="admin.php">Pre-question</a></li>
         <li id="java"><a href="java.php">Java</a></li>
         <li><a href="admin.php">Post-question</a></li>
@@ -20,7 +16,6 @@
     </ul>
     <ul class="nav nav-sidebar">
         <li id="accounts"><a href="accounts.php">Accounts</a></li>
-        <li><a href="#">Statistics</a></li>
     </ul>
     <footer class="footer">
         <div class="container">

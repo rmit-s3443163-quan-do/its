@@ -23,6 +23,7 @@
                 <div class="row">
                     <div class="col-sm-4 hidden-xs" id="logo"></div>
                     <div class="col-xs-1"></div>
+                    <form action="index.php" method="post">
                     <div class="col-sm-7 col-xs-10">
                         <div class="row">
                             <div class="input-group">
@@ -45,6 +46,7 @@
                             </div>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
 

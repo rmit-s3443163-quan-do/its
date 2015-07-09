@@ -24,7 +24,7 @@ require_once('view/nav.php');
         <p>Help us make it better by answering these questions below:</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">View Result</a></p>
     </div>
-    <form action="question1-result.php">
+    <form action="#">
         <h4><span class="label label-warning pull-left">Question 1 of 5:</span></h4><br/>
         <div class="panel panel-default">
             <div class="panel-body">

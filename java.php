@@ -24,9 +24,14 @@ require_once('view/admin-nav.php');
     ?>
     <div class="col-xs-9 col-sm-10 col-xs-offset-3 col-sm-offset-2 main">
         <h1 class="page-header">Java file upload</h1>
-        <span class="btn btn-default btn-file">
-            Browse <input type="file">
-        </span>
+        <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="btn btn-primary btn-file">
+                        Browse<input type="file" multiple="">
+                    </span>
+                </span>
+            <input type="text" class="form-control" readonly="">
+        </div>
     </div>
 </div>
 
