@@ -34,6 +34,10 @@ require_once('view/nav.php');
     </div>
     </form>
 </div>
+
+
+
+
 <?php
 require_once('view/footer.php');
 ?>

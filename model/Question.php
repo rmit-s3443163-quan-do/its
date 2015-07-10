@@ -54,12 +54,60 @@ class Question {
     private $id=-1;
     private $type=0;
     private $title='';
+    private $explain='';
     private $alts= [];
 
     function __construct($id, $type)
     {
         $this->id = $id;
         $this->type = $type;
+    }
+
+    /**
+     * @return string
+     */
+    public function getExplain()
+    {
+        return $this->explain;
+    }
+
+    /**
+     * @param string $explain
+     */
+    public function setExplain($explain)
+    {
+        $this->explain = $explain;
+    }
+
+    public function getRs() {
+        $s = 'Correct answer is: ';
+        foreach ($this->getAlts() as $key=>$a) {
+            if ($a->isCorrect())
+                $s .= $key . ' ';
+        }
+        return $s;
+    }
+
+    /**
+     * @return bool
+     */
+    public function checkRs($s) {
+
+        foreach ($this->getAlts() as $key=>$a) {
+            if ($a->isCorrect()) {
+                if (!preg_match('/' . $key . ',/', $s))
+                    return false;
+                else
+                    $s = str_replace($key.',','',$s);
+            }
+
+            if (!$a->isCorrect() && preg_match('/' . $key . '/', $s))
+                return false;
+        }
+        if (strlen($s)==0)
+            return true;
+        else
+            return false;
     }
 
     /**
@@ -93,8 +141,8 @@ class Question {
     /**
      * @param Option $opt
      */
-    public function addAlt($opt) {
-        array_push($this->alts, $opt);
+    public function addAlt($key, $opt) {
+        $this->alts[$key] = $opt;
     }
 
     /**

@@ -4,4 +4,7 @@ require_once('controller/QuestionCtrl.php');
 
 QuestionCtrl::init();
 
-echo QuestionCtrl::getJSON(12312);
+if (QuestionCtrl::check(1,'D,B,'))
+    echo 'correct';
+else
+    echo 'incorrect';
