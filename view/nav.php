@@ -39,17 +39,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="?p=0">ITS</a>
+            <a class="navbar-brand" href="index.php">ITS</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li <?=$index?>><a href="?p=0">Home</a></li>
-                <li <?=$pre?>><a href="?p=1">Pre-Question <span class="sr-only">(current)</span></a></li>
-                <li <?=$pra?>><a href="?p=2">Practice</a></li>
-                <li <?=$pos?>><a href="?p=3">Post-Question</a></li>
-                <li <?=$sur?>><a href="?p=4">Survey</a></li>
+                <li <?=$index?>><a href="?p=0"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp; Home</a></li>
+                <li <?=$pre?>><a href="?p=1"><span class="glyphicon glyphicon-import"></span>&nbsp;&nbsp; Pre-Question <span class="sr-only">(current)</span></a></li>
+                <li <?=$pra?>><a href="?p=2"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp; Practice</a></li>
+                <li <?=$pos?>><a href="?p=3"><span class="glyphicon glyphicon-export"></span>&nbsp;&nbsp; Post-Question</a></li>
+                <li <?=$sur?>><a href="?p=4"><span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp; Survey</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">

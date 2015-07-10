@@ -20,7 +20,7 @@
                     $url = 'index';
                     break;
                 case '1':
-                    $url = 'pre';
+                    $url = 'pre-question';
                     break;
                 case '2':
                     $url = 'practice';
@@ -34,9 +34,7 @@
             }
             $content = 'view/' . $url . '.php';
         }
-
     }
-
 ?>
 
 <?php if($b) : ?>

@@ -42,12 +42,17 @@
     <div id="alert-wrong" class="alert alert-danger hidden" role="alert">
         <p><strong>Oh Snap!</strong> You got a wrong answer. <span class="correct-answer"></span></p>
         <p><strong>Explain:</strong> <span class="explain"></span></p>
+        <p><button type="button" class="btn btn-warning"><span class="bt-icon glyphicon glyphicon-question-sign"></span>&nbsp;&nbsp; I still don't understand?? Help!!</button> </p>
     </div>
 </div>
 
 <script>
+    var ssubmit = ' next question';
+    if (<?=$q?> == <?=QuestionCtrl::size()?>)
+        ssubmit = ' view overall results';
+
     $('#submit').click(function () {
-        if ($('.bt-text').html() == ' next question') {
+        if ($('.bt-text').html() == ssubmit) {
             if (<?=$q+1?> > <?=QuestionCtrl::size()?>)
                 window.location.href = 'index.php?p=0'; // later move to overall page
             else
@@ -96,15 +101,15 @@
                 setTimeout(function () {
                     $('#submit').addClass('btn-primary').removeClass('btn-success').removeClass('btn-danger');
                     $('.bt-icon').addClass('glyphicon-chevron-right').removeClass('glyphicon-ok').removeClass('glyphicon-remove').removeClass('glyphicon-refresh').removeClass('glyphicon-refresh-animate');
-                    $('.bt-text').html(' next question');
-                }, 2000);
+                    $('.bt-text').html(ssubmit);
+                }, 1500);
             }
         }
     });
 
     $('.answer').click(function () {
 
-        if ($('.bt-text').html() == ' next question') {
+        if ($('.bt-text').html() == ssubmit) {
 
         } else {
             $('#submit').addClass('btn-primary').removeClass('btn-warning').removeClass('btn-danger').removeClass('btn-success');

@@ -17,5 +17,7 @@
 
 <script src="./js/star-rating.js" type="text/javascript"></script>
 <script src="./js/my.js" type="text/javascript"></script>
-<link rel="stylesheet" href="./css/star-rating.css" media="all" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="./css/star-rating.css" media="all" type="text/css"/>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src="./js/jquery.dataTables.js" type="text/javascript"></script>
+<!--<link rel="stylesheet" href="http://cdn.datatables.net/1.10.0/css/jquery.dataTables.css" type="text/css"/>-->

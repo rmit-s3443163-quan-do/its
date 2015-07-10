@@ -56,12 +56,12 @@
                         <div class="row">
                             <div class="right input-group">
                                 <div class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span> </div>
-                                <input id="user" type="text" placeholder="username" title="i.e: quando" />
+                                <input id="user" type="text" placeholder="username: quando" title="i.e: quando" />
                             </div>
 
                             <div class="right input-group">
                                 <div class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-lock"></span></div>
-                                <input id="pass" type="password" placeholder="password" title="i.e: qwerty" />
+                                <input id="pass" type="password" placeholder="password: qwerty" title="i.e: qwerty" />
                             </div>
                         </div>
                         <div class="down row">
