@@ -6,61 +6,54 @@
  * Time: 8:25 AM
  */
 
-class Option {
-    private $text = '';
-    private $correct = false;
-
-    function __construct($text, $correct)
-    {
-        $this->correct = $correct;
-        $this->text = $text;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isCorrect()
-    {
-        return $this->correct;
-    }
-
-    /**
-     * @param boolean $correct
-     */
-    public function setCorrect($correct)
-    {
-        $this->correct = $correct;
-    }
-
-    /**
-     * @return string
-     */
-    public function getText()
-    {
-        return $this->text;
-    }
-
-    /**
-     * @param string $text
-     */
-    public function setText($text)
-    {
-        $this->text = $text;
-    }
-
-}
 
 class Question {
     private $id=-1;
     private $type=0;
+    private $category=0;
+    private $point=0;
     private $title='';
     private $explain='';
-    private $alts= [];
 
-    function __construct($id, $type)
+    function __construct($id, $type, $category, $point, $explain)
     {
         $this->id = $id;
         $this->type = $type;
+        $this->category = $category;
+        $this->point = $point;
+        $this->explain = $explain;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param int $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPoint()
+    {
+        return $this->point;
+    }
+
+    /**
+     * @param int $point
+     */
+    public function setPoint($point)
+    {
+        $this->point = $point;
     }
 
     /**

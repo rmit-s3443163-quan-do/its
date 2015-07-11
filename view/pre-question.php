@@ -1,6 +1,8 @@
 <?php
 require_once('./controller/QuestionCtrl.php');
 QuestionCtrl::init();
+
+
 ?>
 
 <div class="clear-top" style="margin-top: 100px"></div>
@@ -30,13 +32,55 @@ QuestionCtrl::init();
         <?php } ?>
         </tbody>
     </table>
-
+    <input type="hidden" name="s" id="selected" />
     <button id="submit" type="button" class="btn btn-primary">
         <span class="bt-icon glyphicon glyphicon-send"></span>&nbsp;&nbsp;<span class="bt-text"> submit answers</span>
     </button>
 </div>
 
 <script>
+
+    $('#submit').click(function () {
+        if ($('#selected').val() == '') {
+            $('#submit').addClass('btn-warning').removeClass('btn-primary').removeClass('btn-danger').removeClass('btn-success');
+            $('.bt-icon').addClass('glyphicon-warning-sign').removeClass('glyphicon-send');
+            $('.bt-text').html(' select something!');
+
+        } else {
+            var dataString = 'p=1&s=' + $('#selected').val();
+            $.ajax({
+                type: "POST",
+                url: "index.php",
+                data: dataString,
+                success: function (result) {
+                    if (/okkkk/.test(result)) {
+
+                    } else {
+                    }
+                },
+                error: function (xhr) {
+                    console.log("An error occured: " + xhr.status + " " + xhr.statusText);
+                }
+            });
+        }
+    });
+    $('.answer').click(function () {
+        $('#submit').addClass('btn-primary').removeClass('btn-warning').removeClass('btn-danger').removeClass('btn-success');
+        $('.bt-icon').addClass('glyphicon-send').removeClass('glyphicon-warning-sign').removeClass('glyphicon-remove').removeClass('glyphicon-ok');
+        $('.bt-text').html(' submit answer');
+
+        var id = $(this).attr('id');
+        if ($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+            var val = $('#selected').val().replace(id + ',', '');
+            $('#selected').val(val);
+        } else {
+            $(this).addClass('selected');
+            var val = $('#selected').val() + id + ',';
+            $('#selected').val(val);
+        }
+    });
+
     $('.datatable-1').dataTable({
         "lengthMenu": [[1, -1], [1, "All"]],
         "order": [[ 0, "asc" ]],

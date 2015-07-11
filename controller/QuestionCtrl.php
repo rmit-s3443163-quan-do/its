@@ -7,11 +7,44 @@
  */
 
 require_once('./model/Question.php');
+require_once('./controller/DB.php');
 
 class QuestionCtrl {
 
     /** @var Question[] $questions **/
     public static $questions = [];
+
+    /**
+     * @param Question $q
+     */
+    public static function addQuestion($q) {
+        QuestionCtrl::$questions[$q->getId()] = $q;
+
+        $db = DB::getConn();
+
+        $stm = $db->prepare('insert into Question (title, type, category, point, explain) values (:title, :type, :cate, :point, :explain)');
+        $stm->bindParam(':title', $q->getTitle());
+        $stm->bindParam(':type', $q->getType());
+        $stm->bindParam(':cate', $q->getCategory());
+        $stm->bindParam(':point', $q->getPoint());
+        $stm->bindParam(':explain', $q->getExplain());
+
+        $stm->execute();
+    }
+
+
+
+    /**
+     * @return bool
+     */
+    public static function addCate($name) {
+        $db = DB::getConn();
+
+        $stm = $db->prepare('insert into QuestionCategory (name) values (:name)');
+        $stm->bindParam(':name', $name);
+
+        return $stm->execute();
+    }
 
     /**
      * @return bool
@@ -49,21 +82,8 @@ class QuestionCtrl {
         return sizeof(QuestionCtrl::$questions);
     }
 
-    /**
-     * @return boolean
-     * @param int $id
-     */
-    public static function has($id) {
-        return isset(QuestionCtrl::$questions[$id]);
-    }
 
-    /**
-     * @param Question $q
-     */
-    public static function add($q) {
-        if (!QuestionCtrl::has($q->getId()))
-            QuestionCtrl::$questions[$q->getId()] = $q;
-    }
+
 
     public static function init() {
         $q1 = new Question(1, 0);

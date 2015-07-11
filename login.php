@@ -1,4 +1,8 @@
 <?php
+
+    require_once('./controller/UserCtrl.php');
+    require_once('./model/User.php');
+
     $b = true;
 
     if (isset($_GET['a'])) {
@@ -18,7 +22,7 @@
         $u = $_POST['u'];
         $p = $_POST['p'];
 
-        if ($u == 'quando' && $p == 'qwerty') {
+        if (UserCtrl::login(new User($u,$p))) {
             echo 'ok';
         }
     }
