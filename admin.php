@@ -10,17 +10,21 @@ else {
     $page  = isset($_GET['p'])?$_GET['p']:(isset($_POST['p'])?$_POST['p']:'0');
 
     if (is_null($page))
-        $content = 'view/a_index.php';
+        $content = 'view/a_pretest.php';
     else if (in_array($page, $valid)) {
         switch ($page) {
             case '0':
-                $url = 'a_index';
+                $url = 'a_pretest';
                 break;
             case '1':
+                $url = 'a_posttest';
+                break;
+            case '10':
                 $url = 'a_question';
                 break;
         }
-        $content = 'view/' . $url . '.php';
+        $content = './view/' . $url . '.php';
+        echo $content;
     }
 }
 

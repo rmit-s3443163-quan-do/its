@@ -9,7 +9,8 @@
 ?>
 <div class="col-xs-3 col-sm-2 sidebar">
     <ul class="nav nav-sidebar">
-        <li id="admin" class="active"><a href="admin.php"><span class="glyphicon glyphicon-th-list"></span>&nbsp;&nbsp;&nbsp;Question List</a></li>
+        <li id="admin" class="active"><a href="admin.php?p=0"><span class="glyphicon glyphicon-th-list"></span>&nbsp;&nbsp;&nbsp;Pre-Test List</a></li>
+        <li id="admin"><a href="admin.php?p=1"><span class="glyphicon glyphicon-th-list"></span>&nbsp;&nbsp;&nbsp;Post-Test List</a></li>
         <li id="admin-survey"><a href="admin-survey.php"><span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp;&nbsp;Survey</a></li>
     </ul>
     <ul class="nav nav-sidebar">

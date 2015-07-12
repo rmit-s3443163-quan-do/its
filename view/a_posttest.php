@@ -21,9 +21,9 @@
     <a href="#" class="alert-link">Question has been removed successfully!</a>
 </div>
 
-<h1 class="page-header">Question List
+<h1 class="page-header">PostTest Question List
     <div class="pull-right">
-        <h4><a href="admin.php?p=1"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;&nbsp;New Question</a></h4>
+        <h4><a href="admin.php?p=10&c=2"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;&nbsp;New Question</a></h4>
     </div>
 </h1>
 
@@ -34,17 +34,15 @@
             <th>#</th>
             <th>Question</th>
             <th>Point</th>
-            <th>Category</th>
             <th>Action</th>
         </tr>
         </thead>
         <tbody>
-        <?php foreach(QuestionCtrl::getAll() as $key=>$q){ ?>
+        <?php foreach(QuestionCtrl::getQuestionsByCategory(2) as $key=>$q){ ?>
         <tr>
             <td style="text-align: center"><?=$key+1?></td>
             <td><?=$q->getShortTitle()?></td>
             <td><?=$q->getPoint()?></td>
-            <td><?=$q->getCategoryName()?></td>
             <td style="text-align: center">
                 <a href="admin.php?p=1&id=<?=$q->getId()?>"><span class="glyphicon glyphicon-edit"></span></a>&nbsp;&nbsp;
                 <a href="admin.php?p=0&a=1&id=<?=$q->getId()?>"><span class="glyphicon glyphicon-remove"></span></a>

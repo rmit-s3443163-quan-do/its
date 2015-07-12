@@ -1,6 +1,13 @@
 <?php
 require_once('./controller/QuestionCtrl.php');
 
+if (isset($_GET['a']) && $_GET['a']!=0) {
+    if ($_GET['a']=='del') {
+
+    }
+}
+
+
 function getKText($k) {
     switch ($k) {
         case 0:
@@ -22,6 +29,11 @@ function getKText($k) {
 
 <div class="clear-top" style="margin-top: 100px"></div>
 <div class="container">
+    <ol class="breadcrumb" style="margin-bottom: 40px; margin-top: -30px">
+        <li><a href="index.php">Home</a></li>
+        <li class="active">Pre-Test</li>
+    </ol>
+
     <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped display" width="100%">
         <thead style="display: none;">
         <tr>

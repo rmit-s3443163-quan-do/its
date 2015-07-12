@@ -4,9 +4,18 @@
 
     $ok = 'hidden';
 
+
+    if (isset($_POST['c']) && $_POST['c']!='') {
+        if ($_POST['c']==1)
+            $c1 = 'selected';
+        else
+            $c2 = 'selected';
+    }
+
     if (isset($_POST['title']) && $_POST['title']!='') {
+
         $cate = htmlspecialchars($_POST['cate']);
-        $point = htmlspecialchars($_POST['pojnt']);
+        $point = htmlspecialchars($_POST['point']);
         $title = htmlspecialchars($_POST['title']);
         $explain = htmlspecialchars($_POST['explain']);
 
@@ -46,8 +55,8 @@
     <div class="form-group">
         <label for="question">Question Category</label>
         <select name="cate" class="form-control">
-            <option value="1">Pre-Test</option>
-            <option value="2">Post-Test</option>
+            <option <?=$c1?> value="1">Pre-Test</option>
+            <option <?=$c2?> value="2">Post-Test</option>
         </select>
     </div>
     <div class="form-group">
@@ -109,7 +118,12 @@
 //                ['para', ['ul', 'ol', 'paragraph']],
             ['insert', ['picture','link','hr']],
 //                ['misc',['codeview','undo','redo']]
-        ]
+        ],
+        onPaste: function(e) {
+            var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+            e.preventDefault();
+            document.execCommand('insertText', false, bufferText);
+        }
 
     });
 

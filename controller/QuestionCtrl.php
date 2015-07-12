@@ -13,6 +13,22 @@ require_once('./controller/DB.php');
 class QuestionCtrl {
 
     /**
+     * @return bool
+     * @param int $id
+     */
+    public static function remove($id) {
+        $db = DB::getConn();
+
+        $stm = $db->prepare('delete from Option where question=:id');
+        $stm->bindParam(':id', $id);
+        $stm->execute();
+
+        $stm = $db->prepare('delete from Question where id=:id');
+        $stm->bindParam(':id', $id);
+        $stm->execute();
+    }
+
+    /**
      * @return Question[]
      * @param int $id
      */
