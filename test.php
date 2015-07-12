@@ -29,14 +29,19 @@ require_once('./model/Option.php');
 //    echo '<br>';
 //}
 
-echo QuestionCtrl::getLastID();
+$q = QuestionCtrl::get(7);
+
+
 
 ?>
 
-<!--<h2>POST DATA</h2>-->
-<!--<pre>-->
-<?php //print_r($_POST); ?>
-<!--</pre>-->
+<h2>POST DATA</h2>
+<pre>
+<?php echo htmlspecialchars_decode($q->getOpts()[0]->getText()); ?>
+<?php echo htmlspecialchars_decode($q->getOpts()[1]->getText()); ?>
+<?php echo htmlspecialchars_decode($q->getOpts()[2]->getText()); ?>
+<?php echo htmlspecialchars_decode($q->getOpts()[3]->getText()); ?>
+</pre>
 <!--<pre>-->
 <?php //echo htmlspecialchars($_POST['opt4']); ?>
 <!--</pre>-->

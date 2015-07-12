@@ -6,13 +6,17 @@
  * Time: 8:25 AM
  */
 
+require_once('./model/Option.php');
 
 class Question {
+
     private $id=-1;
     private $category=0;
     private $point=0;
     private $title='';
     private $explain='';
+    /** @var $opts Option[] */
+    private $opts = [];
 
     function __construct($category, $point, $title, $explain)
     {
@@ -23,11 +27,46 @@ class Question {
     }
 
     /**
+     * @param Option $opt
+     */
+    public function addOpt($opt) {
+        $this->opts[] = $opt;
+    }
+
+    /**
+     * @return Option[]
+     */
+    public function getOpts()
+    {
+        return $this->opts;
+    }
+
+    /**
+     * @param Option[] $opts
+     */
+    public function setOpts($opts)
+    {
+        $this->opts = $opts;
+    }
+
+    /**
      * @return int
      */
     public function getCategory()
     {
         return $this->category;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCategoryName()
+    {
+        if ($this->category == 1)
+            return 'Pre-Question';
+        else
+            return 'Post-Question';
+
     }
 
     /**
@@ -175,6 +214,14 @@ class Question {
     public function getTitle()
     {
         return $this->title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getShortTitle()
+    {
+        return (strlen($this->title)<100)?$this->title:substr($this->title,0,100).'..';
     }
 
     /**

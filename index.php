@@ -26,7 +26,7 @@
                     $url = 'practice';
                     break;
                 case '3':
-                    $url = 'post';
+                    $url = 'post-question';
                     break;
                 case '4':
                     $url = 'survey';

@@ -34,7 +34,7 @@
                         <li><a href="#">Past Questions</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="change-password.php">Change Password</a></li>
-                        <li><a href="login.php">Logout</a></li>
+                        <li><a href="login.php?a=logout">Logout</a></li>
                     </ul>
                 </li>
             </ul>

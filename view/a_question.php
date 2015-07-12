@@ -28,7 +28,7 @@
             $opt = htmlspecialchars($_POST['opt4']);
             $optCR = $_POST['opt4-cr'];
             QuestionCtrl::addOption(new Option($qid, $opt, $optCR));
-            
+
             $ok = '';
         }
     }
@@ -38,8 +38,9 @@
 
 <form action="admin.php" method="post" enctype="multipart/form-data" onsubmit="return postForm()">
     <input type="hidden" name="p" value="1"/>
-<h2 class="page-header">New Question</h2>
+    <h2 class="page-header">New Question</h2>
     <div class="<?=$ok?> alert alert-success" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <a href="#" class="alert-link">Question has been added successfully!</a>
     </div>
     <div class="form-group">

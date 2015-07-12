@@ -32,7 +32,7 @@ function getKText($k) {
         </tr>
         </thead>
         <tbody>
-        <?php foreach(QuestionCtrl::getQuestionsByCategory(1) as $key=>$q){ ?>
+        <?php foreach(QuestionCtrl::getQuestionsByCategory(2) as $key=>$q){ ?>
         <tr>
             <td><?=$key+1?></td>
             <td>

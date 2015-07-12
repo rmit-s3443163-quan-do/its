@@ -40,6 +40,8 @@ else {
     <script src="js/summernote.min.js"></script>
     <link href="css/admin.css" media="screen" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <script src="./js/jquery.a.dataTables.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.0/css/jquery.dataTables.css" type="text/css"/>
 </head>
 <body>
 <?php

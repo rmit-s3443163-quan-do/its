@@ -13,7 +13,7 @@ require_once('./controller/DB.php');
 class QuestionCtrl {
 
     /**
-     * @return array
+     * @return Question[]
      * @param int $id
      */
     public static function getQuestionsByCategory($id) {
@@ -23,7 +23,97 @@ class QuestionCtrl {
         $stm->bindParam(':id', $id);
 
         $stm->execute();
-        return $stm->fetchAll();
+        $rss = $stm->fetchAll();
+        $arr = [];
+
+        foreach ($rss as $rs) {
+
+            $q = new Question($rs['category'], $rs['point'], $rs['title'], $rs['explain']);
+            $q->setId($rs['id']);
+
+            $stm = $db->prepare('select * from Option where question = :id');
+            $stm->bindParam(':id', $q->getId());
+
+            $stm->execute();
+            $opts = $stm->fetchAll();
+
+            foreach ($opts as $o) {
+                $opt = new Option($o['question'], $o['title'], $o['isCorrect']);
+                $opt->setId($o['id']);
+                $q->addOpt($opt);
+            }
+
+            $arr[] = $q;
+        }
+
+        return $arr;
+    }
+
+    /**
+     * @return Question[]
+     */
+
+    public static function getAll() {
+        $db = DB::getConn();
+
+        $stm = $db->prepare('select * from Question');
+
+        $stm->execute();
+        $rss = $stm->fetchAll();
+        $arr = [];
+
+        foreach ($rss as $rs) {
+
+            $q = new Question($rs['category'], $rs['point'], $rs['title'], $rs['explain']);
+            $q->setId($rs['id']);
+
+            $stm = $db->prepare('select * from Option where question = :id');
+            $stm->bindParam(':id', $q->getId());
+
+            $stm->execute();
+            $opts = $stm->fetchAll();
+
+            foreach ($opts as $o) {
+                $opt = new Option($o['question'], $o['title'], $o['isCorrect']);
+                $opt->setId($o['id']);
+                $q->addOpt($opt);
+            }
+
+            $arr[] = $q;
+        }
+
+        return $arr;
+    }
+
+    /**
+     * @return Question
+     * @param int $id
+     */
+    public static function get($id) {
+        $db = DB::getConn();
+
+        $stm = $db->prepare('select * from Question where id = :id');
+        $stm->bindParam(':id', $id);
+
+        $stm->execute();
+        $rs = $stm->fetchAll()[0];
+
+        $q = new Question($rs['category'], $rs['point'], $rs['title'], $rs['explain']);
+        $q->setId($id);
+
+        $stm = $db->prepare('select * from Option where question = :id');
+        $stm->bindParam(':id', $id);
+
+        $stm->execute();
+        $arr = $stm->fetchAll();
+
+        foreach ($arr as $o) {
+            $opt = new Option($o['question'],$o['title'],$o['isCorrect']);
+            $opt->setId($o['id']);
+            $q->addOpt($opt);
+        }
+
+        return $q;
     }
 
     /**
@@ -116,17 +206,6 @@ class QuestionCtrl {
     public static function getJSON($id) {
         if (QuestionCtrl::get($id)!=null)
             return QuestionCtrl::get($id)->toJSON();
-        else
-            return null;
-    }
-
-    /**
-     * @return Question
-     * @param int $id
-     */
-    public static function get($id) {
-        if (QuestionCtrl::has($id))
-            return QuestionCtrl::$questions[$id];
         else
             return null;
     }
