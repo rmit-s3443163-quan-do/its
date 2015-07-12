@@ -12,11 +12,10 @@ class Option {
     private $text = '';
     private $correct = false;
 
-    function __construct($id, $question, $text, $correct)
+    function __construct($question, $text, $correct)
     {
-        $this->id = $id;
         $this->question = $question;
-        $this->correct = $correct;
+        $this->correct = $correct?1:0;
         $this->text = $text;
     }
 
@@ -35,8 +34,6 @@ class Option {
     {
         $this->id = $id;
     }
-
-
 
     /**
      * @return int

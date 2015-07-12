@@ -9,18 +9,16 @@
 
 class Question {
     private $id=-1;
-    private $type=0;
     private $category=0;
     private $point=0;
     private $title='';
     private $explain='';
 
-    function __construct($id, $type, $category, $point, $explain)
+    function __construct($category, $point, $title, $explain)
     {
-        $this->id = $id;
-        $this->type = $type;
         $this->category = $category;
         $this->point = $point;
+        $this->title = $title;
         $this->explain = $explain;
     }
 
@@ -186,22 +184,5 @@ class Question {
     {
         $this->title = $title;
     }
-
-    /**
-     * @return int
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * @param int $type
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-    }
-
 
 }
