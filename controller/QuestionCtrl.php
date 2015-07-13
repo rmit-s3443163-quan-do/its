@@ -48,7 +48,8 @@ class QuestionCtrl {
             $q->setId($rs['id']);
 
             $stm = $db->prepare('select * from Option where question = :id');
-            $stm->bindParam(':id', $q->getId());
+            $idd = $q->getId();
+            $stm->bindParam(':id', $idd);
 
             $stm->execute();
             $opts = $stm->fetchAll();
@@ -84,7 +85,9 @@ class QuestionCtrl {
             $q->setId($rs['id']);
 
             $stm = $db->prepare('select * from Option where question = :id');
-            $stm->bindParam(':id', $q->getId());
+
+            $idd = $q->getId();
+            $stm->bindParam(':id', $idd);
 
             $stm->execute();
             $opts = $stm->fetchAll();
@@ -124,7 +127,7 @@ class QuestionCtrl {
         $arr = $stm->fetchAll();
 
         foreach ($arr as $o) {
-            $opt = new Option($o['question'],$o['title'],$o['isCorrect']);
+            $opt = new Option($o['question'],$o['title'],$o['isCorrect']?true:false);
             $opt->setId($o['id']);
             $q->addOpt($opt);
         }
@@ -139,7 +142,7 @@ class QuestionCtrl {
     public static function getOptionsByID($id) {
         $db = DB::getConn();
 
-        $stm = $db->prepare('select * from Option where question = :id');
+        $stm = $db->prepare('select * from Option where id = :id');
         $stm->bindParam(':id', $id);
 
         $stm->execute();
@@ -159,6 +162,26 @@ class QuestionCtrl {
         $stm->bindParam(':cate', $q->getCategory());
         $stm->bindParam(':point', $q->getPoint());
         $stm->bindParam(':explain', $q->getExplain());
+
+        $stm->execute();
+
+        return QuestionCtrl::getLastID();
+    }
+
+    /**
+     * @return int
+     * @param Question $q
+     */
+    public static function updateQuestion($q) {
+
+        $db = DB::getConn();
+
+        $stm = $db->prepare('update Question set title=:title, category=:cate, point=:point, explain=:explain where id=:id');
+        $stm->bindParam(':title', $q->getTitle());
+        $stm->bindParam(':cate', $q->getCategory());
+        $stm->bindParam(':point', $q->getPoint());
+        $stm->bindParam(':explain', $q->getExplain());
+        $stm->bindParam(':id',$q->getId());
 
         $stm->execute();
 
@@ -190,6 +213,22 @@ class QuestionCtrl {
 
         $stm = $db->prepare('insert into Option (question, title, isCorrect) values (:question, :title, :correct)');
         $stm->bindParam(':question', $o->getQuestion());
+        $stm->bindParam(':title', $o->getText());
+        $stm->bindParam(':correct', $o->isCorrect());
+
+        $stm->execute();
+    }
+
+    /**
+     * @return bool
+     * @param Option $o
+     */
+    public static function updateOption($o) {
+
+        $db = DB::getConn();
+
+        $stm = $db->prepare('update Option set title=:title, isCorrect=:correct where id=:id');
+        $stm->bindParam(':id', $o->getId());
         $stm->bindParam(':title', $o->getText());
         $stm->bindParam(':correct', $o->isCorrect());
 

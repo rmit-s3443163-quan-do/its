@@ -15,7 +15,7 @@ class Option {
     function __construct($question, $text, $correct)
     {
         $this->question = $question;
-        $this->correct = $correct?1:0;
+        $this->correct = $correct==1?true:false;
         $this->text = $text;
     }
 

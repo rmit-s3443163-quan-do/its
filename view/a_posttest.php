@@ -44,8 +44,8 @@
             <td><?=$q->getShortTitle()?></td>
             <td><?=$q->getPoint()?></td>
             <td style="text-align: center">
-                <a href="admin.php?p=1&id=<?=$q->getId()?>"><span class="glyphicon glyphicon-edit"></span></a>&nbsp;&nbsp;
-                <a href="admin.php?p=0&a=1&id=<?=$q->getId()?>"><span class="glyphicon glyphicon-remove"></span></a>
+                <a href="admin.php?p=10&id=<?=$q->getId()?>"><span class="glyphicon glyphicon-edit"></span></a>&nbsp;&nbsp;
+                <a href="admin.php?p=1&a=1&id=<?=$q->getId()?>"><span class="glyphicon glyphicon-remove"></span></a>
             </td>
         </tr>
         <?php } ?>
