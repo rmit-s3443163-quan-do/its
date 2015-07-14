@@ -34,9 +34,9 @@ if ($c == 2) {
 
 ?>
 
-<div class="clear-top" style="margin-top: 100px"></div>
+<div class="clear-top" style="margin-top: 50px"></div>
 <div class="container">
-    <ol class="breadcrumb" style="margin-bottom: 40px; margin-top: -30px">
+    <ol class="breadcrumb" style="margin-bottom: 40px;">
         <li><a href="index.php">Home</a></li>
         <li class="active"><?=$type?></li>
     </ol>
@@ -106,7 +106,7 @@ if ($c == 2) {
             </table>
 
         </div>
-        <div class="col-md-12 col-lg-4 ">
+        <div class="col-md-12 col-lg-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h2 class="panel-title"><span class="glyphicon glyphicon-list-alt"></span>
@@ -203,7 +203,8 @@ if ($c == 2) {
                 "visible": false
             }
         ],
-        "dom": '<"lb-info label label-warning pull-left"i><"pn-pre panel panel-default"<"panel-body"ptp>>',
+//        "dom": '<"panel panel-default"<"panel-title"i><"panel-body"t><"panel-footer"p> >',
+        'dom': '<"lb-info label label-warning pull-left"i><"pn-pre panel panel-default"<"panel-body"ptp>>',
         "pagingType": "simple"
     });
 </script>

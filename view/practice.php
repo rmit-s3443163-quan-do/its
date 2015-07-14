@@ -6,9 +6,13 @@
  * Time: 12:31 AM
  */
 ?>
+<div class="clear-top" style="margin-top: 50px"></div>
 
-<div class="clear-top"></div>
 <div class="container">
+    <ol class="breadcrumb" style="margin-bottom: 40px;">
+        <li><a href="index.php">Home</a></li>
+        <li class="active">Practice</li>
+    </ol>
     <div class="jumbotron">
         <h1>Embed System here</h1>
         <!--        <object type="application/x-java-applet">-->
