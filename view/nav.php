@@ -13,13 +13,14 @@
                 $index = 'class="active"';
                 break;
             case '1':
-                $pre = 'class="active"';
+                $c = $_GET['c'];
+                if ($c == 2)
+                    $pos = 'class="active"';
+                else
+                    $pre = 'class="active"';
                 break;
             case '2':
                 $pra = 'class="active"';
-                break;
-            case '3':
-                $pos = 'class="active"';
                 break;
             case '4':
                 $sur = 'class="active"';

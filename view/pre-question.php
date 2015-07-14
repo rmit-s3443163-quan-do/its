@@ -10,8 +10,8 @@ if (isset($_GET['c']) && $_GET['c']!='') {
 
 $question_arr = QuestionCtrl::getQuestionsByCategory($c);
 
-function getKText($k) {
-    switch ($k) {
+function getKText($opt) {
+    switch ($opt) {
         case 0:
             return 'A';
             break;
@@ -40,93 +40,155 @@ if ($c == 2) {
         <li><a href="index.php">Home</a></li>
         <li class="active"><?=$type?></li>
     </ol>
+    <div class="row">
+        <div class="col-md-12 col-lg-8">
+            <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped display" width="100%">
+                <thead style="display: none;">
+                <tr>
+                    <th>No</th>
+                    <th>
+                        Questions
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach($question_arr as $ques=>$q){ ?>
+                    <tr>
+                        <td><?=$ques+1?></td>
+                        <td>
+                            <h4 class="question-title"><?=htmlspecialchars_decode($q->getTitle())?></h4>
+                            <?php foreach($q->getOpts() as $opt=>$alt){ ?>
+                                <div id="answer_<?=$q->getId()?>_<?=$alt->getId()?>" class="answer answer-<?=$q->getId()?> panel panel-default">
+                                    <span class="key"><?=getKText($opt)?>.</span> <span><?=htmlspecialchars_decode($alt->getText())?></span>
+                                </div>
+                            <?php } ?>
+                        </td>
+                    </tr>
+                <?php } ?>
 
-    <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped display" width="100%">
-        <thead style="display: none;">
-        <tr>
-            <th>No</th>
-            <th>
-                Questions
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php foreach($question_arr as $key=>$q){ ?>
-        <tr>
-            <td><?=$key+1?></td>
-            <td>
-                <h4 class="question-title"><?=htmlspecialchars_decode($q->getTitle())?></h4>
-                <?php foreach($q->getOpts() as $k=>$alt){ ?>
-                    <div id="<?=$key?><?=$k?>" class="answer answer-<?=$key?> panel panel-default">
-                        <span class="key"><?=getKText($k)?>.</span> <span><?=htmlspecialchars_decode($alt->getText())?></span>
-                    </div>
-                    <script>
-                        $('#<?=$key?><?=$k?>').click(function () {
-                            var radio = $('#<?=$key?><?=getKText($k)?>');
+                <script>
+                    $('.answer').click(function () {
 
-                            $('.answer-<?=$key?>').each(function () {
-                                if ($(this).hasClass('selected')) {
-                                    answered--;
-                                    $(this).removeClass('selected');
-                                }
-                            });
+                        var ques = $(this).attr('id').split('_')[1];
+                        var opt = $(this).attr('id').split('_')[2];
 
-                            if(radio.is(':checked') === false) {
-                                $('#ans<?=$key?>').val('<?=$q->getId()?>:<?=$alt->getId()?>');
-                                radio.prop('checked', true);
-                                $(this).addClass('selected');
-                                answered++;
-                            } else {
-                                $('#ans<?=$key?>').val('');
-                                radio.prop('checked', false);
+                        var radio = $('input:radio[name=q'+ques+']').filter('[value='+ques+'_'+opt+']');
+
+                        $('.answer-'+ques).each(function () {
+                            if ($(this).hasClass('selected')) {
+                                answered--;
                                 $(this).removeClass('selected');
                             }
-
-                            $('#answered').html(answered);
                         });
-                    </script>
-                <?php } ?>
-            </td>
-        </tr>
-        <?php } ?>
-        </tbody>
-    </table>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h2 class="panel-title"><span class="glyphicon glyphicon-list-alt"></span>
-                Answer Sheet <small>(Answered <span id="answered">0</span> / <?=count($question_arr)?>)</small></h2>
-        </div>
-        <div class="panel-body">
-            <div class="row">
-                <?php foreach($question_arr as $key=>$q){ ?>
-                <div class="col-sm-6 col-md-4 answer-group"><a class="answer-title" href="#" id="q<?=$key?>">Question <?=$key+1?>.</a>
-                    <?php foreach($q->getOpts() as $k=>$alt){ ?>
-                    <div class="radio radio-primary radio-inline">
-                        <input id="<?=$key?><?=getKText($k)?>" type="radio" value="<?=$key?><?=getKText($k)?>" name="q<?=$key?>">
-                        <label for="<?=$key?><?=getKText($k)?>"> <?=getKText($k)?> </label>
-                    </div>
-                    <?php } ?>
-                </div>
-                <script>
-                    $('#q<?=$key?>').click(function () {
-                        var table = $('.datatable-1').DataTable();
-                        table.page( <?=$key?> ).draw( false );;
+
+                        if(radio.is(':checked') === false) {
+
+                            $('#ans'+ques).val(ques+'_'+opt);
+                            radio.prop('checked', true);
+                            $(this).addClass('selected');
+                            answered++;
+                        } else {
+                            $('#ans'+ques).val('');
+                            radio.prop('checked', false);
+                            $(this).removeClass('selected');
+                        }
+                        if (answered == <?=count($question_arr)?>) {
+                            $('#answered-undone').addClass('hidden');
+                            $('#answered-done').removeClass('hidden');
+                        } else {
+                            $('#answered').html(answered);
+                            $('#answered-undone').removeClass('hidden');
+                            $('#answered-done').addClass('hidden');
+                        }
                     });
                 </script>
-                <?php } ?>
-            </div>
-        </div>
+                </tbody>
+            </table>
 
-        <div class="panel-footer">
-            <button id="submit" type="button" class="btn btn-primary">
-                <?php foreach($question_arr as $key=>$q){ ?>
-                <input type="hidden" name="a<?=$key?>" id="ans<?=$key?>" />
-                <?php } ?>
-                <span class="bt-icon glyphicon glyphicon-send"></span>&nbsp;&nbsp;<span class="bt-text"> submit test</span>
-            </button>
+        </div>
+        <div class="col-md-12 col-lg-4 ">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title"><span class="glyphicon glyphicon-list-alt"></span>
+                        Answer Sheet
+                        <span id="answered-undone" class="pull-right" style="margin-top: 3px; font-size: 12px;">
+                            Answered <span id="answered">0</span> / <?=count($question_arr)?>
+                        </span>
+                        <span id="answered-done" class="hidden pull-right" style="margin-top: 3px; font-size: 12px; color: darkgreen">
+                            All answered <span class="glyphicon glyphicon-ok-circle" style="margin-right: 0"></span>
+                        </span>
+                    </h2>
+                </div>
+                <div class="panel-body text-center">
+                    <div class="row">
+                        <?php foreach($question_arr as $ques=>$q){ ?>
+                            <div class="col-sm-6 col-md-4 col-lg-12 answer-group">
+                                <a class="answer-title" href="#" id="q<?=$ques?>">Question <?=$ques+1?>.</a>
+                                <?php foreach($q->getOpts() as $opt=>$alt){ ?>
+                                    <div class="radio radio-primary radio-inline radio-disable">
+                                        <input id="r<?=$q->getId()?>_<?=$alt->getId()?>_<?=$ques?>" type="radio" value="<?=$q->getId()?>_<?=$alt->getId()?>" name="q<?=$q->getId()?>">
+                                        <label for="r<?=$q->getId()?>_<?=$alt->getId()?>_<?=$ques?>"> <?=getKText($opt)?> </label>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+                        <script>
+                            $('.answer-title').click(function () {
+                                var id = $(this).attr('id').substring(1);
+                                var table = $('.datatable-1').DataTable();
+                                table.page( parseInt(id) ).draw( false );
+                            });
+                            $('input').change(function (e) {
+
+                                var table = $('.datatable-1').DataTable();
+
+                                var id = $(this).attr('id').substring(1);
+                                var ques = id.split('_')[0];
+                                var opt = id.split('_')[1];
+                                var num = id.split('_')[2];
+
+                                table.page(parseInt(num)).draw(false);
+
+                                $('.answer-' + ques).each(function () {
+                                    if ($(this).hasClass('selected')) {
+                                        answered--;
+                                        $(this).removeClass('selected');
+                                    }
+                                });
+
+                                $('#ans' + ques).val($(this).val());
+                                $('#answer_' + ques +'_'+ opt).addClass('selected');
+                                answered++;
+                                if (answered == <?=count($question_arr)?>) {
+                                    $('#answered-undone').addClass('hidden');
+                                    $('#answered-done').removeClass('hidden');
+                                } else {
+
+                                    $('#answered-undone').removeClass('hidden');
+                                    $('#answered-done').addClass('hidden');
+                                }
+
+                                $('#answered').html(answered);
+
+                            });
+                        </script>
+                    </div>
+                </div>
+
+                <div class="panel-footer">
+                    <form action="test.php" method="post">
+                    <button id="submit" type="button" class="btn btn-primary">
+                        <?php foreach($question_arr as $ques=>$q){ ?>
+                            <input type="hidden" name="a<?=$ques?>" id="ans<?=$ques?>" />
+                        <?php } ?>
+                        <span class="bt-icon glyphicon glyphicon-send"></span>&nbsp;&nbsp;<span class="bt-text"> submit test</span>
+                    </button>
+                    </form>
+                </div>
+            </div>
+
         </div>
     </div>
-
 </div>
 
 <script>

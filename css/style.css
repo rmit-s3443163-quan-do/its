@@ -288,3 +288,7 @@ input[type="radio"] {
     padding-left: 20px;
     border-bottom: 1px dashed lightgray;
 }
+
+.radio {
+    padding-left: 25px !important;
+}
