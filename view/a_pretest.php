@@ -28,7 +28,7 @@
 </h1>
 
 <div class="table-responsiv">
-    <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped display">
+    <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped">
         <thead>
         <tr>
             <th>#</th>

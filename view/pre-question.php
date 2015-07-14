@@ -1,12 +1,14 @@
 <?php
 require_once('./controller/QuestionCtrl.php');
 
-if (isset($_GET['a']) && $_GET['a']!=0) {
-    if ($_GET['a']=='del') {
-
-    }
+$c = 1;
+if (isset($_GET['c']) && $_GET['c']!='') {
+    $c = $_GET['c'];
+    if ($c != 1 && $c!=2)
+        $c = 1;
 }
 
+$question_arr = QuestionCtrl::getQuestionsByCategory($c);
 
 function getKText($k) {
     switch ($k) {
@@ -25,13 +27,18 @@ function getKText($k) {
     }
 }
 
+$type = 'Pre-Test';
+if ($c == 2) {
+    $type = 'Post-Test';
+}
+
 ?>
 
 <div class="clear-top" style="margin-top: 100px"></div>
 <div class="container">
     <ol class="breadcrumb" style="margin-bottom: 40px; margin-top: -30px">
         <li><a href="index.php">Home</a></li>
-        <li class="active">Pre-Test</li>
+        <li class="active"><?=$type?></li>
     </ol>
 
     <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped display" width="100%">
@@ -44,71 +51,88 @@ function getKText($k) {
         </tr>
         </thead>
         <tbody>
-        <?php foreach(QuestionCtrl::getQuestionsByCategory(1) as $key=>$q){ ?>
+        <?php foreach($question_arr as $key=>$q){ ?>
         <tr>
             <td><?=$key+1?></td>
             <td>
-                <h4><?=htmlspecialchars_decode($q->getTitle())?></h4>
+                <h4 class="question-title"><?=htmlspecialchars_decode($q->getTitle())?></h4>
                 <?php foreach($q->getOpts() as $k=>$alt){ ?>
-                    <div id="<?=$key?><?=$k?>" class="answer panel panel-default">
+                    <div id="<?=$key?><?=$k?>" class="answer answer-<?=$key?> panel panel-default">
                         <span class="key"><?=getKText($k)?>.</span> <span><?=htmlspecialchars_decode($alt->getText())?></span>
                     </div>
+                    <script>
+                        $('#<?=$key?><?=$k?>').click(function () {
+                            var radio = $('#<?=$key?><?=getKText($k)?>');
+
+                            $('.answer-<?=$key?>').each(function () {
+                                if ($(this).hasClass('selected')) {
+                                    answered--;
+                                    $(this).removeClass('selected');
+                                }
+                            });
+
+                            if(radio.is(':checked') === false) {
+                                $('#ans<?=$key?>').val('<?=$q->getId()?>:<?=$alt->getId()?>');
+                                radio.prop('checked', true);
+                                $(this).addClass('selected');
+                                answered++;
+                            } else {
+                                $('#ans<?=$key?>').val('');
+                                radio.prop('checked', false);
+                                $(this).removeClass('selected');
+                            }
+
+                            $('#answered').html(answered);
+                        });
+                    </script>
                 <?php } ?>
             </td>
         </tr>
         <?php } ?>
         </tbody>
     </table>
-    <input type="hidden" name="s" id="selected" />
-    <button id="submit" type="button" class="btn btn-primary">
-        <span class="bt-icon glyphicon glyphicon-send"></span>&nbsp;&nbsp;<span class="bt-text"> submit answer</span>
-    </button>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title"><span class="glyphicon glyphicon-list-alt"></span>
+                Answer Sheet <small>(Answered <span id="answered">0</span> / <?=count($question_arr)?>)</small></h2>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <?php foreach($question_arr as $key=>$q){ ?>
+                <div class="col-sm-6 col-md-4 answer-group"><a class="answer-title" href="#" id="q<?=$key?>">Question <?=$key+1?>.</a>
+                    <?php foreach($q->getOpts() as $k=>$alt){ ?>
+                    <div class="radio radio-primary radio-inline">
+                        <input id="<?=$key?><?=getKText($k)?>" type="radio" value="<?=$key?><?=getKText($k)?>" name="q<?=$key?>">
+                        <label for="<?=$key?><?=getKText($k)?>"> <?=getKText($k)?> </label>
+                    </div>
+                    <?php } ?>
+                </div>
+                <script>
+                    $('#q<?=$key?>').click(function () {
+                        var table = $('.datatable-1').DataTable();
+                        table.page( <?=$key?> ).draw( false );;
+                    });
+                </script>
+                <?php } ?>
+            </div>
+        </div>
+
+        <div class="panel-footer">
+            <button id="submit" type="button" class="btn btn-primary">
+                <?php foreach($question_arr as $key=>$q){ ?>
+                <input type="hidden" name="a<?=$key?>" id="ans<?=$key?>" />
+                <?php } ?>
+                <span class="bt-icon glyphicon glyphicon-send"></span>&nbsp;&nbsp;<span class="bt-text"> submit test</span>
+            </button>
+        </div>
+    </div>
+
 </div>
 
 <script>
-
-    $('#submit').click(function () {
-        if ($('#selected').val() == '') {
-            $('#submit').addClass('btn-warning').removeClass('btn-primary').removeClass('btn-danger').removeClass('btn-success');
-            $('.bt-icon').addClass('glyphicon-warning-sign').removeClass('glyphicon-send');
-            $('.bt-text').html(' select something!');
-
-        } else {
-            var dataString = 'p=1&s=' + $('#selected').val();
-            $.ajax({
-                type: "POST",
-                url: "index.php",
-                data: dataString,
-                success: function (result) {
-                    if (/okkkk/.test(result)) {
-
-                    } else {
-                    }
-                },
-                error: function (xhr) {
-                    console.log("An error occured: " + xhr.status + " " + xhr.statusText);
-                }
-            });
-        }
-    });
-    $('.answer').click(function () {
-        $('#submit').addClass('btn-primary').removeClass('btn-warning').removeClass('btn-danger').removeClass('btn-success');
-        $('.bt-icon').addClass('glyphicon-send').removeClass('glyphicon-warning-sign').removeClass('glyphicon-remove').removeClass('glyphicon-ok');
-        $('.bt-text').html(' submit answer');
-
-        var id = $(this).attr('id');
-        if ($(this).hasClass('selected')) {
-            $(this).removeClass('selected');
-            var val = $('#selected').val().replace(id + ',', '');
-            $('#selected').val(val);
-        } else {
-            $(this).addClass('selected');
-            var val = $('#selected').val() + id + ',';
-            $('#selected').val(val);
-        }
-    });
-
-    $('.datatable-1').dataTable({
+    var answered = 0;
+    $('#answered').html(answered);
+    $('.datatable-1').DataTable({
         "lengthMenu": [[1, -1], [1, "All"]],
         "order": [[ 0, "asc" ]],
         "columnDefs": [
@@ -118,6 +142,6 @@ function getKText($k) {
             }
         ],
         "dom": '<"lb-info label label-warning pull-left"i><"pn-pre panel panel-default"<"panel-body"ptp>>',
-        "pagingType": "simple_numbers"
+        "pagingType": "simple"
     });
 </script>

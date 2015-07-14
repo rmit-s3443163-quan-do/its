@@ -82,6 +82,7 @@
     $submit = 'Save';
     $text = 'added';
     $text_css = 'success';
+    $title = 'New Question';
 
     if (isset($_GET['id']) && $_GET['id']!='') {
 
@@ -90,6 +91,7 @@
         $text = 'updated';
         $text_css = 'info';
         $submit ='Update';
+        $title = 'Update Question';
 
         $q = QuestionCtrl::get($id);
     }
@@ -98,7 +100,7 @@
 
 <form action="admin.php?p=10<?=$link?>" method="post" enctype="multipart/form-data" onsubmit="return postForm()">
     <input type="hidden" name="ques_id" value="<?=$id?>"/>
-    <h2 class="page-header">New Question</h2>
+    <h2 class="page-header"><?=$title?></h2>
     <div class="<?=$ok?> alert alert-<?=$text_css?>" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         Question has been <?=$text?> successfully!

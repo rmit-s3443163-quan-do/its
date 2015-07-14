@@ -45,11 +45,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li <?=$index?>><a href="?p=0"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp; Home</a></li>
-                <li <?=$pre?>><a href="?p=1"><span class="glyphicon glyphicon-import"></span>&nbsp;&nbsp; Pre-Question <span class="sr-only">(current)</span></a></li>
-                <li <?=$pra?>><a href="?p=2"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp; Practice</a></li>
-                <li <?=$pos?>><a href="?p=3"><span class="glyphicon glyphicon-export"></span>&nbsp;&nbsp; Post-Question</a></li>
-                <li <?=$sur?>><a href="?p=4"><span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp; Survey</a></li>
+                <li <?=$index?>><a href="?p=0"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+                <li <?=$pre?>><a href="?p=1&c=1"><span class="glyphicon glyphicon-import"></span>Pre-Question <span class="sr-only">(current)</span></a></li>
+                <li <?=$pra?>><a href="?p=2"><span class="glyphicon glyphicon-briefcase"></span>Practice</a></li>
+                <li <?=$pos?>><a href="?p=1&c=2"><span class="glyphicon glyphicon-export"></span>Post-Question</a></li>
+                <li <?=$sur?>><a href="?p=4"><span class="glyphicon glyphicon-tasks"></span>Survey</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
