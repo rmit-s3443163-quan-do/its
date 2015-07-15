@@ -8,8 +8,33 @@
 
 require_once('./model/User.php');
 require_once('./controller/DB.php');
+require_once('./controller/QuestionCtrl.php');
 
 class UserCtrl {
+
+
+    /**
+     * @return bool
+     * @param int $step
+     */
+    public static function isDone($step) {
+
+        switch ($step) {
+            case 1:
+                return QuestionCtrl::isDone(1);
+                break;
+            case 2:
+                return QuestionCtrl::isDone(3);
+                break;
+            case 3:
+                return QuestionCtrl::isDone(2);
+                break;
+            case 4:
+                return QuestionCtrl::isDone(4);
+                break;
+        }
+
+    }
 
     /**
      * @return bool

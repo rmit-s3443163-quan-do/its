@@ -6,7 +6,31 @@
  * Time: 12:28 PM
  */
 
-$p1 = $p2 = $p3 = 'available-step';
+$p1 = 'available-step';
+$p2 = $p3 = $p4 = $p5 = 'disable-step';
+
+$p2_tg = 'data-toggle="tooltip" data-placement="bottom" title="Finish pre-test to unlock practice"';
+$p3_tg = 'data-toggle="tooltip" data-placement="bottom" title="Finish practice to unlock post-test"';
+$p4_tg = 'data-toggle="tooltip" data-placement="bottom" title="Finish post-test to unlock survey"';
+$p5_tg = 'data-toggle="tooltip" data-placement="bottom" title="Finish survey to unlock results"';
+
+if (UserCtrl::isDone(1)) {
+    $p2 = 'available-step';
+    $p2_tg = '';
+}
+if (UserCtrl::isDone(2)) {
+    $p3 = 'available-step';
+    $p3_tg = '';
+}
+if (UserCtrl::isDone(3)) {
+    $p4 = 'available-step';
+    $p4_tg = '';
+}
+if (UserCtrl::isDone(4)) {
+    $p5 = 'available-step';
+    $p5_tg = '';
+}
+
 if (isset($_GET['p']) && $_GET['p']!='') {
     $p = $_GET['p'];
     if ($p == 1) {
@@ -17,15 +41,26 @@ if (isset($_GET['p']) && $_GET['p']!='') {
             else
                 $p1 = 'activestep';
         }
+        else
+            $p1 = 'activestep';
     }
-    if ($p == 2)
+    if ($p==2 || $p==13)
         $p2 = 'activestep';
+    if ($p==12)
+        $p1 = 'activestep';
+    if ($p == 13)
+        $p3 = 'available-step';
+    if ($p == 14)
+        $p3 = 'activestep';
+    if ($p == 4 || $p == 15)
+        $p4 = 'activestep';
+    if ($p == 5)
+        $p5 = 'activestep';
+    if ($p == 15) {
+        $p5 = 'available-step';
+        $p5_tg = '';
+    }
 }
-$p4 = $p5 = 'disable-step';
-//$p2_tg = 'data-toggle="tooltip" data-placement="bottom" title="Finish pre-test to unlock practice"';
-//$p3_tg = 'data-toggle="tooltip" data-placement="bottom" title="Finish practice to unlock post-test"';
-$p4_tg = 'data-toggle="tooltip" data-placement="bottom" title="Finish post-test to unlock survey"';
-$p5_tg = 'data-toggle="tooltip" data-placement="bottom" title="Finish survey to unlock results"';
 
 ?>
 

@@ -1,5 +1,7 @@
 <?php
 
+    require_once('./controller/UserCtrl.php');
+
     $b = (isset($_COOKIE['uid']) && $_COOKIE['uid']!='');
 
     if (!$b)
@@ -9,34 +11,81 @@
         $nav = 'view/nav_new.php';
         $foot = 'view/footer.php';
 
-        $valid = ['index', '0', '1', '2', '3', '4','11'];
+        $valid = ['index', '0', '1', '2', '3', '4', '5','11', '12', '13','14', '15'];
         $page  = isset($_GET['p'])?$_GET['p']:(isset($_POST['p'])?$_POST['p']:'0');
 
-        if (is_null($page))
-            $content = 'view/index.php';
-        else if (in_array($page, $valid)) {
+        if (in_array($page, $valid)) {
             switch ($page) {
                 case '0':
                     $url = 'index';
                     break;
                 case '1':
-                    $url = 'pre-question';
+                    $url = !UserCtrl::isDone(1)?'pre-question':'pre_done';
+
+                    if (isset($_GET['c']) && $_GET['c']!='')
+                        if ($_GET['c'] == 2) {
+                            if (!UserCtrl::isDone(1))
+                                header('Location: index.php?p=1');
+                            else if (!UserCtrl::isDone(2))
+                                header('Location: index.php?p=2');
+                            else
+                                $url = !UserCtrl::isDone(3) ? 'pre-question' : 'post_done';
+                        }
+
                     break;
                 case '2':
-                    $url = 'practice';
-                    break;
-                case '3':
-                    $url = 'post-question';
+                    if (!UserCtrl::isDone(1))
+                        header('Location: index.php?p=1');
+                    else
+                        $url = !UserCtrl::isDone(2)?'practice':'practice_done';
                     break;
                 case '4':
-                    $url = 'survey';
+                    if (!UserCtrl::isDone(1))
+                        header('Location: index.php?p=1');
+                    else if (!UserCtrl::isDone(2))
+                        header('Location: index.php?p=2');
+                    else if (!UserCtrl::isDone(3))
+                        header('Location: index.php?p=1&c==2');
+                    else
+                        $url = !UserCtrl::isDone(4)?'survey':'survey_done';
+                    break;
+                case '5':
+
+                    if (!UserCtrl::isDone(1))
+                        header('Location: index.php?p=1');
+                    else if (!UserCtrl::isDone(2))
+                        header('Location: index.php?p=2');
+                    else if (!UserCtrl::isDone(3))
+                        header('Location: index.php?p=1&c=2');
+                    else if (!UserCtrl::isDone(4))
+                        header('Location: index.php?p=4');
+                    else
+                        $url = 'result';
                     break;
                 case '11':
                     $url = 'submit_test';
                     break;
+                case '12':
+                    $url = 'pre_done';
+                    break;
+                case '13':
+                    $url = 'practice_done';
+                    break;
+                case '14':
+                    $url = 'post_done';
+                    break;
+                case '15':
+                    $url = 'survey_done';
+                    break;
+                default:
+                    header('Location: index.php');
+                    break;
             }
-            $content = 'view/' . $url . '.php';
+        } else {
+            header('Location: index.php');
         }
+
+        $content = 'view/' . $url . '.php';
     }
 ?>
 

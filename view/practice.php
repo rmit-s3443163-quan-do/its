@@ -15,10 +15,7 @@
     </ol>
     <div class="jumbotron">
         <h1>Embed System here</h1>
-        <!--        <object type="application/x-java-applet">-->
-        <!--            <param name="code" value="qq/Main.class" />-->
-        <!--            <param name="archive" value="qq/Its.jar" />-->
-        <!--            Applet failed to run.  No Java plug-in was found.-->
-        <!--        </object>-->
+        <p><a class="btn btn-primary btn-lg" href="index.php?p=13" role="button">
+                <span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp; practice done</a></p>
     </div>
 </div>

@@ -8,9 +8,42 @@
 
 require_once('./model/Question.php');
 require_once('./model/Option.php');
+require_once('./model/Answer.php');
 require_once('./controller/DB.php');
 
 class QuestionCtrl {
+
+
+    /**
+     * @return bool
+     * @param int $step
+     */
+    public static function isDone($cate) {
+        $db = DB::getConn();
+        $uid = $_COOKIE['uid'];
+
+        $stm = $db->prepare('select * from Answers where uid=:uid and cate=:cate');
+        $stm->bindParam(':uid', $uid);
+        $stm->bindParam(':cate', $cate);
+        $stm->execute();
+        $rs = $stm->fetchAll();
+
+        return count($rs)>0?true:false;
+    }
+
+    /**
+     * @return bool
+     * @param Answers $ans
+     */
+    public static function submitTest($ans) {
+        $db = DB::getConn();
+
+        $stm = $db->prepare('insert into Answers (uid, cate, ans, time) values (:uid, :cate, :ans, date("now"))');
+        $stm->bindParam(':uid', $ans->getUid());
+        $stm->bindParam(':cate', $ans->getCate());
+        $stm->bindParam(':ans', $ans->ansToString());
+        $stm->execute();
+    }
 
     /**
      * @return bool

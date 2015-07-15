@@ -2,11 +2,14 @@
 require_once('./controller/QuestionCtrl.php');
 
 $c = 1;
+
 if (isset($_GET['c']) && $_GET['c']!='') {
     $c = $_GET['c'];
     if ($c != 1 && $c!=2)
         $c = 1;
 }
+
+
 
 $question_arr = QuestionCtrl::getQuestionsByCategory($c);
 
@@ -82,7 +85,6 @@ if ($c == 2) {
                         });
 
                         if(radio.is(':checked') === false) {
-
                             $('#ans'+ques).val(ques+'_'+opt);
                             radio.prop('checked', true);
                             $(this).addClass('selected');
@@ -132,53 +134,26 @@ if ($c == 2) {
                                 <?php } ?>
                             </div>
                         <?php } ?>
-                        <script>
-                            $('.answer-title').click(function () {
-                                var id = $(this).attr('id').substring(1);
-                                var table = $('.datatable-1').DataTable();
-                                table.page( parseInt(id) ).draw( false );
-                            });
-                            $('input').change(function (e) {
-
-                                var table = $('.datatable-1').DataTable();
-
-                                var id = $(this).attr('id').substring(1);
-                                var ques = id.split('_')[0];
-                                var opt = id.split('_')[1];
-                                var num = id.split('_')[2];
-
-                                table.page(parseInt(num)).draw(false);
-
-                                $('.answer-' + ques).each(function () {
-                                    if ($(this).hasClass('selected')) {
-                                        answered--;
-                                        $(this).removeClass('selected');
-                                    }
-                                });
-
-                                $('#ans' + ques).val($(this).val());
-                                $('#answer_' + ques +'_'+ opt).addClass('selected');
-                                answered++;
-                                if (answered == <?=count($question_arr)?>) {
-                                    $('#answered-undone').addClass('hidden');
-                                    $('#answered-done').removeClass('hidden');
-                                } else {
-
-                                    $('#answered-undone').removeClass('hidden');
-                                    $('#answered-done').addClass('hidden');
-                                }
-
-                                $('#answered').html(answered);
-
-                            });
-                        </script>
                     </div>
                 </div>
-
+<!--                <div class="panel-footer">-->
+<!--                    <form id="answerSheet" action="index.php" method="post">-->
+<!--                        <input type="hidden" name="p" value="11">-->
+<!--                        <input type="hidden" name="c" value="--><?//=$c?><!--">-->
+<!--                        --><?php //foreach($question_arr as $q){ ?>
+<!--                            <input type="hidden" name="ans::--><?//=$q->getId()?><!--" id="ans--><?//=$q->getId()?><!--" />-->
+<!--                        --><?php //} ?>
+<!--                        <button id="submit" type="submit" class="btn btn-primary">-->
+<!--                            <span class="bt-icon glyphicon glyphicon-send"></span>&nbsp;&nbsp;<span class="bt-text"> submit test</span>-->
+<!--                        </button>-->
+<!--                    </form>-->
+<!--                </div>-->
                 <div class="panel-footer">
                     <form id="answerSheet" action="index.php" method="post">
-                        <?php foreach($question_arr as $ques=>$q){ ?>
-                            <input type="hidden" name="a<?=$ques?>" id="ans<?=$ques?>" />
+                        <input type="hidden" name="p" value="11">
+                        <input type="hidden" name="c" value="<?=$c?>">
+                        <?php foreach($question_arr as $q){ ?>
+                            <input type="hidden" name="ans::<?=$q->getId()?>" id="ans<?=$q->getId()?>" />
                         <?php } ?>
                     <button id="submit" type="button" class="btn btn-primary" data-title="It can't be undone.<br>Are you sure?"
                             data-btn-ok-label="Sure!! " data-btn-cancel-label="No.. " data-on-confirm="submitTest"  data-toggle="confirmation" data-popout="true">
@@ -191,25 +166,65 @@ if ($c == 2) {
         </div>
     </div>
 </div>
-
 <script>
+    $('.answer-title').click(function () {
+        var id = $(this).attr('id').substring(1);
+        var table = $('.datatable-1').DataTable();
+        table.page( parseInt(id) ).draw( false );
+    });
+    $('input').change(function (e) {
+
+        var table = $('.datatable-1').DataTable();
+
+        var id = $(this).attr('id').substring(1);
+        var ques = id.split('_')[0];
+        var opt = id.split('_')[1];
+        var num = id.split('_')[2];
+
+        table.page(parseInt(num)).draw(false);
+
+        $('.answer-' + ques).each(function () {
+            if ($(this).hasClass('selected')) {
+                answered--;
+                $(this).removeClass('selected');
+            }
+        });
+
+        $('#ans' + ques).val($(this).val());
+        $('#answer_' + ques +'_'+ opt).addClass('selected');
+        answered++;
+        if (answered == <?=count($question_arr)?>) {
+            $('#answered-undone').addClass('hidden');
+            $('#answered-done').removeClass('hidden');
+        } else {
+
+            $('#answered-undone').removeClass('hidden');
+            $('#answered-done').addClass('hidden');
+        }
+
+        $('#answered').html(answered);
+
+    });
 
     $('#answerSheet').submit(function () {
         $('.bt-icon').removeClass('glyphicon-send').addClass('glyphicon-refresh').addClass('glyphicon-refresh-animate');
         $('.bt-text').html(' submitting..');
         setTimeout(function () {
-            var dataString = 'p=11';
             $.ajax({
                 type: "POST",
                 url: "index.php",
-                data: dataString,
+                data: $('#answerSheet').serialize(),
                 success: function (result) {
                     if (/okkkk/.test(result)) {
                         $('#submit').addClass('btn-success').removeClass('btn-primary');
                         $('.bt-icon').addClass('glyphicon-ok').removeClass('glyphicon-refresh').removeClass('glyphicon-refresh-animate');
                         $('.bt-text').html(' submitted');
                         setTimeout(function () {
-                            window.location.href = "index.php?p=2";
+                            if (<?=$c?> == 1)
+                                window.location.href = "index.php?p=12";
+                            else
+                                window.location.href = "index.php?p=14";
+
                         }, 2000);
                     }
                 },
@@ -235,7 +250,6 @@ if ($c == 2) {
                 "visible": false
             }
         ],
-//        "dom": '<"panel panel-default"<"panel-title"i><"panel-body"t><"panel-footer"p> >',
         'dom': '<"lb-info label label-warning pull-left"i><"pn-pre panel panel-default"<"panel-body"ptp>>',
         "pagingType": "simple"
     });
