@@ -152,7 +152,6 @@ if (isset($_GET['p']) && $_GET['p']!='') {
         background-color: rgb(243, 243, 243) !important;
         border: 1px solid #D6D6D6;
         border-right: none;
-
     }
 
     .step {

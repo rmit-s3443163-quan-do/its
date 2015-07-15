@@ -20,7 +20,7 @@ if (isset($_POST['c']) && $_POST['c']!='') {
     foreach ($_POST as $key => $value) {
         $param_name = 'ans::';
         if (substr($key, 0, strlen($param_name)) == $param_name) {
-            $ques = explode('_', $value)[0];
+            $ques = explode('ans::', $key)[1];
             $ans = explode('_', $value)[1];
             $ktext = explode('_', $value)[2];
             $answers->addAns(new Answer($ques, $ans . '_' . $ktext));

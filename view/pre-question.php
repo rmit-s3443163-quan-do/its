@@ -110,7 +110,7 @@ if ($c == 2) {
 
         </div>
         <div class="col-md-12 col-lg-4">
-            <div class="panel panel-default">
+            <div class="thisone panel panel-default">
                 <div class="panel-heading">
                     <h2 class="panel-title"><span class="glyphicon glyphicon-list-alt"></span>
                         Answer Sheet
@@ -157,6 +157,8 @@ if ($c == 2) {
     </div>
 </div>
 <script>
+    $('.thisone').affix();
+
     $('.answer-title').click(function () {
         var id = $(this).attr('id').substring(1);
         var table = $('.datatable-1').DataTable();

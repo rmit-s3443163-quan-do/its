@@ -15,7 +15,7 @@ class Result {
 
     function __construct($ktext, $res, $point)
     {
-        $this->ktext = $ktext;
+        $this->ktext = $ktext!=''?$ktext:'-';
         $this->res = $res;
         $this->point = $point;
         if ($res == 'success')
