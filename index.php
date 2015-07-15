@@ -18,12 +18,16 @@
             switch ($page) {
                 case '0':
                     $url = 'index';
+                    $title = 'ITS - Homepage';
                     break;
                 case '1':
+
+                    $title = 'ITS - Pretest';
                     $url = !UserCtrl::isDone(1)?'pre-question':'pre_done';
 
                     if (isset($_GET['c']) && $_GET['c']!='')
                         if ($_GET['c'] == 2) {
+                            $title = 'ITS - Posttest';
                             if (!UserCtrl::isDone(1))
                                 header('Location: index.php?p=1');
                             else if (!UserCtrl::isDone(2))
@@ -34,6 +38,7 @@
 
                     break;
                 case '2':
+                    $title = 'ITS - Practice';
                     if (!UserCtrl::isDone(1)) {
                         header('Location: index.php?p=1');
                         echo '<script>console.log("not done")</script>';
@@ -41,6 +46,7 @@
                         $url = !UserCtrl::isDone(2)?'practice':'practice_done';
                     break;
                 case '4':
+                    $title = 'ITS - Survey';
                     if (!UserCtrl::isDone(1))
                         header('Location: index.php?p=1');
                     else if (!UserCtrl::isDone(2))
@@ -51,7 +57,7 @@
                         $url = !UserCtrl::isDone(4)?'survey':'survey_done';
                     break;
                 case '5':
-
+                    $title = 'ITS - Results';
                     if (!UserCtrl::isDone(1))
                         header('Location: index.php?p=1');
                     else if (!UserCtrl::isDone(2))
@@ -67,20 +73,21 @@
                     $url = 'submit_test';
                     break;
                 case '12':
+                    $title = 'ITS - Pretest';
                     if (!UserCtrl::isDone(1))
                         header('Location: index.php?p=1');
                     else
                         $url = 'pre_done';
                     break;
                 case '13':
+                    $title = 'ITS - Practice';
                     if (!UserCtrl::isDone(1))
                         header('Location: index.php?p=1');
-                    else if (!UserCtrl::isDone(2))
-                            header('Location: index.php?p=2');
                     else
                         $url = 'practice_done';
                     break;
                 case '14':
+                    $title = 'ITS - Posttest';
                     if (!UserCtrl::isDone(1))
                         header('Location: index.php?p=1');
                     else if (!UserCtrl::isDone(2))
@@ -91,22 +98,23 @@
                         $url = 'post_done';
                     break;
                 case '15':
+                    $title = 'ITS - Survey';
                     if (!UserCtrl::isDone(1))
                         header('Location: index.php?p=1');
                     else if (!UserCtrl::isDone(2))
                         header('Location: index.php?p=2');
                     else if (!UserCtrl::isDone(3))
                         header('Location: index.php?p=1&c=2');
-                    if (!UserCtrl::isDone(4))
-                        header('Location: index.php?p=4');
                     else
                         $url = 'survey_done';
                     break;
                 default:
+                    $title = 'ITS - Homepage';
                     header('Location: index.php');
                     break;
             }
         } else {
+            $title = 'ITS - Homepage';
             header('Location: index.php');
         }
 
@@ -118,6 +126,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title><?=$title?></title>
     <?php require_once($head);?>
 </head>
 <body>

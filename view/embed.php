@@ -26,3 +26,4 @@
 <!--<script src="js/jquery.loadingbar.min.js"></script>-->
 <!--<link rel="stylesheet" href="./css/loadingbar.css" type="text/css"/>-->
 <script src="js/bootstrap-confirmation.min.js"></script>
+

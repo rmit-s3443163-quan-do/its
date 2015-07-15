@@ -37,7 +37,7 @@ if ($c == 2) {
 
 ?>
 
-<div class="clear-top" style="margin-top: 50px"></div>
+<div class="clear-top hidden-xs"></div>
 <div class="container">
     <ol class="breadcrumb" style="margin-bottom: 40px;">
         <li><a href="index.php">Home</a></li>

@@ -106,27 +106,27 @@ if (isset($_GET['p']) && $_GET['p']!='') {
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-
-<div class="container" style="margin-top: 80px;">
+<div class="container hidden-xs" style="margin-top: 50px;"></div>
+<div class="container" style="margin-top: 30px;">
     <div class="row">
         <div class="row step text-center">
-            <div id="index.php?p=1&c=1" class="st col-sm-offset-1 col-sm-2 <?=$p1?>">
+            <div id="index.php?p=1&c=1" class="st col-xs-offset-1 col-xs-2 nav-step <?=$p1?>">
                 <span class="fa fa-flag-o"></span>
                 <p>pre-test</p>
             </div>
-            <div id="index.php?p=2" class="st col-sm-2 <?=$p2?>" <?=$p2_tg?>>
+            <div id="index.php?p=2" class="st col-xs-2 nav-step <?=$p2?>" <?=$p2_tg?>>
                 <span class="fa fa-sitemap"></span>
                 <p>practice</p>
             </div>
-            <div id="index.php?p=1&c=2" class="st col-sm-2 <?=$p3?>" <?=$p3_tg?>>
+            <div id="index.php?p=1&c=2" class="st col-xs-2 nav-step <?=$p3?>" <?=$p3_tg?>>
                 <span class="fa fa-flag-checkered"></span>
                 <p>post-test</p>
             </div>
-            <div id="index.php?p=4" class="st col-sm-2 <?=$p4?>" <?=$p4_tg?>>
+            <div id="index.php?p=4" class="st col-xs-2 nav-step <?=$p4?>" <?=$p4_tg?>>
                 <span class="fa fa-pie-chart"></span>
                 <p>survey</p>
             </div>
-            <div id="index.php?p=5" class="st col-sm-2 <?=$p5?>" <?=$p5_tg?>>
+            <div id="index.php?p=5" class="st col-xs-2 nav-step <?=$p5?>" <?=$p5_tg?>>
                 <span class="fa fa-tasks"></span>
                 <p>results</p>
             </div>
@@ -156,41 +156,39 @@ if (isset($_GET['p']) && $_GET['p']!='') {
     }
 
     .step {
-        margin-top: 27px;
+        margin-top: 35px;
+        margin-bottom: 15px;
     }
 
-    .step .col-sm-2 {
-
+    .step .nav-step {
+        padding: 0;
+        font-size: 14px;
     }
 
-    .step .col-sm-2:last-child {
+    .step .nav-step:last-child {
         border: 1px solid #D6D6D6;
     }
 
-    .step .col-sm-2:first-child {
-        border-radius: 5px 0 0 5px;
-    }
-
-    .step .col-sm-2:last-child {
-        border-radius: 0 5px 5px 0;
-    }
-
-    .step .col-sm-2:hover {
+    .step .nav-step:hover {
         color: #F58723;
         cursor: pointer;
     }
 
     .step .activestep {
         color: #ffffff;
-        height: 100px;
-        margin-top: -7px;
-        padding-top: 7px;
+        height: 84px;
+        margin-top: -3px;
+        padding-top: 3px;
         background-color: #005A00;
         vertical-align: central;
     }
 
+    .nav-step p {
+        overflow: hidden;
+    }
+
     .step .fa {
         padding-top: 15px;
-        font-size: 40px;
+        font-size: 30px;
     }
 </style>

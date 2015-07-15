@@ -7,7 +7,7 @@
  */
 ?>
 
-<div class="clear-top"></div>
+<div class="clear-top hidden-xs"></div>
 <div class="container">
 <div class="jumbotron">
     <h2>Well done!</h2>

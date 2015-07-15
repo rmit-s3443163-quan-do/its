@@ -6,7 +6,7 @@
  * Time: 12:31 AM
  */
 ?>
-<div class="clear-top"></div>
+<div class="clear-top hidden-xs"></div>
 <div class="container">
     <ol class="breadcrumb" style="margin-bottom: 40px;">
         <li><a href="index.php">Home</a></li>

@@ -2,17 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b65b2733-5630-4704-bdf6-30a2b16e53bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/Result.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/its.db" afterPath="$PROJECT_DIR$/db/its.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/Answer.php" afterPath="$PROJECT_DIR$/model/Answer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/QuestionCtrl.php" afterPath="$PROJECT_DIR$/controller/QuestionCtrl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/embed.php" afterPath="$PROJECT_DIR$/view/embed.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/index.php" afterPath="$PROJECT_DIR$/view/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/nav_new.php" afterPath="$PROJECT_DIR$/view/nav_new.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/post_done.php" afterPath="$PROJECT_DIR$/view/post_done.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/practice.php" afterPath="$PROJECT_DIR$/view/practice.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/practice_done.php" afterPath="$PROJECT_DIR$/view/practice_done.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/pre-question.php" afterPath="$PROJECT_DIR$/view/pre-question.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/pre_done.php" afterPath="$PROJECT_DIR$/view/pre_done.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/result.php" afterPath="$PROJECT_DIR$/view/result.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/submit_test.php" afterPath="$PROJECT_DIR$/view/submit_test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/survey.php" afterPath="$PROJECT_DIR$/view/survey.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/survey_done.php" afterPath="$PROJECT_DIR$/view/survey_done.php" />
     </list>
     <ignored path="its.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,11 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="result.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="result.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/view/result.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.458333" vertical-offset="838" max-vertical-offset="1830">
-              <caret line="71" column="38" selection-start-line="71" selection-start-column="38" selection-end-line="71" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.68349755" vertical-offset="0" max-vertical-offset="1830">
+              <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
               <folding>
                 <element signature="e#6#88#0#PHP" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
@@ -50,85 +53,32 @@
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <marker date="1436953861000" expanded="true" signature="4247:4326" placeholder="..." />
-                <marker date="1436953861000" expanded="true" signature="4260:4318" placeholder="{...}" />
-                <marker date="1436953861000" expanded="true" signature="4335:4396" placeholder="..." />
+                <marker date="1436962299000" expanded="true" signature="4257:4336" placeholder="..." />
+                <marker date="1436962299000" expanded="true" signature="4270:4328" placeholder="{...}" />
+                <marker date="1436962299000" expanded="true" signature="4345:4406" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuestionCtrl.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/QuestionCtrl.php">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.875" vertical-offset="885" max-vertical-offset="6510">
-              <caret line="78" column="27" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="27" />
-              <folding>
-                <element signature="e#6#87#0#PHP" expanded="true" />
-                <marker date="1436952491000" expanded="true" signature="469:522" placeholder="select res f..Answers..." />
-                <marker date="1436952491000" expanded="true" signature="1044:1083" placeholder="select point..Question..." />
-                <marker date="1436952491000" expanded="true" signature="1411:1462" placeholder="select * fro..Answers..." />
-                <marker date="1436952491000" expanded="true" signature="1914:1996" placeholder="insert into ..." />
-                <marker date="1436952491000" expanded="true" signature="2310:2347" placeholder="delete from ..." />
-                <marker date="1436952491000" expanded="true" signature="2443:2476" placeholder="delete from ..." />
-                <marker date="1436952491000" expanded="true" signature="2729:2772" placeholder="select * fro..Question..." />
-                <marker date="1436952491000" expanded="true" signature="3085:3126" placeholder="select * fro..Option..." />
-                <marker date="1436952491000" expanded="true" signature="3682:3704" placeholder="select * fro..Question..." />
-                <marker date="1436952491000" expanded="true" signature="3980:4021" placeholder="select * fro..Option..." />
-                <marker date="1436952491000" expanded="true" signature="4597:4634" placeholder="select * fro..Question..." />
-                <marker date="1436952491000" expanded="true" signature="4879:4920" placeholder="select * fro..Option..." />
-                <marker date="1436952491000" expanded="true" signature="5407:5442" placeholder="select * fro..Option..." />
-                <marker date="1436952491000" expanded="true" signature="5715:5810" placeholder="insert into ..." />
-                <marker date="1436952491000" expanded="true" signature="6269:6362" placeholder="update Quest..." />
-                <marker date="1436952491000" expanded="true" signature="6832:6880" placeholder="SELECT id FR..Question..." />
-                <marker date="1436952491000" expanded="true" signature="7125:7209" placeholder="insert into ..." />
-                <marker date="1436952491000" expanded="true" signature="7573:7636" placeholder="update Optio..." />
-                <marker date="1436952491000" expanded="true" signature="7961:8011" placeholder="insert into ..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="submit_test.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/submit_test.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.875" vertical-offset="0" max-vertical-offset="495">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="4054" max-vertical-offset="4950">
+              <caret line="299" column="17" selection-start-line="299" selection-start-column="17" selection-end-line="299" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nav_new.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nav_new.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/nav_new.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.4217772" vertical-offset="165" max-vertical-offset="3030">
-              <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="7" />
+            <state vertical-scroll-proportion="-31.5" vertical-offset="2154" max-vertical-offset="3000">
+              <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Answer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/Answer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="3090">
-              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-              <folding>
-                <marker date="1436954915000" expanded="true" signature="533:574" placeholder="select isCor..Option..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.375" vertical-offset="645" max-vertical-offset="2205">
-              <caret line="66" column="41" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -178,32 +128,32 @@
         <option value="$PROJECT_DIR$/view/nav.php" />
         <option value="$PROJECT_DIR$/admin_backup.php" />
         <option value="$PROJECT_DIR$/index_new.php" />
-        <option value="$PROJECT_DIR$/view/index.php" />
         <option value="$PROJECT_DIR$/css/loadingbar.css" />
-        <option value="$PROJECT_DIR$/view/embed.php" />
-        <option value="$PROJECT_DIR$/view/pre_done.php" />
-        <option value="$PROJECT_DIR$/view/practice.php" />
-        <option value="$PROJECT_DIR$/view/post_done.php" />
-        <option value="$PROJECT_DIR$/view/survey.php" />
         <option value="$PROJECT_DIR$/controller/UserCtrl.php" />
-        <option value="$PROJECT_DIR$/view/practice_done.php" />
-        <option value="$PROJECT_DIR$/view/survey_done.php" />
-        <option value="$PROJECT_DIR$/view/nav_new.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/view/pre-question.php" />
         <option value="$PROJECT_DIR$/controller/QuestionCtrl.php" />
         <option value="$PROJECT_DIR$/model/Result.php" />
-        <option value="$PROJECT_DIR$/view/result.php" />
         <option value="$PROJECT_DIR$/model/Answer.php" />
-        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/view/embed.php" />
         <option value="$PROJECT_DIR$/view/submit_test.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/view/index.php" />
+        <option value="$PROJECT_DIR$/view/pre-question.php" />
+        <option value="$PROJECT_DIR$/view/pre_done.php" />
+        <option value="$PROJECT_DIR$/view/survey.php" />
+        <option value="$PROJECT_DIR$/view/survey_done.php" />
+        <option value="$PROJECT_DIR$/view/post_done.php" />
+        <option value="$PROJECT_DIR$/view/practice.php" />
+        <option value="$PROJECT_DIR$/view/practice_done.php" />
+        <option value="$PROJECT_DIR$/view/nav_new.php" />
+        <option value="$PROJECT_DIR$/view/result.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="186" />
-    <option name="y" value="159" />
+    <option name="x" value="81" />
+    <option name="y" value="138" />
     <option name="width" value="1650" />
     <option name="height" value="956" />
   </component>
@@ -370,7 +320,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="186" y="159" width="1650" height="956" extended-state="6" />
+    <frame x="81" y="138" width="1650" height="956" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -602,14 +552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19011407" vertical-offset="0" max-vertical-offset="789">
-          <caret line="15" column="64" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/jquery.loadingbar.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="800">
@@ -634,14 +576,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/embed.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="420">
-          <caret line="27" column="55" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/pre.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2355">
@@ -655,32 +589,6 @@
         <state vertical-scroll-proportion="0.6674877" vertical-offset="2113" max-vertical-offset="3195">
           <caret line="177" column="30" selection-start-line="177" selection-start-column="30" selection-end-line="177" selection-end-column="30" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/practice.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22813688" vertical-offset="0" max-vertical-offset="789">
-          <caret line="17" column="65" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/post_done.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22167487" vertical-offset="0" max-vertical-offset="812">
-          <caret line="17" column="97" selection-start-line="17" selection-start-column="97" selection-end-line="17" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/survey.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="1050">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-          <folding>
-            <element signature="n#style#0;n#ol#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -705,38 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/pre_done.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.036945812" vertical-offset="0" max-vertical-offset="812">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/practice_done.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05541872" vertical-offset="0" max-vertical-offset="812">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/survey_done.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16625616" vertical-offset="0" max-vertical-offset="812">
-          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51555026" vertical-offset="4054" max-vertical-offset="4950">
-          <caret line="299" column="17" selection-start-line="299" selection-start-column="17" selection-end-line="299" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/Question.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.96059114" vertical-offset="120" max-vertical-offset="3600">
@@ -747,38 +623,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/pre-question.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.041666" vertical-offset="422" max-vertical-offset="3825">
-          <caret line="57" column="59" selection-start-line="57" selection-start-column="59" selection-end-line="57" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/Option.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.018472906" vertical-offset="195" max-vertical-offset="1290">
           <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/result.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.458333" vertical-offset="838" max-vertical-offset="1830">
-          <caret line="71" column="38" selection-start-line="71" selection-start-column="38" selection-end-line="71" selection-end-column="38" />
-          <folding>
-            <element signature="e#6#88#0#PHP" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <marker date="1436953861000" expanded="true" signature="4247:4326" placeholder="..." />
-            <marker date="1436953861000" expanded="true" signature="4260:4318" placeholder="{...}" />
-            <marker date="1436953861000" expanded="true" signature="4335:4396" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -793,67 +642,166 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/QuestionCtrl.php">
+    <entry file="file://$PROJECT_DIR$/view/submit_test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.875" vertical-offset="885" max-vertical-offset="6510">
-          <caret line="78" column="27" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="27" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-            <marker date="1436952491000" expanded="true" signature="469:522" placeholder="select res f..Answers..." />
-            <marker date="1436952491000" expanded="true" signature="1044:1083" placeholder="select point..Question..." />
-            <marker date="1436952491000" expanded="true" signature="1411:1462" placeholder="select * fro..Answers..." />
-            <marker date="1436952491000" expanded="true" signature="1914:1996" placeholder="insert into ..." />
-            <marker date="1436952491000" expanded="true" signature="2310:2347" placeholder="delete from ..." />
-            <marker date="1436952491000" expanded="true" signature="2443:2476" placeholder="delete from ..." />
-            <marker date="1436952491000" expanded="true" signature="2729:2772" placeholder="select * fro..Question..." />
-            <marker date="1436952491000" expanded="true" signature="3085:3126" placeholder="select * fro..Option..." />
-            <marker date="1436952491000" expanded="true" signature="3682:3704" placeholder="select * fro..Question..." />
-            <marker date="1436952491000" expanded="true" signature="3980:4021" placeholder="select * fro..Option..." />
-            <marker date="1436952491000" expanded="true" signature="4597:4634" placeholder="select * fro..Question..." />
-            <marker date="1436952491000" expanded="true" signature="4879:4920" placeholder="select * fro..Option..." />
-            <marker date="1436952491000" expanded="true" signature="5407:5442" placeholder="select * fro..Option..." />
-            <marker date="1436952491000" expanded="true" signature="5715:5810" placeholder="insert into ..." />
-            <marker date="1436952491000" expanded="true" signature="6269:6362" placeholder="update Quest..." />
-            <marker date="1436952491000" expanded="true" signature="6832:6880" placeholder="SELECT id FR..Question..." />
-            <marker date="1436952491000" expanded="true" signature="7125:7209" placeholder="insert into ..." />
-            <marker date="1436952491000" expanded="true" signature="7573:7636" placeholder="update Optio..." />
-            <marker date="1436952491000" expanded="true" signature="7961:8011" placeholder="insert into ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/Answer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="3090">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-          <folding>
-            <marker date="1436954915000" expanded="true" signature="533:574" placeholder="select isCor..Option..." />
-          </folding>
+        <state vertical-scroll-proportion="0.092364535" vertical-offset="0" max-vertical-offset="812">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.375" vertical-offset="645" max-vertical-offset="2205">
-          <caret line="66" column="41" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
+        <state vertical-scroll-proportion="-0.05703422" vertical-offset="1455" max-vertical-offset="2340">
+          <caret line="94" column="50" selection-start-line="94" selection-start-column="50" selection-end-line="94" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/submit_test.php">
+    <entry file="file://$PROJECT_DIR$/view/survey.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.875" vertical-offset="0" max-vertical-offset="495">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.05703422" vertical-offset="0" max-vertical-offset="1050">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/survey_done.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26615968" vertical-offset="0" max-vertical-offset="789">
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/practice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05703422" vertical-offset="0" max-vertical-offset="789">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/practice_done.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2770936" vertical-offset="0" max-vertical-offset="812">
+          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/pre_done.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.073891625" vertical-offset="0" max-vertical-offset="812">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Answer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3140394" vertical-offset="0" max-vertical-offset="3090">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+          <folding>
+            <marker date="1436954915000" expanded="true" signature="-1:-1" placeholder="select isCor..Option..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/embed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44334975" vertical-offset="0" max-vertical-offset="812">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.073891625" vertical-offset="0" max-vertical-offset="812">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/pre-question.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.204005" vertical-offset="422" max-vertical-offset="3825">
+          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/post_done.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.073891625" vertical-offset="0" max-vertical-offset="812">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/QuestionCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46933666" vertical-offset="780" max-vertical-offset="6510">
+          <caret line="77" column="32" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="32" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <marker date="1436952491000" expanded="true" signature="-1:-1" placeholder="select res f..Answers..." />
+            <marker date="1436952491000" expanded="true" signature="-1:-1" placeholder="select point..Question..." />
+            <marker date="1436952491000" expanded="true" signature="-1:-1" placeholder="select * fro..Answers..." />
+            <marker date="1436952491000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1436952491000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1436952491000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1436952491000" expanded="true" signature="-1:-1" placeholder="select * fro..Question..." />
+            <marker date="1436952491000" expanded="true" signature="-1:-1" placeholder="select * fro..Option..." />
+            <marker date="1436952491000" expanded="true" signature="-1:-1" placeholder="select * fro..Question..." />
+            <marker date="1436952491000" expanded="true" signature="-1:-1" placeholder="select * fro..Option..." />
+            <marker date="1436952491000" expanded="true" signature="-1:-1" placeholder="select * fro..Question..." />
+            <marker date="1436952491000" expanded="true" signature="-1:-1" placeholder="select * fro..Option..." />
+            <marker date="1436952491000" expanded="true" signature="-1:-1" placeholder="select * fro..Option..." />
+            <marker date="1436952491000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1436952491000" expanded="true" signature="-1:-1" placeholder="update Quest..." />
+            <marker date="1436952491000" expanded="true" signature="-1:-1" placeholder="SELECT id FR..Question..." />
+            <marker date="1436952491000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1436952491000" expanded="true" signature="-1:-1" placeholder="update Optio..." />
+            <marker date="1436952491000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4054" max-vertical-offset="4950">
+          <caret line="299" column="17" selection-start-line="299" selection-start-column="17" selection-end-line="299" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/nav_new.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.4217772" vertical-offset="165" max-vertical-offset="3030">
-          <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="7" />
+        <state vertical-scroll-proportion="-31.5" vertical-offset="2154" max-vertical-offset="3000">
+          <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/result.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.68349755" vertical-offset="0" max-vertical-offset="1830">
+          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <marker date="1436962299000" expanded="true" signature="4257:4336" placeholder="..." />
+            <marker date="1436962299000" expanded="true" signature="4270:4328" placeholder="{...}" />
+            <marker date="1436962299000" expanded="true" signature="4345:4406" placeholder="..." />
           </folding>
         </state>
       </provider>

@@ -35,7 +35,7 @@ foreach ($post as $p) {
 
 ?>
 
-<div class="clear-top"></div>
+<div class="clear-top hidden-xs"></div>
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-5 col-sm-offset-1">
