@@ -7,21 +7,25 @@
  */
 
 $p1 = $p2 = $p3 = 'available-step';
-$p4 = $p5 = 'disable-step';
 if (isset($_GET['p']) && $_GET['p']!='') {
     $p = $_GET['p'];
     if ($p == 1) {
         if (isset($_GET['c']) && $_GET['c']!='') {
             $c = $_GET['c'];
-            if ($c == 1)
-                $p1 = 'activestep';
-            else
+            if ($c == 2)
                 $p3 = 'activestep';
+            else
+                $p1 = 'activestep';
         }
     }
     if ($p == 2)
         $p2 = 'activestep';
 }
+$p4 = $p5 = 'disable-step';
+//$p2_tg = 'data-toggle="tooltip" data-placement="bottom" title="Finish pre-test to unlock practice"';
+//$p3_tg = 'data-toggle="tooltip" data-placement="bottom" title="Finish practice to unlock post-test"';
+$p4_tg = 'data-toggle="tooltip" data-placement="bottom" title="Finish post-test to unlock survey"';
+$p5_tg = 'data-toggle="tooltip" data-placement="bottom" title="Finish survey to unlock results"';
 
 ?>
 
@@ -35,7 +39,7 @@ if (isset($_GET['p']) && $_GET['p']!='') {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index_new.php">ITS</a>
+            <a class="navbar-brand" href="index.php">ITS</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -62,30 +66,34 @@ if (isset($_GET['p']) && $_GET['p']!='') {
 <div class="container" style="margin-top: 80px;">
     <div class="row">
         <div class="row step text-center">
-            <div id="index_new.php?p=1&c=1" class="st col-sm-offset-1 col-sm-2 <?=$p1?>">
+            <div id="index.php?p=1&c=1" class="st col-sm-offset-1 col-sm-2 <?=$p1?>">
                 <span class="fa fa-flag-o"></span>
                 <p>pre-test</p>
             </div>
-            <div id="index_new.php?p=2" class="st col-sm-2 <?=$p2?>">
+            <div id="index.php?p=2" class="st col-sm-2 <?=$p2?>" <?=$p2_tg?>>
                 <span class="fa fa-sitemap"></span>
                 <p>practice</p>
             </div>
-            <div id="index_new.php?p=1&c=2" class="st col-sm-2 <?=$p3?>">
+            <div id="index.php?p=1&c=2" class="st col-sm-2 <?=$p3?>" <?=$p3_tg?>>
                 <span class="fa fa-flag-checkered"></span>
                 <p>post-test</p>
             </div>
-            <div class="st col-sm-2 <?=$p4?>">
+            <div id="index.php?p=3" class="st col-sm-2 <?=$p4?>" <?=$p4_tg?>>
                 <span class="fa fa-pie-chart"></span>
                 <p>survey</p>
             </div>
-            <div class="st col-sm-2 <?=$p5?>">
+            <div id="index.php?p=4" class="st col-sm-2 <?=$p5?>" <?=$p5_tg?>>
                 <span class="fa fa-tasks"></span>
                 <p>results</p>
             </div>
         </div>
     </div>
 </div>
-
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
 <style>
     .available-step {
         background-color: rgb(242, 255, 243);

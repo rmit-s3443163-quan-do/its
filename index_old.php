@@ -6,7 +6,7 @@
         echo '<script>window.location.href = "login.php";</script>';
     else {
         $head = 'view/embed.php';
-        $nav = 'view/nav_new.php';
+        $nav = 'view/nav.php';
         $foot = 'view/footer.php';
 
         $valid = ['index', '0', '1', '2', '3', '4'];
@@ -44,21 +44,14 @@
     <?php require_once($head);?>
 </head>
 <body>
-    <div id="main-page">
     <?php require_once($nav);?>
 
     <?php require_once($content);?>
 
     <?php require_once($foot);?>
-    </div>
-    <script>
-        $('.st').click(function () {
-            var id = $(this).attr('id');
 
-            $.ajax({url: id, success: function(result){
-                $("#main-page").html(result);
-            }});
-        });
+    <script>
+
     </script>
 </body>
 </html>

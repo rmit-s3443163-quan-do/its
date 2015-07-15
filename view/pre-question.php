@@ -176,11 +176,12 @@ if ($c == 2) {
                 </div>
 
                 <div class="panel-footer">
-                    <form action="test.php" method="post">
-                    <button id="submit" type="button" class="btn btn-primary">
+                    <form id="answerSheet" action="index.php" method="post">
                         <?php foreach($question_arr as $ques=>$q){ ?>
                             <input type="hidden" name="a<?=$ques?>" id="ans<?=$ques?>" />
                         <?php } ?>
+                    <button id="submit" type="button" class="btn btn-primary" data-title="It can't be undone.<br>Are you sure?"
+                            data-btn-ok-label="Sure!! " data-btn-cancel-label="No.. " data-on-confirm="submitTest"  data-toggle="confirmation" data-popout="true">
                         <span class="bt-icon glyphicon glyphicon-send"></span>&nbsp;&nbsp;<span class="bt-text"> submit test</span>
                     </button>
                     </form>
@@ -192,6 +193,37 @@ if ($c == 2) {
 </div>
 
 <script>
+
+    $('#answerSheet').submit(function () {
+        $('.bt-icon').removeClass('glyphicon-send').addClass('glyphicon-refresh').addClass('glyphicon-refresh-animate');
+        $('.bt-text').html(' submitting..');
+        setTimeout(function () {
+            var dataString = 'p=11';
+            $.ajax({
+                type: "POST",
+                url: "index.php",
+                data: dataString,
+                success: function (result) {
+                    if (/okkkk/.test(result)) {
+                        $('#submit').addClass('btn-success').removeClass('btn-primary');
+                        $('.bt-icon').addClass('glyphicon-ok').removeClass('glyphicon-refresh').removeClass('glyphicon-refresh-animate');
+                        $('.bt-text').html(' submitted');
+                        setTimeout(function () {
+                            window.location.href = "index.php?p=2";
+                        }, 2000);
+                    }
+                },
+                error: function (xhr) {
+                    alert("An error occured: " + xhr.status + " " + xhr.statusText);
+                }
+            });
+        }, 2000);
+    });
+
+    function submitTest() {
+        $('#answerSheet').submit();
+    }
+
     var answered = 0;
     $('#answered').html(answered);
     $('.datatable-1').DataTable({
@@ -207,4 +239,5 @@ if ($c == 2) {
         'dom': '<"lb-info label label-warning pull-left"i><"pn-pre panel panel-default"<"panel-body"ptp>>',
         "pagingType": "simple"
     });
+    $('[data-toggle=confirmation]').confirmation();
 </script>

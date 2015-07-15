@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script src="./js/jquery.dataTables.js" type="text/javascript"></script>
 <script src="js/snabbt.min.js"></script>
-<script src="js/jquery.loadingbar.min.js"></script>
 <link rel="stylesheet" href="./css/awesome-bootstrap-checkbox.css" type="text/css"/>
-<link rel="stylesheet" href="./css/loadingbar.css" type="text/css"/>
+
+<!--<script src="js/jquery.loadingbar.min.js"></script>-->
+<!--<link rel="stylesheet" href="./css/loadingbar.css" type="text/css"/>-->
+<script src="js/bootstrap-confirmation.min.js"></script>
