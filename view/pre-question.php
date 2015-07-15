@@ -61,7 +61,7 @@ if ($c == 2) {
                         <td>
                             <h4 class="question-title"><?=htmlspecialchars_decode($q->getTitle())?></h4>
                             <?php foreach($q->getOpts() as $opt=>$alt){ ?>
-                                <div id="answer_<?=$q->getId()?>_<?=$alt->getId()?>" class="answer answer-<?=$q->getId()?> panel panel-default">
+                                <div id="answer_<?=$q->getId()?>_<?=$alt->getId()?>_<?=getKText($opt)?>" class="answer answer-<?=$q->getId()?> panel panel-default">
                                     <span class="key"><?=getKText($opt)?>.</span> <span><?=htmlspecialchars_decode($alt->getText())?></span>
                                 </div>
                             <?php } ?>
@@ -71,11 +71,12 @@ if ($c == 2) {
 
                 <script>
                     $('.answer').click(function () {
+                        var id = $(this).attr('id');
+                        var ques = id.split('_')[1];
+                        var opt = id.split('_')[2];
+                        var ktext = id.split('_')[3];
 
-                        var ques = $(this).attr('id').split('_')[1];
-                        var opt = $(this).attr('id').split('_')[2];
-
-                        var radio = $('input:radio[name=q'+ques+']').filter('[value='+ques+'_'+opt+']');
+                        var radio = $('input:radio[name=q'+ques+']').filter('[value='+ques+'_'+opt+'_'+ktext+']');
 
                         $('.answer-'+ques).each(function () {
                             if ($(this).hasClass('selected')) {
@@ -85,7 +86,7 @@ if ($c == 2) {
                         });
 
                         if(radio.is(':checked') === false) {
-                            $('#ans'+ques).val(ques+'_'+opt);
+                            $('#ans'+ques).val(ques+'_'+opt+"_"+ktext);
                             radio.prop('checked', true);
                             $(this).addClass('selected');
                             answered++;
@@ -128,31 +129,20 @@ if ($c == 2) {
                                 <a class="answer-title" href="#" id="q<?=$ques?>">Question <?=$ques+1?>.</a>
                                 <?php foreach($q->getOpts() as $opt=>$alt){ ?>
                                     <div class="radio radio-primary radio-inline radio-disable">
-                                        <input id="r<?=$q->getId()?>_<?=$alt->getId()?>_<?=$ques?>" type="radio" value="<?=$q->getId()?>_<?=$alt->getId()?>" name="q<?=$q->getId()?>">
-                                        <label for="r<?=$q->getId()?>_<?=$alt->getId()?>_<?=$ques?>"> <?=getKText($opt)?> </label>
+                                        <input id="r<?=$q->getId()?>_<?=$alt->getId()?>_<?=$ques?>_<?=getKText($opt)?>"
+                                               type="radio" value="<?=$q->getId()?>_<?=$alt->getId()?>_<?=getKText($opt)?>" name="q<?=$q->getId()?>">
+                                        <label for="r<?=$q->getId()?>_<?=$alt->getId()?>_<?=$ques?>_<?=getKText($opt)?>"> <?=getKText($opt)?> </label>
                                     </div>
                                 <?php } ?>
                             </div>
                         <?php } ?>
                     </div>
                 </div>
-<!--                <div class="panel-footer">-->
-<!--                    <form id="answerSheet" action="index.php" method="post">-->
-<!--                        <input type="hidden" name="p" value="11">-->
-<!--                        <input type="hidden" name="c" value="--><?//=$c?><!--">-->
-<!--                        --><?php //foreach($question_arr as $q){ ?>
-<!--                            <input type="hidden" name="ans::--><?//=$q->getId()?><!--" id="ans--><?//=$q->getId()?><!--" />-->
-<!--                        --><?php //} ?>
-<!--                        <button id="submit" type="submit" class="btn btn-primary">-->
-<!--                            <span class="bt-icon glyphicon glyphicon-send"></span>&nbsp;&nbsp;<span class="bt-text"> submit test</span>-->
-<!--                        </button>-->
-<!--                    </form>-->
-<!--                </div>-->
                 <div class="panel-footer">
                     <form id="answerSheet" action="index.php" method="post">
                         <input type="hidden" name="p" value="11">
                         <input type="hidden" name="c" value="<?=$c?>">
-                        <?php foreach($question_arr as $q){ ?>
+                        <?php foreach($question_arr as $q) { ?>
                             <input type="hidden" name="ans::<?=$q->getId()?>" id="ans<?=$q->getId()?>" />
                         <?php } ?>
                     <button id="submit" type="button" class="btn btn-primary" data-title="It can't be undone.<br>Are you sure?"
@@ -177,9 +167,11 @@ if ($c == 2) {
         var table = $('.datatable-1').DataTable();
 
         var id = $(this).attr('id').substring(1);
+
         var ques = id.split('_')[0];
         var opt = id.split('_')[1];
         var num = id.split('_')[2];
+        var ktext = id.split('_')[3];
 
         table.page(parseInt(num)).draw(false);
 
@@ -191,7 +183,8 @@ if ($c == 2) {
         });
 
         $('#ans' + ques).val($(this).val());
-        $('#answer_' + ques +'_'+ opt).addClass('selected');
+        $('#answer_' + ques +'_'+ opt + '_' + ktext).addClass('selected');
+
         answered++;
         if (answered == <?=count($question_arr)?>) {
             $('#answered-undone').addClass('hidden');

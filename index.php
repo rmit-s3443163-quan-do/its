@@ -34,9 +34,10 @@
 
                     break;
                 case '2':
-                    if (!UserCtrl::isDone(1))
+                    if (!UserCtrl::isDone(1)) {
                         header('Location: index.php?p=1');
-                    else
+                        echo '<script>console.log("not done")</script>';
+                    } else
                         $url = !UserCtrl::isDone(2)?'practice':'practice_done';
                     break;
                 case '4':
@@ -66,16 +67,40 @@
                     $url = 'submit_test';
                     break;
                 case '12':
-                    $url = 'pre_done';
+                    if (!UserCtrl::isDone(1))
+                        header('Location: index.php?p=1');
+                    else
+                        $url = 'pre_done';
                     break;
                 case '13':
-                    $url = 'practice_done';
+                    if (!UserCtrl::isDone(1))
+                        header('Location: index.php?p=1');
+                    else if (!UserCtrl::isDone(2))
+                            header('Location: index.php?p=2');
+                    else
+                        $url = 'practice_done';
                     break;
                 case '14':
-                    $url = 'post_done';
+                    if (!UserCtrl::isDone(1))
+                        header('Location: index.php?p=1');
+                    else if (!UserCtrl::isDone(2))
+                        header('Location: index.php?p=2');
+                    else if (!UserCtrl::isDone(3))
+                        header('Location: index.php?p=1&c=2');
+                    else
+                        $url = 'post_done';
                     break;
                 case '15':
-                    $url = 'survey_done';
+                    if (!UserCtrl::isDone(1))
+                        header('Location: index.php?p=1');
+                    else if (!UserCtrl::isDone(2))
+                        header('Location: index.php?p=2');
+                    else if (!UserCtrl::isDone(3))
+                        header('Location: index.php?p=1&c=2');
+                    if (!UserCtrl::isDone(4))
+                        header('Location: index.php?p=4');
+                    else
+                        $url = 'survey_done';
                     break;
                 default:
                     header('Location: index.php');

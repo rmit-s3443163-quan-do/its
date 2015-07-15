@@ -9,10 +9,47 @@
 require_once('./model/Question.php');
 require_once('./model/Option.php');
 require_once('./model/Answer.php');
+require_once('./model/Result.php');
 require_once('./controller/DB.php');
 
 class QuestionCtrl {
 
+    /**
+     * @return Result[]
+     */
+    public static function getRes($cate) {
+        $db = DB::getConn();
+        $uid = $_COOKIE['uid'];
+
+        $stm = $db->prepare('select ans from Answers where uid=:uid and cate=:cate');
+        $stm->bindParam(':uid', $uid);
+        $stm->bindParam(':cate', $cate);
+        $stm->execute();
+        $rs = $stm->fetchAll();
+
+        $arr = explode(',',$rs[0][0]);
+        $temp = [];
+
+        foreach ($arr as $a)
+            $temp[] = new Result(explode('_', $a)[2], explode('_', $a)[3], QuestionCtrl::getPoint(explode('_', $a)[0]));
+
+        return $temp;
+
+    }
+
+    /**
+     * @return int
+     */
+    public static function getPoint($ques) {
+        $db = DB::getConn();
+
+        $stm = $db->prepare('select point from Question where id=:id');
+        $stm->bindParam(':id', $ques);
+        $stm->execute();
+        $rs = $stm->fetchAll();
+
+        return $rs[0][0];
+    }
 
     /**
      * @return bool
@@ -37,12 +74,16 @@ class QuestionCtrl {
      */
     public static function submitTest($ans) {
         $db = DB::getConn();
+        $uid = $ans->getUid();
+        $cate = $ans->getCate();
+        $res = $ans->getRes();
 
         $stm = $db->prepare('insert into Answers (uid, cate, ans, time) values (:uid, :cate, :ans, date("now"))');
-        $stm->bindParam(':uid', $ans->getUid());
-        $stm->bindParam(':cate', $ans->getCate());
-        $stm->bindParam(':ans', $ans->ansToString());
+        $stm->bindParam(':uid', $uid);
+        $stm->bindParam(':cate', $cate);
+        $stm->bindParam(':ans', $res);
         $stm->execute();
+
     }
 
     /**

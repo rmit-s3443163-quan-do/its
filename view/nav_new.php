@@ -46,12 +46,21 @@ if (isset($_GET['p']) && $_GET['p']!='') {
     }
     if ($p==2 || $p==13)
         $p2 = 'activestep';
-    if ($p==12)
+    if ($p==12) {
         $p1 = 'activestep';
-    if ($p == 13)
+        $p2 = 'available-step';
+        $p2_tg = '';
+    }
+    if ($p == 13) {
+        $p2 = 'activestep';
         $p3 = 'available-step';
-    if ($p == 14)
+        $p3_tg = '';
+    }
+    if ($p == 14) {
         $p3 = 'activestep';
+        $p4 = 'available-step';
+        $p4_tg = '';
+    }
     if ($p == 4 || $p == 15)
         $p4 = 'activestep';
     if ($p == 5)
@@ -113,11 +122,11 @@ if (isset($_GET['p']) && $_GET['p']!='') {
                 <span class="fa fa-flag-checkered"></span>
                 <p>post-test</p>
             </div>
-            <div id="index.php?p=3" class="st col-sm-2 <?=$p4?>" <?=$p4_tg?>>
+            <div id="index.php?p=4" class="st col-sm-2 <?=$p4?>" <?=$p4_tg?>>
                 <span class="fa fa-pie-chart"></span>
                 <p>survey</p>
             </div>
-            <div id="index.php?p=4" class="st col-sm-2 <?=$p5?>" <?=$p5_tg?>>
+            <div id="index.php?p=5" class="st col-sm-2 <?=$p5?>" <?=$p5_tg?>>
                 <span class="fa fa-tasks"></span>
                 <p>results</p>
             </div>

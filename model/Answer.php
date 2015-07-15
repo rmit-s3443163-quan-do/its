@@ -20,6 +20,27 @@ class Answer {
     /**
      * @return string
      */
+    function getRes()
+    {
+        $s = $this->question.'_'.$this->answer.'_';
+        $ans = explode('_',$this->answer)[0];
+
+        $db = DB::getConn();
+
+        $stm = $db->prepare('select isCorrect from Option where id=:id');
+        $stm->bindParam(':id', $ans);
+        $stm->execute();
+        $rs = $stm->fetchAll();
+
+
+        $s .= $rs[0][0]==1?'success':'danger';
+
+        return $s;
+    }
+
+    /**
+     * @return string
+     */
     function toString()
     {
         return $this->question . '_' .$this->answer;
@@ -86,12 +107,28 @@ class Answer {
 class Answers {
     private $uid = 0;
     private $cate = 0;
+    /**
+     * @var Answer[] $ans
+     */
     private $ans = [];
 
     function __construct($uid, $cate)
     {
         $this->cate = $cate;
         $this->uid = $uid;
+    }
+
+    /**
+     * @return string
+     */
+    function getRes() {
+        $s = '';
+
+        foreach ($this->ans as $a) {
+            $s .= $a->getRes() . ',';
+        }
+
+        return substr($s, 0, strlen($s)-1);
     }
 
     /**
