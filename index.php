@@ -11,7 +11,7 @@
         $nav = 'view/nav_new.php';
         $foot = 'view/footer.php';
 
-        $valid = ['index', '0', '1', '2', '3', '4', '5','11', '12', '13','14', '15'];
+        $valid = ['index', '0', '1', '2', '3', '4', '5','11', '12', '13','14', '15', '21'];
         $page  = isset($_GET['p'])?$_GET['p']:(isset($_POST['p'])?$_POST['p']:'0');
 
         if (in_array($page, $valid)) {
@@ -107,6 +107,10 @@
                         header('Location: index.php?p=1&c=2');
                     else
                         $url = 'survey_done';
+                    break;
+                case '21':
+                    $title = 'ITS - View Test';
+                    $url = 'view_test';
                     break;
                 default:
                     $title = 'ITS - Homepage';

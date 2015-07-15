@@ -43,7 +43,7 @@ foreach ($post as $p) {
                 <div class="panel-heading">
                     <h2 class="panel-title"><span class="glyphicon glyphicon-list-alt"></span>
                         Pre-test Result
-                        <span class="label label-primary pull-right">Detail</span>
+                        <span onclick="seePre()" class="pointer label label-primary pull-right">Detail</span>
                     </h2>
                 </div>
                 <div class="panel-body text-center">
@@ -74,7 +74,7 @@ foreach ($post as $p) {
                 <div class="panel-heading">
                     <h2 class="panel-title"><span class="glyphicon glyphicon-list-alt"></span>
                         Post-test Result
-                        <span class="label label-primary pull-right">Detail</span>
+                        <span onclick="seePost()" class="pointer label label-primary pull-right">Detail</span>
                     </h2>
                 </div>
                 <div class="panel-body text-center">
@@ -109,6 +109,13 @@ foreach ($post as $p) {
     }
 </style>
 <script>
+    function seePre() {
+        window.location.href = 'index.php?p=21&c=1';
+    }
+    function seePost() {
+        window.location.href = 'index.php?p=21&c=2';
+    }
+
     $(document).ready(function () {
         $('input[type = "radio"]').click(function () {
             return false;

@@ -9,8 +9,6 @@ if (isset($_GET['c']) && $_GET['c']!='') {
         $c = 1;
 }
 
-
-
 $question_arr = QuestionCtrl::getQuestionsByCategory($c);
 
 function getKText($opt) {
