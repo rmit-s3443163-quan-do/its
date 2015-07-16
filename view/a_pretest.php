@@ -15,6 +15,10 @@
 
 ?>
 
+<ol class="breadcrumb" style="margin-top: 50px;">
+    <li><a href="admin.php">Admin CP</a></li>
+    <li class="active">Pre-test</li>
+</ol>
 
 <div class="<?=$rm?> alert alert-success" role="alert" style="margin-top: 51px; margin-bottom: -30px">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>

@@ -4,13 +4,18 @@
 
 ?>
 
+
+<ol class="breadcrumb" style="margin-top: 50px;">
+    <li><a href="admin.php">Admin CP</a></li>
+    <li class="active">New Question</li>
+</ol>
 <h2 class="page-header">New Question</h2>
 <form id="form-add-question" action="admin.php" method="post" enctype="multipart/form-data" onsubmit="return postForm()" class="form-horizontal">
     <input type="hidden" name="p" value="11"/>
     <input type="hidden" name="type" value="add"/>
     <div class="form-group">
-        <label class="col-sm-2 control-label">Category</label>
-        <div class="col-sm-10">
+        <label class="col-sm-1 control-label">Category</label>
+        <div class="col-sm-11">
             <div class="btn-group" data-toggle="buttons">
                 <label class="btn btn-default active">
                     <input value="1" type="radio" name="cate" autocomplete="off" checked> Pre-test
@@ -25,14 +30,14 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="point" class="col-sm-2 control-label">Point</label>
-        <div class="col-sm-10">
+        <label for="point" class="col-sm-1 control-label">Point</label>
+        <div class="col-sm-11">
             <input id="point" name="point" type="number" class="form-control" value="1">
         </div>
     </div>
     <div class="form-group">
-        <label for="title" class="col-sm-2 control-label">Title</label>
-        <div class="col-sm-10">
+        <label for="title" class="col-sm-1 control-label">Title</label>
+        <div class="col-sm-11">
             <div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-question-sign"></span> </span>
                 <input name="title" id="title" type="text" class="sm form-control" placeholder="what you want to ask?">
@@ -40,8 +45,8 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="o1" class="col-sm-2 control-label">Option A</label>
-        <div class="col-sm-10">
+        <label for="o1" class="col-sm-1 control-label">Option A</label>
+        <div class="col-sm-11">
             <div class="input-group">
                 <span class="input-group-addon">
                     <input type="radio" value="a" name="correct" data-toggle="tooltip" data-placement="top" title="is this the correct answer?">
@@ -51,8 +56,8 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="o2" class="col-sm-2 control-label">Option B</label>
-        <div class="col-sm-10">
+        <label for="o2" class="col-sm-1 control-label">Option B</label>
+        <div class="col-sm-11">
             <div class="input-group">
                 <span class="input-group-addon">
                     <input type="radio" value="b" name="correct" data-toggle="tooltip" data-placement="top" title="is this the correct answer?">
@@ -62,8 +67,8 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="o3" class="col-sm-2 control-label">Option C</label>
-        <div class="col-sm-10">
+        <label for="o3" class="col-sm-1 control-label">Option C</label>
+        <div class="col-sm-11">
             <div class="input-group">
                 <span class="input-group-addon">
                     <input type="radio" value="c" name="correct" data-toggle="tooltip" data-placement="top" title="is this the correct answer?">
@@ -73,8 +78,8 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="o4" class="col-sm-2 control-label">Option D</label>
-        <div class="col-sm-10">
+        <label for="o4" class="col-sm-1 control-label">Option D</label>
+        <div class="col-sm-11">
             <div class="input-group">
                 <span class="input-group-addon">
                     <input type="radio" value="d" name="correct" data-toggle="tooltip" data-placement="top" title="is this the correct answer?">
@@ -84,8 +89,8 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="explain" class="col-sm-2 control-label">Explain</label>
-        <div class="col-sm-10">
+        <label for="explain" class="col-sm-1 control-label">Explain</label>
+        <div class="col-sm-11">
             <div class="input-group">
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-comment"></span>
@@ -95,7 +100,7 @@
         </div>
     </div>
     <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
+        <div class="col-sm-offset-2 col-sm-11">
             <button id="btn-add-question" type="submit" class="btn btn-primary">Add Question</button>
         </div>
     </div>

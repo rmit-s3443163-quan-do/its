@@ -10,14 +10,18 @@ if (isset($_GET['id']) && $_GET['id']!='') {
 }
 ?>
 
+<ol class="breadcrumb" style="margin-top: 50px;">
+    <li><a href="admin.php">Admin CP</a></li>
+    <li class="active">Update-Question</li>
+</ol>
 <h2 class="page-header">Update Question</h2>
 <form action="admin.php" method="post" enctype="multipart/form-data" class="form-horizontal">
     <input type="hidden" name="p" value="11"/>
     <input type="hidden" name="qid" value="<?=$id?>"/>
     <input type="hidden" name="type" value="update"/>
     <div class="form-group">
-        <label class="col-sm-2 control-label">Category</label>
-        <div class="col-sm-10">
+        <label class="col-sm-1 control-label">Category</label>
+        <div class="col-sm-11">
             <div class="btn-group" data-toggle="buttons">
                 <label class="btn btn-default active">
                     <input value="1" type="radio" name="cate" autocomplete="off" <?=$q->isCate(1)?>> Pre-test
@@ -32,14 +36,14 @@ if (isset($_GET['id']) && $_GET['id']!='') {
         </div>
     </div>
     <div class="form-group">
-        <label for="point" class="col-sm-2 control-label">Point</label>
-        <div class="col-sm-10">
+        <label for="point" class="col-sm-1 control-label">Point</label>
+        <div class="col-sm-11">
             <input id="point" name="point" type="number" class="form-control" value="<?=$q->getPoint()?>">
         </div>
     </div>
     <div class="form-group">
-        <label for="title" class="col-sm-2 control-label">Title</label>
-        <div class="col-sm-10">
+        <label for="title" class="col-sm-1 control-label">Title</label>
+        <div class="col-sm-11">
             <div class="question-input"><?=html_entity_decode($q->getTitle())?></div>
             <input type="hidden" name="title"/>
         </div>
@@ -47,25 +51,25 @@ if (isset($_GET['id']) && $_GET['id']!='') {
 
     <?php foreach($q->getOpts() as $index=>$opt){ ?>
     <div class="form-group">
-        <label for="o<?=$index+1?>" class="col-sm-2 control-label">
+        <label for="o<?=$index+1?>" class="col-sm-1 control-label">
             <input type="radio" value="<?=QuestionCtrl::getKText($index)?>" name="correct"
                    data-toggle="tooltip" data-placement="top" title="is this the correct answer?" <?=$opt->isCorrectText()?>>
             Option <?=QuestionCtrl::getKText($index)?></label>
-        <div class="col-sm-10">
+        <div class="col-sm-11">
             <div class="question-input"><?=html_entity_decode($opt->getText())?></div>
             <input type="hidden" name="o::<?=QuestionCtrl::getKText($index)?>::<?=$opt->getId()?>" />
         </div>
     </div>
     <?php } ?>
     <div class="form-group">
-        <label for="explain" class="col-sm-2 control-label">Explain</label>
-        <div class="col-sm-10">
+        <label for="explain" class="col-sm-1 control-label">Explain</label>
+        <div class="col-sm-11">
             <div class="question-input"><?=html_entity_decode($q->getExplain())?></div>
             <input type="hidden" name="explain" />
         </div>
     </div>
     <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
+        <div class="col-sm-offset-2 col-sm-11">
             <button id="btn-add-question" type="submit" class="btn btn-primary">Update Question</button>
         </div>
     </div>

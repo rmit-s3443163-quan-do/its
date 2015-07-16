@@ -26,6 +26,7 @@ $arr = SurveyCtrl::getSurveys();
                 <h4 class="survey-title"><span class="glyphicon glyphicon-question-sign"></span>
                     <?=$s->getTitle()?>
                 </h4>
+                <hr>
                 <div class="mood-icon"><h4><span class="glyphicon glyphicon-heart-empty"></h4></span></div>
                 <div id="<?=$s->getId()?>::0" data-toggle="tooltip" data-placement="bottom" title="Naah" class="mood yeck"></div>
                 <div id="<?=$s->getId()?>::25" data-toggle="tooltip" data-placement="bottom" title="Meh" class="mood meh"></div>

@@ -16,6 +16,10 @@
 ?>
 
 
+<ol class="breadcrumb" style="margin-top: 50px;">
+    <li><a href="admin.php">Admin CP</a></li>
+    <li class="active">Post-test</li>
+</ol>
 <div class="<?=$rm?> alert alert-success" role="alert" style="margin-top: 51px; margin-bottom: -30px">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <a href="#" class="alert-link">Question has been removed successfully!</a>
@@ -26,7 +30,6 @@
         <h4><a href="admin.php?p=10&c=2"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;&nbsp;New Question</a></h4>
     </div>
 </h1>
-
 <div class="table-responsiv">
     <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped display">
         <thead>

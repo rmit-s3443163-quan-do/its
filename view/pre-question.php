@@ -58,6 +58,7 @@ if ($c == 2) {
                         <td><?=$ques+1?></td>
                         <td>
                             <h4 class="question-title"><?=htmlspecialchars_decode($q->getTitle())?></h4>
+                            <hr>
                             <?php foreach($q->getOpts() as $opt=>$alt){ ?>
                                 <div id="answer_<?=$q->getId()?>_<?=$alt->getId()?>_<?=getKText($opt)?>" class="answer answer-<?=$q->getId()?> panel panel-default">
                                     <div class="row">
