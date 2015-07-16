@@ -76,3 +76,29 @@ body {
     cursor: inherit;
     display: block;
 }
+
+
+.paginate_button:hover {
+    color: #3C9EF3;
+    border: 1px solid #87cefa;
+    box-sizing: border-box;
+    background-color: rgb(231, 251, 255);
+}
+
+.paginate_button {
+    text-decoration: none!important;
+    display: block;
+    float: left;
+    width: 38px;
+    margin-right: 3px;
+    padding: 8px;
+    text-align: center;
+    background-color: rgb(236, 236, 236);
+    border: 1px solid rgb(236, 236, 236);
+    cursor: pointer;
+}
+
+.question-input {
+    padding: 7px;
+    padding-left: 0;
+}

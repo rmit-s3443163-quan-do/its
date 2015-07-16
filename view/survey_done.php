@@ -6,14 +6,29 @@
  * Time: 12:02 AM
  */
 
+
 require_once('./controller/QuestionCtrl.php');
+require_once('./controller/SurveyCtrl.php');
 require_once('./controller/UserCtrl.php');
 
+$uid = $_COOKIE['uid'];
 
-if (!UserCtrl::isDone(4)) {
-    $uid = $_COOKIE['uid'];
-    QuestionCtrl::submitTest(new Answers($uid, 4));
+foreach ($_POST as $key => $value) {
+
+    $param_name = 'r::';
+    if (substr($key, 0, strlen($param_name)) == $param_name) {
+        $sid = explode('::',$key)[1];
+        if (isset($_POST['c::'.$sid]) && $_POST['c::'.$sid] != '')
+            $comment = $_POST['c::' . $sid];
+        else
+            $comment = '';
+        $vote = new Vote($sid, $uid, $value, $comment);
+        SurveyCtrl::vote($vote);
+    }
 }
+
+if (!UserCtrl::isDone(4))
+    QuestionCtrl::submitTest(new Answers($uid, 4));
 
 ?>
 

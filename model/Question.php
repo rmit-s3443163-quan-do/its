@@ -98,7 +98,10 @@ class Question {
      */
     public function getExplain()
     {
-        return $this->explain;
+        if (!isset($this->explain) || $this->explain=='')
+            return 'not set yet';
+        else
+            return $this->explain;
     }
 
     /**
@@ -211,9 +214,23 @@ class Question {
     /**
      * @return string
      */
+    public function isCate($c)
+    {
+        if ($this->category == $c)
+            return 'checked';
+        else
+            return '';
+    }
+
+    /**
+     * @return string
+     */
     public function getTitle()
     {
-        return $this->title;
+        if (!isset($this->title) || $this->title=='')
+            return 'not set yet';
+        else
+            return $this->title;
     }
 
     /**

@@ -60,7 +60,10 @@ if ($c == 2) {
                             <h4 class="question-title"><?=htmlspecialchars_decode($q->getTitle())?></h4>
                             <?php foreach($q->getOpts() as $opt=>$alt){ ?>
                                 <div id="answer_<?=$q->getId()?>_<?=$alt->getId()?>_<?=getKText($opt)?>" class="answer answer-<?=$q->getId()?> panel panel-default">
-                                    <span class="key"><?=getKText($opt)?>.</span> <span><?=htmlspecialchars_decode($alt->getText())?></span>
+                                    <div class="row">
+                                        <div style="padding: 0; padding-left: 5px" class="col-xs-1 key"><?=getKText($opt)?>.</div>
+                                        <div style="padding: 0; padding-left: 5px" class="col-xs-10"><?=htmlspecialchars_decode($alt->getText())?></div>
+                                    </div>
                                 </div>
                             <?php } ?>
                         </td>

@@ -33,26 +33,9 @@ foreach ($arr as $p) {
 
 $q_arr = QuestionCtrl::getQuestionsByCategory($c);
 
-function getKText($opt) {
-    switch ($opt) {
-        case 0:
-            return 'A';
-            break;
-        case 1:
-            return 'B';
-            break;
-        case 2:
-            return 'C';
-            break;
-        case 3:
-            return 'D';
-            break;
-    }
-}
 $type = 'Pre-Test Result';
-if ($c == 2) {
-    $type = 'Pre-Test Result';
-}
+if ($c == 2)
+    $type = 'Post-Test Result';
 ?>
 
 <div class="clear-top hidden-xs"></div>
@@ -65,8 +48,8 @@ if ($c == 2) {
     <div class="alert alert-info">
         <span class="glyphicon glyphicon-info-sign"></span> Your result is being marked..
     </div>
-    <?php } ?>
-    <?php foreach($q_arr as $ques=>$q){
+    <?php };
+    foreach($q_arr as $ques=>$q) {
         $selected = false;
         ?>
     <h4><span class="label label-warning pull-left">Question <?=$ques+1?> of <?=count($q_arr)?> </span></h4><br/>
@@ -77,7 +60,7 @@ if ($c == 2) {
                 if ($arr[$ques]->getKtext() != '-')
                     $selected = true;
 
-                if ($arr[$ques]->getKtext() == getKText($opt)) {
+                if ($arr[$ques]->getKtext() == QuestionCtrl::getKText($opt)) {
                     if ($done4)
                         $type = $arr[$ques]->getRes();
                     else
@@ -87,10 +70,10 @@ if ($c == 2) {
 
                 ?>
             <div class="answer-view alert alert-<?=$type?>">
-                <span class="key"><?=getKText($opt)?>.</span><?=htmlspecialchars_decode($o->getText())?>
+                <span class="key"><?=QuestionCtrl::getKText($opt)?>.</span><?=htmlspecialchars_decode($o->getText())?>
             </div>
-            <?php } ?>
-            <?php if ($done4) { ?>
+            <?php };
+            if ($done4) { ?>
             <hr>
             <blockquote>
                 <?php if (!$selected) { ?>
@@ -100,14 +83,14 @@ if ($c == 2) {
                         <p><span class="g-green glyphicon glyphicon-ok-sign"></span> You got your answer correct. </p>
                     <?php } else if ($arr[$ques]->getRes() == 'danger') { ?>
                         <p><span class="g-red glyphicon glyphicon-remove-sign"></span> You got your answer incorrect.</p>
-                <?php }} ?>
+                <?php }
+                } ?>
             </blockquote>
             <?php } ?>
         </div>
     </div>
-    <?php } ?>
-
-    <?php if ($done4) { ?>
+    <?php };
+    if ($done4) { ?>
     <div class="panel panel-default">
         <div class="panel-body">
             <span>Correct: <strong><?=$correct?> / <?=count($arr)?></strong></span>

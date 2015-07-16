@@ -14,6 +14,32 @@ require_once('./controller/DB.php');
 
 class QuestionCtrl {
 
+    public static function getKText($opt) {
+        switch ($opt) {
+            case 0:
+                return 'A';
+                break;
+            case 1:
+                return 'B';
+                break;
+            case 2:
+                return 'C';
+                break;
+            case 3:
+                return 'D';
+                break;
+            case 4:
+                return 'E';
+                break;
+            case 5:
+                return 'F';
+                break;
+            case 6:
+                return 'G';
+                break;
+        }
+    }
+
     /**
      * @return Result[]
      */

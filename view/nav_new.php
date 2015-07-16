@@ -89,8 +89,8 @@ if (isset($_GET['p']) && $_GET['p']!='') {
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li <?=$index?>><a href="?p=0"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-                <li <?=$sur?>><a href="?p=4"><span class="glyphicon glyphicon-tasks"></span>Results</a></li>
+                <li <?=$index?>><a href="index.php?p=0"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+                <li <?=$sur?>><a href="index.php?p=5"><span class="glyphicon glyphicon-tasks"></span>Results</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">

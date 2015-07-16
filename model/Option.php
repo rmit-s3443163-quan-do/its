@@ -60,6 +60,14 @@ class Option {
     }
 
     /**
+     * @return string
+     */
+    public function isCorrectText()
+    {
+        return $this->correct?'checked':'';
+    }
+
+    /**
      * @param boolean $correct
      */
     public function setCorrect($correct)

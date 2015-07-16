@@ -41,4 +41,20 @@ class DB {
         return $rows->fetchColumn() > 0?true:false;
     }
 
+    /**
+     * @return int
+     */
+    public static function getLastID($table) {
+
+        $db = DB::getConn();
+
+        $stm = $db->prepare('SELECT id FROM :table ORDER BY id DESC LIMIT 1;');
+        $stm->bindParam(':table',$table);
+
+        $stm->execute();
+
+        return $stm->fetchAll()[0]['id'];
+
+    }
+
 }
