@@ -73,7 +73,7 @@ if (isset($_GET['p']) && $_GET['p']!='') {
 
 ?>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top" style="display: none;">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -107,7 +107,7 @@ if (isset($_GET['p']) && $_GET['p']!='') {
     </div><!-- /.container-fluid -->
 </nav>
 <div class="container hidden-xs" style="margin-top: 50px;"></div>
-<div class="container" style="margin-top: 30px;">
+<div class="container">
     <div class="row">
         <div class="row step text-center">
             <div id="index.php?p=1&c=1" class="st col-xs-offset-1 col-xs-2 nav-step <?=$p1?>">
@@ -140,18 +140,17 @@ if (isset($_GET['p']) && $_GET['p']!='') {
 </script>
 <style>
     .available-step {
-        background-color: rgb(242, 255, 243);
-        border: 1px solid rgb(175, 209, 174);
-        border-right: none;
-
+        background-color: rgb(50, 112, 145);
+        /* border: 1px solid rgb(43, 128, 79); */
+        border-right: 1px solid rgba(32, 143, 202, 0.69);
+        color: gainsboro;
     }
 
     .disable-step, .disable-step:hover, .disable-step:active {
-        color: rgb(133, 133, 133) !important;
+        color: rgb(51, 72, 94);
         cursor: default !important;
-        background-color: rgb(243, 243, 243) !important;
-        border: 1px solid #D6D6D6;
-        border-right: none;
+        background-color: rgba(65, 90, 115, 1);
+        border-right: 1px solid rgb(51, 72, 94);
     }
 
     .step {
@@ -165,21 +164,29 @@ if (isset($_GET['p']) && $_GET['p']!='') {
     }
 
     .step .nav-step:last-child {
-        border: 1px solid #D6D6D6;
+        /*border: 1px solid rgb(51, 72, 94);*/
     }
 
-    .step .nav-step:hover {
-        color: #F58723;
+    .available-step:hover {
+        color: white;
+        background-color: rgb(55, 124, 161);
         cursor: pointer;
     }
 
-    .step .activestep {
+    .activestep:hover {
+        cursor: pointer;
+    }
+
+    .available-step + .activestep {
+        /*border-right: none;*/
+    }
+
+    .activestep {
         color: #ffffff;
-        height: 84px;
+        height: 81px;
         margin-top: -3px;
-        padding-top: 3px;
-        background-color: #005A00;
-        vertical-align: central;
+        background-color: rgb(32, 143, 202);
+        border-right: 5px solid rgb(0, 197, 255);
     }
 
     .nav-step p {

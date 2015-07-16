@@ -13,14 +13,9 @@ body {
     padding-left: 20px;
 }
 
-.answer:hover {
-    border: 1px solid rgb(0, 172, 241);
-    background-color: rgb(231, 251, 255);
-}
-
-.selected {
-    border: 1px solid rgb(0, 172, 241);
-    background-color: rgb(205, 247, 255);
+.panel.selected {
+    border: 1px solid rgb(43, 61, 79);
+    background-color: rgb(51, 72, 94);
 }
 
 .success {
@@ -52,8 +47,11 @@ button {
 .footer {
     width: 100%;
     padding: 10px;
-    background-color: #f5f5f5;
+    padding-top: 18px;
+    /* background-color: #415A73; */
     margin-top: 30px;
+    text-align: left;
+    color: rgba(176, 187, 231, 0.1);
 }
 
 .clear-top {
@@ -106,11 +104,16 @@ button:focus {
 }
 
 .lb-info {
-    margin-top: -20px;
+    /* margin-top: -20px; */
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    height: 20px;
+    height: 38px;
+    padding: 11px;
+    margin: 15px 15px 0 0;
     font-size: 14px;
+     
+    border-right: 3px solid rgb(0, 197, 255);
+    background-color: rgba(0, 197, 255, 0.22);
 }
 
 .pn-pre {
@@ -118,7 +121,7 @@ button:focus {
 }
 
 td {
-    background-color: white !important;
+    /* background-color: white !important; */
 }
 
 table, tr, td {
@@ -137,7 +140,7 @@ table {
 .yeck, .meh, .good, .awesome {
     background-repeat: no-repeat;
     background-position: center;
-    border: 2px solid gray;
+    border: 2px solid rgb(64, 85, 108);
     border-radius: 20px !important;
     width: 50px;
     height: 50px;
@@ -184,33 +187,36 @@ table {
 a.disabled {
     color: gray;
     text-decoration: none;
-    cursor: not-allowed;
+    cursor: default;
 }
 
 a.disabled:hover {
     color: gray;
-    background-color: rgb(236, 236, 236);
-    border: 1px solid rgb(236, 236, 236);
-}
-
-.paginate_button:hover {
-    color: #3C9EF3;
-    border: 1px solid #87cefa;
-    box-sizing: border-box;
-    background-color: rgb(231, 251, 255);
+    background-color: rgb(51, 81, 112);
+    border: 1px solid rgb(69, 108, 149);
 }
 
 .paginate_button {
+
+    cursor: pointer;
+}
+.paginate_button:hover {
+    border: 1px solid rgb(90, 138, 188);
+    box-sizing: border-box;
+    background-color: rgb(51, 81, 112);
+}
+
+.paginate_button, .paginate_button.disabled:hover {
     text-decoration: none!important;
     display: block;
     float: left;
-    width: 38px;
-    margin-right: 3px;
-    padding: 8px;
+    width: 58px;
+    height: 38px;
+    margin-right: 0;
+    padding: 7px;
     text-align: center;
-    background-color: rgb(236, 236, 236);
-    border: 1px solid rgb(236, 236, 236);
-    cursor: pointer;
+    background-color: rgba(61, 116, 145, 0.45);
+    border: 1px solid rgba(63, 82, 102, 1);
 }
 
 * {
@@ -237,7 +243,7 @@ input[type="radio"] {
 .answer-group {
     padding: 5px;
     padding-left: 20px;
-    border-bottom: 1px dashed lightgray;
+    border-bottom: 1px dashed rgb(94, 128, 165);
 }
 
 .radio {
@@ -320,4 +326,120 @@ blockquote {
 
 .pointer {
     cursor: pointer;
+}
+
+body {
+    background-color: #33485E;
+    color: #000;
+    background: url(../img/index_bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+td {
+    background-color: transparent!important;
+}
+
+.panel {
+
+    background-color: rgba(78, 105, 133, 0.56);
+    color: white;
+    border: 1px solid rgb(77, 105, 135);
+}
+
+.answer:hover {
+    border: 1px solid rgb(127, 170, 215);
+}
+
+.answer.selected:hover {
+    border: 1px solid rgb(43, 61, 79);
+}
+
+.jumbotron {
+    padding: 30px;
+    margin-bottom: 30px;
+    color: white;
+    background-color: #4F6D8B;
+}
+
+a {
+    color: #B0DBFF;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: #00C1FF;
+    text-decoration: underline;
+}
+.breadcrumb {
+    display: none;
+}
+
+.panel-default>.panel-heading, .panel-footer {
+    color: #FFF2F2;
+    background-color: #415A73;
+    border-color: #4D6987;
+    background-image: none;
+}
+
+.btn {
+    background-image: none;
+}
+
+.popover-title {
+    padding: 8px 14px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    background-color: #415A73;
+    border-bottom: 1px solid #4A6783;
+    border-radius: 5px 5px 0 0;
+}
+
+.popover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1060;
+    display: none;
+    max-width: 276px;
+    padding: 1px;
+    text-align: left;
+    white-space: normal;
+    background-color: #415A73;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(94, 128, 165, 1);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.btn-default {
+    color: #333;
+    background-color: #DBDBDB;
+    border-color: #ccc;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #FFF;
+    background-color: #34485C;
+    background-image: none;
+    border: 1px solid #2C3F51;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }

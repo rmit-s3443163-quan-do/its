@@ -22,6 +22,9 @@ else {
             case '2':
                 $url = 'a_survey';
                 break;
+            case '3':
+                $url = 'a_users';
+                break;
             case '10':
                 $url = 'a_question';
                 break;

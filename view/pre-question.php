@@ -37,10 +37,6 @@ if ($c == 2) {
 
 <div class="clear-top hidden-xs"></div>
 <div class="container">
-    <ol class="breadcrumb" style="margin-bottom: 40px;">
-        <li><a href="index.php">Home</a></li>
-        <li class="active"><?=$type?></li>
-    </ol>
     <div class="row">
         <div class="col-md-12 col-lg-8">
             <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped display" width="100%">
@@ -58,7 +54,6 @@ if ($c == 2) {
                         <td><?=$ques+1?></td>
                         <td>
                             <h4 class="question-title"><?=htmlspecialchars_decode($q->getTitle())?></h4>
-                            <hr>
                             <?php foreach($q->getOpts() as $opt=>$alt){ ?>
                                 <div id="answer_<?=$q->getId()?>_<?=$alt->getId()?>_<?=getKText($opt)?>" class="answer answer-<?=$q->getId()?> panel panel-default">
                                     <div class="row">
@@ -119,7 +114,7 @@ if ($c == 2) {
                         <span id="answered-undone" class="pull-right" style="margin-top: 3px; font-size: 12px;">
                             Answered <span id="answered">0</span> / <?=count($question_arr)?>
                         </span>
-                        <span id="answered-done" class="hidden pull-right" style="margin-top: 3px; font-size: 12px; color: darkgreen">
+                        <span id="answered-done" class="hidden pull-right" style="margin-top: 3px; font-size: 12px; color: rgb(0, 244, 0);">
                             All answered <span class="glyphicon glyphicon-ok-circle" style="margin-right: 0"></span>
                         </span>
                     </h2>
@@ -247,7 +242,7 @@ if ($c == 2) {
                 "visible": false
             }
         ],
-        'dom': '<"lb-info label label-warning pull-left"i><"pn-pre panel panel-default"<"panel-body"ptp>>',
+        'dom': '<"lb-info label label-warning pull-right"i><"pn-pre panel panel-default"<"panel-body"ptp>>',
         "pagingType": "simple"
     });
     $('[data-toggle=confirmation]').confirmation();
