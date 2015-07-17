@@ -109,6 +109,19 @@ if (isset($_GET['p']) && $_GET['p']!='') {
 <div class="container hidden-xs" style="margin-top: 50px;"></div>
 <div class="container">
     <div class="row">
+        <li class="user-dd dropdown">
+            <div class="user dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <?=$_COOKIE['uid']?><span style="margin-left: 10px" class="glyphicon glyphicon-chevron-down"></span>
+            </div>
+            <ul class="dropdown-menu">
+                <li><a href="admin.php">Admin CP</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="change-password.php">Change Password</a></li>
+                <li><a href="login.php?a=logout">Logout</a></li>
+            </ul>
+        </li>
+    </div>
+    <div class="row">
         <div class="row step text-center">
             <div id="index.php?p=1&c=1" class="st col-xs-offset-1 col-xs-2 nav-step <?=$p1?>">
                 <span class="fa fa-flag-o"></span>

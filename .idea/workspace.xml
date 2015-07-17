@@ -2,19 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b65b2733-5630-4704-bdf6-30a2b16e53bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/a_users.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/admin-survey.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/index_old.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/accounts.php" afterPath="$PROJECT_DIR$/view/a_users.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/a_add_survey.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/a_remove_survey.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/a_update_survey.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/its.db" afterPath="$PROJECT_DIR$/db/its.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/Survey.php" afterPath="$PROJECT_DIR$/model/Survey.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/SurveyCtrl.php" afterPath="$PROJECT_DIR$/controller/SurveyCtrl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/UserCtrl.php" afterPath="$PROJECT_DIR$/controller/UserCtrl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/a_survey.php" afterPath="$PROJECT_DIR$/view/a_survey.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/admin-sidebar.php" afterPath="$PROJECT_DIR$/view/admin-sidebar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/add_question.php" afterPath="$PROJECT_DIR$/view/add_question.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin.php" afterPath="$PROJECT_DIR$/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/footer.php" afterPath="$PROJECT_DIR$/view/footer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/nav_new.php" afterPath="$PROJECT_DIR$/view/nav_new.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/pre-question.php" afterPath="$PROJECT_DIR$/view/pre-question.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/survey.php" afterPath="$PROJECT_DIR$/view/survey.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="its.iws" />
@@ -37,108 +36,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pre-question.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/pre-question.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.3137255">
-              <caret line="120" column="22" selection-start-line="120" selection-start-column="22" selection-end-line="120" selection-end-column="22" />
-              <folding>
-                <element signature="n#style#0;n#span#2;n#h2#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#span#2;n#h2#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="survey.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/survey.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.125">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.291666">
-              <caret line="143" column="12" selection-start-line="143" selection-start-column="12" selection-end-line="143" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.222222">
-              <caret line="347" column="17" selection-start-line="347" selection-start-column="17" selection-end-line="347" selection-end-column="17" />
-              <folding>
-                <element signature="e#81511#107408#2" expanded="true" />
-                <marker date="1437067715000" expanded="true" signature="2217:2432" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login-style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/login-style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="5" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nav_new.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="nav_new.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/view/nav_new.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.291666">
-              <caret line="181" column="5" selection-start-line="181" selection-start-column="5" selection-end-line="181" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.16584766">
+              <caret line="113" column="36" selection-start-line="113" selection-start-column="36" selection-end-line="113" selection-end-column="36" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
                 <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#li#0;n#div#0;n#div#1;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/view/footer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12899263">
-              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="a_survey.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/a_survey.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.125">
-              <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-              <folding>
-                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="a_users.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/a_users.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.125">
-              <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="35" selection-end-column="17" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -162,12 +70,9 @@
         <option value="$PROJECT_DIR$/css/admin.css" />
         <option value="$PROJECT_DIR$/model/Option.php" />
         <option value="$PROJECT_DIR$/model/Question.php" />
-        <option value="$PROJECT_DIR$/model/Survey.php" />
         <option value="$PROJECT_DIR$/controller/QuestionCtrl.php" />
         <option value="$PROJECT_DIR$/controller/DB.php" />
-        <option value="$PROJECT_DIR$/view/add_question.php" />
         <option value="$PROJECT_DIR$/model/Vote.php" />
-        <option value="$PROJECT_DIR$/controller/SurveyCtrl.php" />
         <option value="$PROJECT_DIR$/view/survey_done.php" />
         <option value="$PROJECT_DIR$/view/view_test.php" />
         <option value="$PROJECT_DIR$/view/a_pretest.php" />
@@ -175,16 +80,24 @@
         <option value="$PROJECT_DIR$/view/a_question.php" />
         <option value="$PROJECT_DIR$/view/a_question_update.php" />
         <option value="$PROJECT_DIR$/admin-survey.php" />
-        <option value="$PROJECT_DIR$/admin.php" />
         <option value="$PROJECT_DIR$/view/admin-sidebar.php" />
         <option value="$PROJECT_DIR$/view/a_users.php" />
-        <option value="$PROJECT_DIR$/view/a_survey.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/view/nav_new.php" />
         <option value="$PROJECT_DIR$/view/pre-question.php" />
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/view/survey.php" />
         <option value="$PROJECT_DIR$/view/footer.php" />
+        <option value="$PROJECT_DIR$/view/nav_new.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/view/add_survey.php" />
+        <option value="$PROJECT_DIR$/model/Survey.php" />
+        <option value="$PROJECT_DIR$/admin.php" />
+        <option value="$PROJECT_DIR$/view/a_remove_survey.php" />
+        <option value="$PROJECT_DIR$/view/a_add_survey.php" />
+        <option value="$PROJECT_DIR$/view/a_update_survey.php" />
+        <option value="$PROJECT_DIR$/controller/SurveyCtrl.php" />
+        <option value="$PROJECT_DIR$/view/a_survey.php" />
+        <option value="$PROJECT_DIR$/view/add_question.php" />
+        <option value="$PROJECT_DIR$/controller/UserCtrl.php" />
       </list>
     </option>
   </component>
@@ -194,6 +107,9 @@
   </component>
   <component name="NamedScopeManager">
     <order />
+  </component>
+  <component name="PhpServers">
+    <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
@@ -285,20 +201,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="its" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="its" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -366,14 +268,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1650" height="956" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29850745" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29850745" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -407,13 +309,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/model/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2447217">
-          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/jquery.a.dataTables.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
@@ -508,30 +403,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/submit_test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
-          <caret line="21" column="66" selection-start-line="20" selection-start-column="8" selection-end-line="21" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/pre.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="1" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/result.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37102923">
-          <caret line="96" column="75" selection-start-line="96" selection-start-column="73" selection-end-line="96" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/admin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9642005">
@@ -544,14 +415,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5184275">
           <caret line="64" column="35" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/Question.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5785441">
-          <caret line="232" column="31" selection-start-line="232" selection-start-column="31" selection-end-line="232" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -582,67 +445,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/UserCtrl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09213759">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-          <folding>
-            <marker date="1436942399000" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
-            <marker date="1436942399000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1436942399000" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/Survey.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25">
-          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/QuestionCtrl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09213759">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-          <folding>
-            <marker date="1437010585000" expanded="true" signature="-1:-1" placeholder="select ans f..Answers..." />
-            <marker date="1437010585000" expanded="true" signature="-1:-1" placeholder="select point..Question..." />
-            <marker date="1437010585000" expanded="true" signature="-1:-1" placeholder="select * fro..Answers..." />
-            <marker date="1437010585000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1437010585000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1437010585000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1437010585000" expanded="true" signature="-1:-1" placeholder="select * fro..Question..." />
-            <marker date="1437010585000" expanded="true" signature="-1:-1" placeholder="select * fro..Option..." />
-            <marker date="1437010585000" expanded="true" signature="-1:-1" placeholder="select * fro..Question..." />
-            <marker date="1437010585000" expanded="true" signature="-1:-1" placeholder="select * fro..Option..." />
-            <marker date="1437010585000" expanded="true" signature="-1:-1" placeholder="select * fro..Question..." />
-            <marker date="1437010585000" expanded="true" signature="-1:-1" placeholder="select * fro..Option..." />
-            <marker date="1437010585000" expanded="true" signature="-1:-1" placeholder="select * fro..Option..." />
-            <marker date="1437010585000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1437010585000" expanded="true" signature="-1:-1" placeholder="update Quest..." />
-            <marker date="1437010585000" expanded="true" signature="-1:-1" placeholder="SELECT id FR..Question..." />
-            <marker date="1437010585000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1437010585000" expanded="true" signature="-1:-1" placeholder="update Optio..." />
-            <marker date="1437010585000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/SurveyCtrl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.875">
-          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
-          <folding>
-            <element signature="e#7#88#0#PHP" expanded="true" />
-            <marker date="1437025154000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1437025154000" expanded="true" signature="-1:-1" placeholder="select * fro..Survey..." />
-            <marker date="1437025154000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/survey_done.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.875">
@@ -656,24 +458,6 @@
         <state vertical-scroll-proportion="-15.625">
           <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/add_question.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46560195">
-          <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="46" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/a_question_update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45118734">
-          <caret line="71" column="47" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
-          <folding>
-            <element signature="n#style#0;n#ol#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -709,38 +493,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.625">
-          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin-sidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.375">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/a_users.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.125">
           <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="35" selection-end-column="17" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/a_survey.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-          <folding>
-            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -757,56 +514,6 @@
         <state vertical-scroll-proportion="0.32678133">
           <caret line="138" column="28" selection-start-line="138" selection-start-column="28" selection-end-line="150" selection-end-column="31" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.291666">
-          <caret line="143" column="12" selection-start-line="143" selection-start-column="12" selection-end-line="143" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/login-style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="5" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/nav_new.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.291666">
-          <caret line="181" column="5" selection-start-line="181" selection-start-column="5" selection-end-line="181" selection-end-column="5" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.222222">
-          <caret line="347" column="17" selection-start-line="347" selection-start-column="17" selection-end-line="347" selection-end-column="17" />
-          <folding>
-            <element signature="e#81511#107408#2" expanded="true" />
-            <marker date="1437067715000" expanded="true" signature="2217:2432" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/pre-question.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3137255">
-          <caret line="120" column="22" selection-start-line="120" selection-start-column="22" selection-end-line="120" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#span#2;n#h2#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#span#2;n#h2#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -828,11 +535,206 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/view/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12899263">
+        <state vertical-scroll-proportion="-4.375">
           <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
           <folding>
             <element signature="n#style#0;n#p#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin-sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/login-style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48329356">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/submit_test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23955774">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/pre.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62653565">
+          <caret line="98" column="23" selection-start-line="70" selection-start-column="20" selection-end-line="98" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/pre-question.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62653565">
+          <caret line="207" column="51" selection-start-line="207" selection-start-column="22" selection-end-line="207" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5712531">
+          <caret line="143" column="12" selection-start-line="143" selection-start-column="12" selection-end-line="143" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Question.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15247777">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="21" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/QuestionCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46560195">
+          <caret line="280" column="52" selection-start-line="280" selection-start-column="52" selection-end-line="280" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2948403">
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/a_add_survey.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12899263">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/a_remove_survey.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23955774">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/SurveyCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1425061">
+          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+          <folding>
+            <element signature="e#7#88#0#PHP" expanded="true" />
+            <marker date="1437101039000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1437101039000" expanded="true" signature="-1:-1" placeholder="select * fro..Survey..." />
+            <marker date="1437101039000" expanded="true" signature="-1:-1" placeholder="select * fro..Survey..." />
+            <marker date="1437101039000" expanded="true" signature="-1:-1" placeholder="select count..Vote..." />
+            <marker date="1437101039000" expanded="true" signature="-1:-1" placeholder="select avg(r..Vote..." />
+            <marker date="1437101039000" expanded="true" signature="-1:-1" placeholder="update Surve..." />
+            <marker date="1437101039000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1437101039000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1437101039000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/UserCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16584766">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding>
+            <marker date="1437101339000" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
+            <marker date="1437101339000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1437101339000" expanded="true" signature="-1:-1" placeholder="select * fro..Users..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/add_question.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9189189">
+          <caret line="67" column="49" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Survey.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36855036">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/a_update_survey.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25798526">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/a_question_update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41031942">
+          <caret line="73" column="14" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/a_survey.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1891892">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/result.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45823097">
+          <caret line="97" column="109" selection-start-line="97" selection-start-column="54" selection-end-line="97" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44512948">
+          <caret line="460" column="46" selection-start-line="460" selection-start-column="46" selection-end-line="460" selection-end-column="46" />
+          <folding>
+            <element signature="e#81513#107410#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/nav_new.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16584766">
+          <caret line="113" column="36" selection-start-line="113" selection-start-column="36" selection-end-line="113" selection-end-column="36" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#li#0;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

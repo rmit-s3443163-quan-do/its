@@ -8,18 +8,53 @@
  */
 class Survey {
     private $id=0;
-    private $title=0;
+    private $title='';
     private $show=1;
+    private $percent=0;
+    private $count=0;
 
     /**
      * Survey constructor.
-     * @param int $title
+     * @param string $title
      * @param int $show
      */
-    public function __construct($title, $show)
+    public function __construct($title)
     {
         $this->title = $title;
-        $this->show = $show;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCount()
+    {
+        return $this->count;
+    }
+
+    /**
+     * @param int $count
+     */
+    public function setCount($count)
+    {
+        $this->count = $count;
+    }
+
+
+
+    /**
+     * @return int
+     */
+    public function getPercent()
+    {
+        return $this->percent;
+    }
+
+    /**
+     * @param int $percent
+     */
+    public function setPercent($percent)
+    {
+        $this->percent = $percent;
     }
 
     /**
@@ -39,7 +74,7 @@ class Survey {
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getTitle()
     {
@@ -47,7 +82,7 @@ class Survey {
     }
 
     /**
-     * @param int $title
+     * @param string $title
      */
     public function setTitle($title)
     {

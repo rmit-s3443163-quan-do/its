@@ -39,6 +39,33 @@ class SurveyCtrl {
     }
 
 
+    /**
+     * @return Survey[]
+     */
+    public static function getSurveyList() {
+
+        $db = DB::getConn();
+
+        $stm = $db->prepare('select * from Survey');
+
+        $stm->execute();
+        $rss = $stm->fetchAll();
+        $arr = [];
+
+        foreach ($rss as $rs) {
+            $q = new Survey($rs['title']);
+            $q->setId($rs['id']);
+            $q->setShow($rs['show']);
+            $q->setPercent(SurveyCtrl::getPercent($rs['id']));
+            $q->setCount(SurveyCtrl::getVotedNumber($rs['id']));
+
+            $arr[] = $q;
+        }
+
+        return $arr;
+
+    }
+
 
     /**
      * @return Survey[]
@@ -57,6 +84,9 @@ class SurveyCtrl {
             if ($rs['show']==1) {
                 $q = new Survey($rs['title'], 1);
                 $q->setId($rs['id']);
+                $q->setPercent(SurveyCtrl::getPercent($rs['id']));
+                $q->setCount(SurveyCtrl::getVotedNumber($rs['id']));
+
                 $arr[] = $q;
             }
         }
@@ -65,21 +95,81 @@ class SurveyCtrl {
 
     }
 
+    public static function getVotedNumber($id) {
+
+        $db = DB::getConn();
+
+        $stm = $db->prepare('select count(rate) from Vote where survey=:id');
+        $stm->bindParam(':id', $id);
+        $stm->execute();
+        $rs = $stm->fetchAll();
+
+        return $rs[0][0];
+
+    }
+
+    public static function getPercent($id) {
+
+        $db = DB::getConn();
+
+        $stm = $db->prepare('select avg(rate) from Vote where survey=:id');
+        $stm->bindParam(':id', $id);
+        $stm->execute();
+        $rs = $stm->fetchAll();
+
+        return number_format($rs[0][0], 1, '.', ',');
+
+    }
+
     /**
      * @param Survey $s
      */
-    public static function add($s) {
+    public static function update($s) {
 
         $db = DB::getConn();
         $t = $s->getTitle();
         $sh = $s->getShow();
+        $id = $s->getId();
 
-        $stm = $db->prepare('insert into Survey (title, show) values (:title, :show)');
+        $stm = $db->prepare('update Survey set title=:title, show=:show where id=:id');
         $stm->bindParam(':title', $t);
-        $stm->bindParam(':cate', $sh);
+        $stm->bindParam(':show', $sh);
+        $stm->bindParam(':id', $id);
         $stm->execute();
 
 //        return DB::getLastID('Survey');
+
+    }
+
+    /**
+     * @param string $s
+     */
+    public static function add($s) {
+
+        $db = DB::getConn();
+
+        $stm = $db->prepare('insert into Survey (title) values (:title)');
+        $stm->bindParam(':title', $s);
+        $stm->execute();
+
+//        return DB::getLastID('Survey');
+
+    }
+
+    /**
+     * @param string $s
+     */
+    public static function remove($id) {
+
+        $db = DB::getConn();
+
+        $stm = $db->prepare('delete from Vote where survey=:id');
+        $stm->bindParam(':id', $id);
+        $stm->execute();
+
+        $stm = $db->prepare('delete from Survey where id=:id');
+        $stm->bindParam(':id', $id);
+        $stm->execute();
 
     }
 

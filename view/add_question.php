@@ -65,4 +65,4 @@ if ($qid > 0) {
 }
 
 
-//echo '<script>window.location.href="admin.php?p=0"</script>';
+echo '<script>window.location.href="admin.php?p=0"</script>';
