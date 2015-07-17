@@ -23,6 +23,7 @@ $arr = UserCtrl::getUserList();
         <!-- Modal -->
         <form id="new-user-form" action="admin.php" method="post">
             <input type="hidden" name="p" value="16">
+            <input type="hidden" name="type" value="1">
             <div class="modal fade" id="new-user" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -33,7 +34,7 @@ $arr = UserCtrl::getUserList();
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button id="new-u" type="submit" class="btn btn-primary">Add</button>
+                            <button id="new-u" type="button" class="btn btn-primary">Add</button>
                         </div>
                     </div>
                 </div>
@@ -41,6 +42,25 @@ $arr = UserCtrl::getUserList();
         </form>
 
         <script>
+            $('#new-u').click(function () {
+                var dataString = $('#new-user-form').serialize();
+                $.ajax({
+                    type: "POST",
+                    url: "admin.php",
+                    data: dataString,
+                    success: function (result) {
+                        if (/okkkk/.test(result)) {
+                            window.location.href='admin.php?p=3';
+                        } else {
+                            alert(result.split(':::')[1]);
+                            $('#uid-u').focus().select();
+                        }
+                    },
+                    error: function (xhr) {
+                        alert("An error occured: " + xhr.status + " " + xhr.statusText);
+                    }
+                });
+            });
             $('#new-user').on('shown.bs.modal', function () {
                 $('#uid-u').focus();
             })

@@ -87,7 +87,7 @@ class UserCtrl {
      * @param User $user
      */
     public static function add($user) {
-        if (UserCtrl::has($user))
+        if (UserCtrl::has($user->getUsername()))
             return false;
         else {
 
@@ -105,18 +105,18 @@ class UserCtrl {
 
     /**
      * @return bool
-     * @param User $user
+     * @param string $uid
      */
-    public static function has($user) {
+    public static function has($uid) {
         $db = DB::getConn();
 
         $stm = $db->prepare('select * from Users where username = :uid');
-        $stm->bindParam(':uid', $user->getUsername());
+        $stm->bindParam(':uid', $uid);
 
         $stm->execute();
         $rs = $stm->fetchAll();
 
-        return count($rs);
+        return count($rs)>0?true:false;
     }
 
 

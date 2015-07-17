@@ -23,8 +23,9 @@
         $p = $_POST['p'];
 
         if (UserCtrl::login(new User($u,$p))) {
-            echo 'ok';
-        }
+            echo 'okkkk';
+        } else
+            echo 'naaah';
     }
 ?>
 
@@ -126,7 +127,7 @@
                     url: "login.php",
                     data: dataString,
                     success: function(result){
-                        if (/ok/.test(result)) {
+                        if (/okkkk/.test(result)) {
                             var r = $('#remember').val();
                             if (r=='on')
                                 $.cookie('uid',u, { expires : 7 });

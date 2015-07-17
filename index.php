@@ -150,12 +150,6 @@
             }
         });
     </script>
-
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-confirmation.min.js"></script>
-    <script src="./js/jquery.dataTables.js" type="text/javascript"></script>
-    <script src="js/snabbt.min.js"></script>
-    <script src="./js/my.js" type="text/javascript"></script>
 </body>
 </html>
 <?php endif; ?>

@@ -16,3 +16,9 @@
 <link rel="stylesheet" href="./css/awesome-bootstrap-checkbox.css" type="text/css"/>
 <script src="./js/jquery.min.js"></script>
 
+<script src="./js/bootstrap.min.js"></script>
+<script src="js/bootstrap-confirmation.min.js"></script>
+<script src="./js/jquery.dataTables.js" type="text/javascript"></script>
+<script src="js/snabbt.min.js"></script>
+<script src="./js/my.js" type="text/javascript"></script>
+

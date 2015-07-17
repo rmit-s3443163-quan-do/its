@@ -6,7 +6,7 @@ if (!$b)
     echo '<script>window.location.href = "login.php";</script>';
 else {
 
-    $valid = ['admin', '0', '1', '2', '3', '4','5','10','11','12','13','14','15'];
+    $valid = ['admin', '0', '1', '2', '3', '4','5','10','11','12','13','14','15','16'];
     $page  = isset($_GET['p'])?$_GET['p']:(isset($_POST['p'])?$_POST['p']:'0');
 
     if (is_null($page))
