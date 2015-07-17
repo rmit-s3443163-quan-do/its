@@ -49,7 +49,7 @@
             <div class="col-md-offset-2 col-md-8 text-center">
 
                 <div class="row" id="pn-title">
-                    <h3 class="up panel-title">welcome to <strong class="coral">Intelligent Tutoring System</strong></h3>
+                    <h3 class="up panel-title">welcome to <strong class="coral">Automatic Tutoring System</strong></h3>
                 </div>
 
                 <div class="row">
@@ -60,18 +60,18 @@
                         <div class="row">
                             <div class="right input-group">
                                 <div class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span> </div>
-                                <input id="user" type="text" placeholder="username: quando" title="i.e: quando" />
+                                <input id="user" type="text" placeholder="username" />
                             </div>
 
                             <div class="right input-group">
                                 <div class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-lock"></span></div>
-                                <input id="pass" type="password" placeholder="password: qwerty" title="i.e: qwerty" />
+                                <input id="pass" type="password" placeholder="password" />
                             </div>
                         </div>
                         <div class="down row">
                             <div class="pull-left checkbox col-xs-1">
                                 <input id="remember" type="checkbox" style="height: 20px; margin-left: 0px">
-                            </div><span class="col-xs-5">Remember me</span>
+                            </div><span id="rmb-lb" class="col-xs-5">Remember me</span>
 
                             <div class="col-xs-5 pull-right" style="padding-right: 0;">
                                 <button class="btn-login pull-right btn btn-success" type="button"><span class="glyphicon glyphicon-chevron-right"></span> <span class="bt-text">log me in</span></button>
@@ -84,6 +84,10 @@
         </div>
     </div>
     <script>
+        $('#rmb-lb').click(function () {
+            var checkBoxes = $("#remember");
+            checkBoxes.prop("checked", !checkBoxes.prop("checked"));
+        });
         $(document).keypress(function(e) {
             if(e.which == 13) {
                 $( ".btn-login" ).trigger( "click" );

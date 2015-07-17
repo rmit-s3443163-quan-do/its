@@ -72,6 +72,24 @@ class User {
     }
 
     /**
+     * @return string
+     */
+    public function getTypeString()
+    {
+        switch ($this->type) {
+            case 1:
+                return 'Student';
+                break;
+            case 2:
+                return 'Teacher';
+                break;
+            case 1903:
+                return 'Admin';
+                break;
+        }
+    }
+
+    /**
      * @param int $type
      */
     public function setType($type)

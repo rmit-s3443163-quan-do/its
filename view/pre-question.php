@@ -154,7 +154,7 @@ if ($c == 2) {
     </div>
 </div>
 <script>
-    $('.thisone').affix();
+//    $('.thisone').affix();
 
     $('.answer-title').click(function () {
         var id = $(this).attr('id').substring(1);

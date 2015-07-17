@@ -43,6 +43,9 @@ else {
             case '15':
                 $url = 'a_update_survey';
                 break;
+            case '16':
+                $url = 'a_student_add';
+                break;
         }
         $content = 'view/' . $url . '.php';
     }

@@ -12,7 +12,30 @@ require_once('./controller/QuestionCtrl.php');
 
 class UserCtrl {
 
+    /**
+     * @return User[]
+     */
+    public static function getUserList() {
 
+        $db = DB::getConn();
+
+        $stm = $db->prepare('select * from Users where type=1');
+        $stm->execute();
+
+        $rss = $stm->fetchAll();
+        $arr = [];
+
+        foreach ($rss as $rs) {
+            $q = new User($rs['username'], '');
+            $q->setId($rs['id']);
+            $q->setType($rs['type']);
+
+            $arr[] = $q;
+        }
+
+        return $arr;
+
+    }
 
     /**
      * @return bool

@@ -83,7 +83,7 @@ if (isset($_GET['p']) && $_GET['p']!='') {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php">ITS</a>
+            <a class="navbar-brand" href="index.php">ATS</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -114,9 +114,9 @@ if (isset($_GET['p']) && $_GET['p']!='') {
                 <?=$_COOKIE['uid']?><span style="margin-left: 10px" class="glyphicon glyphicon-chevron-down"></span>
             </div>
             <ul class="dropdown-menu">
-                <li><a href="admin.php">Admin CP</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="change-password.php">Change Password</a></li>
+<!--                <li><a href="admin.php">Admin CP</a></li>-->
+<!--                <li role="separator" class="divider"></li>-->
+<!--                <li><a href="change-password.php">Change Password</a></li>-->
                 <li><a href="login.php?a=logout">Logout</a></li>
             </ul>
         </li>

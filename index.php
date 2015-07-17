@@ -18,16 +18,16 @@
             switch ($page) {
                 case '0':
                     $url = 'index';
-                    $title = 'ITS - Homepage';
+                    $title = 'ATS - Homepage';
                     break;
                 case '1':
 
-                    $title = 'ITS - Pretest';
+                    $title = 'ATS - Pretest';
                     $url = !UserCtrl::isDone(1)?'pre-question':'pre_done';
 
                     if (isset($_GET['c']) && $_GET['c']!='')
                         if ($_GET['c'] == 2) {
-                            $title = 'ITS - Posttest';
+                            $title = 'ATS - Posttest';
                             if (!UserCtrl::isDone(1))
                                 header('Location: index.php?p=1');
                             else if (!UserCtrl::isDone(2))
@@ -38,7 +38,7 @@
 
                     break;
                 case '2':
-                    $title = 'ITS - Practice';
+                    $title = 'ATS - Practice';
                     if (!UserCtrl::isDone(1)) {
                         header('Location: index.php?p=1');
                         echo '<script>console.log("not done")</script>';
@@ -46,7 +46,7 @@
                         $url = !UserCtrl::isDone(2)?'practice':'practice_done';
                     break;
                 case '4':
-                    $title = 'ITS - Survey';
+                    $title = 'ATS - Survey';
                     if (!UserCtrl::isDone(1))
                         header('Location: index.php?p=1');
                     else if (!UserCtrl::isDone(2))
@@ -57,7 +57,7 @@
                         $url = !UserCtrl::isDone(4)?'survey':'survey_done';
                     break;
                 case '5':
-                    $title = 'ITS - Results';
+                    $title = 'ATS - Results';
                     if (!UserCtrl::isDone(1))
                         header('Location: index.php?p=1');
                     else if (!UserCtrl::isDone(2))
@@ -73,21 +73,21 @@
                     $url = 'submit_test';
                     break;
                 case '12':
-                    $title = 'ITS - Pretest';
+                    $title = 'ATS - Pretest';
                     if (!UserCtrl::isDone(1))
                         header('Location: index.php?p=1');
                     else
                         $url = 'pre_done';
                     break;
                 case '13':
-                    $title = 'ITS - Practice';
+                    $title = 'ATS - Practice';
                     if (!UserCtrl::isDone(1))
                         header('Location: index.php?p=1');
                     else
                         $url = 'practice_done';
                     break;
                 case '14':
-                    $title = 'ITS - Posttest';
+                    $title = 'ATS - Posttest';
                     if (!UserCtrl::isDone(1))
                         header('Location: index.php?p=1');
                     else if (!UserCtrl::isDone(2))
@@ -98,7 +98,7 @@
                         $url = 'post_done';
                     break;
                 case '15':
-                    $title = 'ITS - Survey';
+                    $title = 'ATS - Survey';
                     if (!UserCtrl::isDone(1))
                         header('Location: index.php?p=1');
                     else if (!UserCtrl::isDone(2))
@@ -109,16 +109,16 @@
                         $url = 'survey_done';
                     break;
                 case '21':
-                    $title = 'ITS - View Test';
+                    $title = 'ATS - View Test';
                     $url = 'view_test';
                     break;
                 default:
-                    $title = 'ITS - Homepage';
+                    $title = 'ATS - Homepage';
                     header('Location: index.php');
                     break;
             }
         } else {
-            $title = 'ITS - Homepage';
+            $title = 'ATS - Homepage';
             header('Location: index.php');
         }
 
@@ -150,6 +150,12 @@
             }
         });
     </script>
+
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-confirmation.min.js"></script>
+    <script src="./js/jquery.dataTables.js" type="text/javascript"></script>
+    <script src="js/snabbt.min.js"></script>
+    <script src="./js/my.js" type="text/javascript"></script>
 </body>
 </html>
 <?php endif; ?>
