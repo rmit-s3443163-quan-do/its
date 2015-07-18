@@ -6,7 +6,7 @@ if (!$b)
     echo '<script>window.location.href = "login.php";</script>';
 else {
 
-    $valid = ['admin', '0', '1', '2', '3', '4','5','10','11','12','13','14','15','16'];
+    $valid = ['admin', '0', '1', '2', '3', '4','5','10','11','12','13','14','15','16','17','18'];
     $page  = isset($_GET['p'])?$_GET['p']:(isset($_POST['p'])?$_POST['p']:'0');
 
     if (is_null($page))
@@ -45,6 +45,12 @@ else {
                 break;
             case '16':
                 $url = 'a_student_add';
+                break;
+            case '17':
+                $url = 'a_student_reset_pw';
+                break;
+            case '18':
+                $url = 'a_student_remove';
                 break;
         }
         $content = 'view/' . $url . '.php';
@@ -88,6 +94,9 @@ require_once('view/admin-nav.php');
 
 
 <script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
 </script>
 </body>
 </html>

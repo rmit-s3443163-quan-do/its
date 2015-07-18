@@ -128,4 +128,5 @@
             }
         });
     });
+    $('.datatable-1').dataTable();
 </script>

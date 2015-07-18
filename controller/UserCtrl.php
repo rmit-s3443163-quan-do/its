@@ -105,6 +105,33 @@ class UserCtrl {
 
     /**
      * @return bool
+     * @param int $id
+     */
+    public static function remove($id) {
+        $db = DB::getConn();
+        echo 'got conn';
+        $stm = $db->prepare('update Users set type=100 where id=:id');
+        $stm->bindParam(':id', $id);
+        echo 'prepared';
+        return $stm->execute();
+    }
+
+    /**
+     * @return bool
+     * @param int $id
+     */
+    public static function resetPassword($id) {
+        $db = DB::getConn();
+
+        $stm = $db->prepare('update Users set password=:pwd where id=:id');
+        $stm->bindParam(':id', $id);
+        $stm->bindParam(':pwd', md5('qwerty'));
+
+        return $stm->execute();
+    }
+
+    /**
+     * @return bool
      * @param string $uid
      */
     public static function has($uid) {

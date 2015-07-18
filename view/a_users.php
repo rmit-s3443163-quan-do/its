@@ -84,7 +84,8 @@ $arr = UserCtrl::getUserList();
             <td><?=$s->getUsername()?></td>
             <td><?=$s->getTypeString()?></td>
             <td>
-                <a href="#"><span class="glyphicon glyphicon-remove"></span></a>
+                <a href="admin.php?p=17&id=<?=$s->getId()?>" data-toggle="tooltip" data-placement="top" title="Reset Password" ><span class="glyphicon glyphicon-refresh"></span></a>&nbsp;
+                <a href="admin.php?p=18&id=<?=$s->getId()?>" data-toggle="tooltip" data-placement="top" title="Delete user"><span class="glyphicon glyphicon-remove"></span></a>
             </td>
         </tr>
         <?php } ?>
@@ -92,7 +93,6 @@ $arr = UserCtrl::getUserList();
     </table>
 </div>
 <script>
-
     $('.datatable-1').dataTable({
 
     });
