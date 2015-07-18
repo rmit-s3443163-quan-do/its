@@ -17,7 +17,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php">ITS</a>
+            <a class="navbar-brand" href="index.php">ATS</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -26,7 +26,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quan Do <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?=$_COOKIE['uid']?><span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="index.php">Homepage</a></li>
                         <li role="separator" class="divider"></li>

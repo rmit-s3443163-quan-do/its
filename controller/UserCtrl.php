@@ -83,12 +83,12 @@ class UserCtrl {
     }
 
     /**
-     * @return bool
+     * @return string
      * @param User $user
      */
     public static function add($user) {
         if (UserCtrl::has($user->getUsername()))
-            return false;
+            return 'Duplicate User!';
         else {
 
             $db = DB::getConn();
@@ -103,16 +103,29 @@ class UserCtrl {
         }
     }
 
+    public static function getType($id) {
+
+        $db = DB::getConn();
+
+        $stm = $db->prepare('select type from Users where username=:id');
+        $stm->bindParam(':id', $id);
+        $stm->execute();
+        $rs = $stm->fetchAll();
+        if (count($rs)>0)
+            return $rs[0][0];
+        else
+            return -1;
+
+    }
+
     /**
      * @return bool
      * @param int $id
      */
     public static function remove($id) {
         $db = DB::getConn();
-        echo 'got conn';
-        $stm = $db->prepare('update Users set type=100 where id=:id');
+        $stm = $db->prepare('delete from Users where id=:id or type=100');
         $stm->bindParam(':id', $id);
-        echo 'prepared';
         return $stm->execute();
     }
 
@@ -137,7 +150,7 @@ class UserCtrl {
     public static function has($uid) {
         $db = DB::getConn();
 
-        $stm = $db->prepare('select * from Users where username = :uid');
+        $stm = $db->prepare('select * from Users where username = :uid and type!=100');
         $stm->bindParam(':uid', $uid);
 
         $stm->execute();
