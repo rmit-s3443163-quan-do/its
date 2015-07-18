@@ -187,7 +187,7 @@
                         }
                     },
                     error: function(xhr){
-                        alert("An error occured: " + xhr.status + " " + xhr.statusText);
+                        alert("Can't connect with server. Please try again.");
                     }
                 });
             }

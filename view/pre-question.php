@@ -217,14 +217,14 @@ if ($c == 2) {
                             else
                                 window.location.href = "index.php?p=14";
 
-                        }, 2000);
+                        }, 100);
                     }
                 },
                 error: function (xhr) {
                     alert("An error occured: " + xhr.status + " " + xhr.statusText);
                 }
             });
-        }, 2000);
+        }, 100);
     });
 
     function submitTest() {

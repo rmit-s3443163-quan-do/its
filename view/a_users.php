@@ -52,7 +52,7 @@ $arr = UserCtrl::getUserList();
                         if (/okkkk/.test(result)) {
                             window.location.href='admin.php?p=3';
                         } else {
-                            alert(result.split(':::')[1]);
+                            alert(result);
                             $('#uid-u').focus().select();
                         }
                     },

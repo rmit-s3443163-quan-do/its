@@ -17,7 +17,7 @@ foreach ($_POST as $key => $value) {
             echo ':::Username already exists!:::';
         } else {
             $pwd = 'qwerty';
-            if ($_POST['pwd'] != $pwd)
+            if (strlen($_POST['pwd'])>0)
                 $pwd = $_POST['pwd'];
             $u = new User($value, $pwd);
             $u->setType($_POST['type']);

@@ -23,8 +23,3 @@
         </div>
     </footer>
 </div>
-
-<script>
-    var cl = location.pathname.split("/")[3].split(".")[0];
-    $('#' + cl).addClass('active');
-</script>

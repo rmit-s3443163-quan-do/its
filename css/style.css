@@ -470,8 +470,8 @@ a:hover, a:focus {
 
 .user-dd {
     position: fixed;
-    top: 38px;
-    right: 190px;
+    top: 30px;
+    right: 189px;
     max-width: 160px;
     list-style-type: none;
     z-index: 99999;
