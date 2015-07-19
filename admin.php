@@ -12,11 +12,11 @@ else {
 
 
 
-    $valid = ['admin', '0', '1', '2', '3', '4','5','10','11','12','13','14','15','16','17','18'];
-    $page  = isset($_GET['p'])?$_GET['p']:(isset($_POST['p'])?$_POST['p']:'0');
+    $valid = ['admin', '0', '1', '2', '3', '4','5','10','11','12','13','14','15','16','17','18','20'];
+    $page  = isset($_GET['p'])?$_GET['p']:(isset($_POST['p'])?$_POST['p']:null);
 
     if (is_null($page))
-        $content = 'view/a_pretest.php';
+        $content = 'view/dashboard.php';
     else if (in_array($page, $valid)) {
         switch ($page) {
             case '0':
@@ -58,6 +58,9 @@ else {
             case '18':
                 $url = 'a_student_remove';
                 break;
+            case '20':
+                $url = 'dashboard';
+                break;
         }
         $content = 'view/' . $url . '.php';
     }
@@ -82,26 +85,31 @@ else {
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <script src="./js/jquery.a.dataTables.js" type="text/javascript"></script>
 <!--    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.0/css/jquery.dataTables.css" type="text/css"/>-->
+    <script src="js/chart.min.js"></script>
 </head>
 <body>
 <?php
 require_once('view/admin-nav.php');
 ?>
-<div class="container-fluid">
-    <?php
-    require_once('view/admin-sidebar.php');
-    ?>
-    <div class="col-xs-9 col-sm-10 col-xs-offset-3 col-sm-offset-2 main">
-        <?php
-        require_once($content);
-        ?>
+<div class="container-fluid" style="margin-top: 60px">
+    <div class="row">
+        <div class="col-xs-3 col-sm-2 col-md-2">
+            <?php
+            require_once('view/admin-sidebar.php');
+            ?>
+        </div>
+        <div class="col-xs-9 col-sm-10 col-md-10">
+            <?php
+            require_once($content);
+            ?>
+        </div>
     </div>
 </div>
 
 
 <script>
     $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
+        $('[data-toggle="tooltip"]').tooltip();
     })
 </script>
 </body>

@@ -16,7 +16,7 @@
 ?>
 
 
-<ol class="breadcrumb" style="margin-top: 50px;">
+<ol class="breadcrumb">
     <li><a href="admin.php">Admin CP</a></li>
     <li class="active">Post-test</li>
 </ol>

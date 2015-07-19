@@ -6,8 +6,7 @@
  * Time: 12:28 PM
  */
 
-$p0 = $p1 = $p2 = $p3 = '';
-
+$p0 = $p1 = $p2 = $p3 = $phome = '';
 if (isset($_GET['p']) && $_GET['p']!='') {
     $p = $_GET['p'];
     if ($p == 1)
@@ -19,10 +18,13 @@ if (isset($_GET['p']) && $_GET['p']!='') {
     else
         $p0 = ' class="active"';
 } else
-    $p0 = ' class="active"';
+    $phome = ' class="active"';
 
 ?>
-<div class="col-xs-3 col-sm-2 sidebar">
+
+    <ul class="nav nav-sidebar">
+        <li<?=$phome?>><a href="admin.php"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;Dashboard</a></li>
+    </ul>
     <ul class="nav nav-sidebar">
         <li<?=$p0?>><a href="admin.php?p=0"><span class="glyphicon glyphicon-th-list"></span>&nbsp;&nbsp;&nbsp;Pre-Test List</a></li>
         <li<?=$p1?>><a href="admin.php?p=1"><span class="glyphicon glyphicon-th-list"></span>&nbsp;&nbsp;&nbsp;Post-Test List</a></li>
@@ -37,4 +39,3 @@ if (isset($_GET['p']) && $_GET['p']!='') {
             <p class="text-muted"> QuanDo &copy; 2015 RMIT</p>
         </div>
     </footer>
-</div>

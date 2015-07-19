@@ -7,7 +7,7 @@ $arr = UserCtrl::getUserList();
 
 ?>
 
-<ol class="breadcrumb" style="margin-top: 50px;">
+<ol class="breadcrumb">
     <li><a href="admin.php">Admin CP</a></li>
     <li class="active">User List</li>
 </ol>

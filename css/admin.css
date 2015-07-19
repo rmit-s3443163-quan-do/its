@@ -31,10 +31,10 @@ body {
 
 .sidebar {
     min-width: 170px;
-    position: fixed;
-    top: 51px;
-    bottom: 0;
-    left: 0;
+    /* position: fixed; */
+    /* top: 51px; */
+    /* bottom: 0; */
+    /* left: 0; */
     z-index: 1000;
     display: block;
     padding: 20px;
@@ -101,4 +101,36 @@ body {
 .question-input {
     padding: 7px;
     padding-left: 0;
+}
+
+.leg {
+    padding: 1px 7px;
+    background-color: gray;
+    border-radius: 3px;
+    border: 1px solid gray;
+    margin-right: 10px;
+}
+
+.leg-hd {
+    background-color: rgb(58, 137, 204);
+}
+
+.leg-di {
+    background-color: rgb(63, 170, 202);
+}
+
+.leg-cr {
+    background-color: rgb(63, 156, 63);
+}
+
+.leg-pa {
+    background-color: rgb(252, 194, 112);
+}
+
+.leg-nn {
+    background-color: rgb(245, 113, 109);
+}
+
+.legend-list li {
+    margin-bottom: 10px;
 }

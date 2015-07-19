@@ -12,7 +12,7 @@
 </head>
 <body>
 <?php
-require_once('view/nav.php');
+require_once('view/nav_new.php');
 ?>
 <div class="clear-top"></div>
 <div class="container">

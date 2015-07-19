@@ -381,7 +381,7 @@ a:hover, a:focus {
 
 .panel-default>.panel-heading, .panel-footer {
     color: #FFF2F2;
-    background-color: #415A73;
+    background-color: rgba(65, 90, 115, 0.76);
     border-color: #4D6987;
     background-image: none;
 }
@@ -451,6 +451,8 @@ a:hover, a:focus {
 }
 
 .user {
+    text-align: right;
+    width: 158px;
     position: fixed;
     top: 0;
     right: 30px;
@@ -486,6 +488,7 @@ a:hover, a:focus {
 .dropdown-menu>li>a {
     color: white;
     font-size: 12px;
+    text-align: right;
 }
 
 .dropdown-menu .divider {
@@ -497,4 +500,42 @@ a:hover, a:focus {
     background-color: #42525C;
     background-image: none;
     color: white;
+}
+
+hr {
+    border-top: 1px solid #78A3D1;
+}
+
+.leg {
+    padding: 1px 7px;
+    background-color: gray;
+    border-radius: 3px;
+    border: 2px solid white;
+    margin-right: 10px;
+    min-width: 90px;
+}
+
+.leg-hd {
+    background-color: rgb(58, 137, 204);
+}
+
+.leg-di {
+    background-color: rgb(63, 170, 202);
+}
+
+.leg-cr {
+    background-color: rgb(63, 156, 63);
+}
+
+.leg-pa {
+    background-color: rgb(252, 194, 112);
+}
+
+.leg-nn {
+    background-color: rgb(245, 113, 109);
+}
+
+.legend-list li {
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
