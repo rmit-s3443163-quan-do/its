@@ -22,6 +22,6 @@
 <script src="js/snabbt.min.js"></script>
 <script src="./js/my.js" type="text/javascript"></script>
 <script src="js/chart.min.js"></script>
-
+<script src="js/imagesloaded.pkgd.min.js"></script>
 <link rel="stylesheet" href="./css/MyFontsWebfontsKit.css">
 

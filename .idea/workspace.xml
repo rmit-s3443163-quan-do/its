@@ -2,36 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b65b2733-5630-4704-bdf6-30a2b16e53bc" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/ITS - View Test.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/ITS - View Test_files/awesome-bootstrap-checkbox.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/ITS - View Test_files/bootstrap-confirmation.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/ITS - View Test_files/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/ITS - View Test_files/css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/ITS - View Test_files/jquery.dataTables.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/ITS - View Test_files/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/ITS - View Test_files/my.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/ITS - View Test_files/snabbt.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/ITS - View Test_files/star-rating.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/ITS - View Test_files/star-rating.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/admin.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/admin.php_files/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/admin.php_files/css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/admin.php_files/jquery.a.dataTables.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/admin.php_files/jquery.dataTables.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/admin.php_files/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/admin.php_files/summernote.min.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/index_bg.jpg" afterPath="$PROJECT_DIR$/img/index_bg.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/its.db" afterPath="$PROJECT_DIR$/db/its.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/UserCtrl.php" afterPath="$PROJECT_DIR$/controller/UserCtrl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/bg.jpg" afterPath="$PROJECT_DIR$/img/bg.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/embed.php" afterPath="$PROJECT_DIR$/view/embed.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/login-style.css" afterPath="$PROJECT_DIR$/css/login-style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/nav_new.php" afterPath="$PROJECT_DIR$/view/nav_new.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/pre-question.php" afterPath="$PROJECT_DIR$/view/pre-question.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/view_test.php" afterPath="$PROJECT_DIR$/view/view_test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="its.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,12 +58,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.333333">
-              <caret line="143" column="12" selection-start-line="143" selection-start-column="12" selection-end-line="143" selection-end-column="12" />
-              <folding />
+            <state vertical-scroll-proportion="0.8337439">
+              <caret line="184" column="4" selection-start-line="184" selection-start-column="4" selection-end-line="184" selection-end-column="4" />
+              <folding>
+                <element signature="e#6087#6108#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,8 +83,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="270.5926">
-              <caret line="547" column="78" selection-start-line="547" selection-start-column="78" selection-end-line="547" selection-end-column="78" />
+            <state vertical-scroll-proportion="284.48148">
+              <caret line="336" column="68" selection-start-line="336" selection-start-column="38" selection-end-line="336" selection-end-column="68" />
               <folding>
                 <element signature="e#2660#29481#2" expanded="true" />
                 <element signature="e#29539#55564#2" expanded="true" />
@@ -125,8 +102,8 @@
       <file leaf-file-name="embed.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/embed.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.875">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="25" selection-end-column="59" />
+            <state vertical-scroll-proportion="-11.25">
+              <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -142,11 +119,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44334975">
-              <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+            <state vertical-scroll-proportion="-9.375">
+              <caret line="64" column="77" selection-start-line="64" selection-start-column="77" selection-end-line="64" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -207,14 +184,14 @@
         <option value="$PROJECT_DIR$/view/result.php" />
         <option value="$PROJECT_DIR$/view/view_test.php" />
         <option value="$PROJECT_DIR$/controller/UserCtrl.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/view/pre-question.php" />
-        <option value="$PROJECT_DIR$/view/embed.php" />
         <option value="$PROJECT_DIR$/view/nav_new.php" />
         <option value="$PROJECT_DIR$/admin.php" />
         <option value="$PROJECT_DIR$/css/login-style.css" />
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/login.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/view/embed.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -797,14 +774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.333333">
-          <caret line="143" column="12" selection-start-line="143" selection-start-column="12" selection-end-line="143" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/pre-question.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="23.75">
@@ -817,14 +786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.375">
           <caret line="105" column="5" selection-start-line="105" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/embed.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.875">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="25" selection-end-column="59" />
           <folding />
         </state>
       </provider>
@@ -853,10 +814,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375">
+          <caret line="64" column="77" selection-start-line="64" selection-start-column="77" selection-end-line="64" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="270.5926">
-          <caret line="547" column="78" selection-start-line="547" selection-start-column="78" selection-end-line="547" selection-end-column="78" />
+        <state vertical-scroll-proportion="284.48148">
+          <caret line="336" column="68" selection-start-line="336" selection-start-column="38" selection-end-line="336" selection-end-column="68" />
           <folding>
             <element signature="e#2660#29481#2" expanded="true" />
             <element signature="e#29539#55564#2" expanded="true" />
@@ -870,11 +839,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
+    <entry file="file://$PROJECT_DIR$/view/embed.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44334975">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+        <state vertical-scroll-proportion="-11.25">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8337439">
+          <caret line="184" column="4" selection-start-line="184" selection-start-column="4" selection-end-line="184" selection-end-column="4" />
+          <folding>
+            <element signature="e#6087#6108#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

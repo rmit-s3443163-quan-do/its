@@ -168,7 +168,22 @@
             });
         });
     </script>
+    <img src="img/bg.jpg" style="display: none" id="preload"/>
+<script>
+//    $(document).ready(function() {
+//        $('#preload').load(function() {
+//            var src = $(this).attr('src');
+//            $('body').css('backgroundImage','url('+src+')');
+//        });
+//        console.log('loaded')
+//    });
 
+    imagesLoaded( '#preload', function() {
+        var src = $(('#preload')).attr('src');
+        $('body').css('backgroundImage','url('+src+')');
+    });
+    
+</script>
 </body>
 </html>
 <?php endif; ?>

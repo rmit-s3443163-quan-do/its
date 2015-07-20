@@ -62,7 +62,7 @@
                         <div class="row">
                             <div class="right input-group">
                                 <div class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span> </div>
-                                <input autocapitalize="none" id="user" type="text" placeholder="username" />
+                                <input autocomplete="off" autocapitalize="off" id="user" type="text" placeholder="username" />
                             </div>
 
                             <div class="right input-group">
