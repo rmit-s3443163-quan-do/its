@@ -148,8 +148,24 @@ if (isset($_GET['p']) && $_GET['p']!='') {
 </div>
 <script>
     $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
+    $('.available-step').hover(function () {
+        snabbt($(this).children('.fa'), {
+            fromPosition: [0, -30, 0],
+            position: [0, 0, 0],
+            easing: 'ease',
+            duration: 300
+        });
+        snabbt($(this).children('p'), {
+            fromPosition: [0, 30, 0],
+            position: [0, 0, 0],
+            easing: 'ease',
+            duration: 300
+        });
+    }, function () {
+    });
 </script>
 <style>
     .available-step {

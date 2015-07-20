@@ -114,7 +114,7 @@ $post_chart = QuestionCtrl::getChart(2);
                         <?=$post_chart->getAverageType()?></span> (<?=$post_chart->getAverage()?>%)
                     <hr>
                     <div class="row">
-                        Your Result: <span class="label label-primary">HD</span>
+                        Your Result<span class="label label-primary"></span>
                         <?php foreach($post as $index=>$res){ ?>
                             <div class="answer-group">
                                 <div style="display: inline-block; width: 60px; margin-right: 5px" class="label label-default">

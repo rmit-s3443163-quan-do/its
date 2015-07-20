@@ -149,6 +149,23 @@
                 window.location.href = id;
             }
         });
+
+
+        $('.btn').hover(function () {
+            snabbt($(this).children('.glyphicon'), {
+                fromPosition: [0, 0, 0],
+                position: [5, 0, 0],
+                easing: 'ease',
+                duration: 300
+            });
+        }, function () {
+            snabbt($(this).children('.glyphicon'), {
+                fromPosition: [5, 0, 0],
+                position: [0, 0, 0],
+                easing: 'ease',
+                duration: 300
+            });
+        });
     </script>
 
 </body>
