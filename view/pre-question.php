@@ -63,6 +63,24 @@ if ($c == 2) {
                                 </div>
                             <?php } ?>
                         </td>
+                        <script>
+
+                            $('.answer').hover(function () {
+                                snabbt($(this), {
+                                    fromPosition: [0, 0, 0],
+                                    position: [5, 0, 0],
+                                    easing: 'ease',
+                                    duration: 50
+                                });
+                            }, function () {
+                                snabbt($(this), {
+                                    fromPosition: [5, 0, 0],
+                                    position: [0, 0, 0],
+                                    easing: 'ease',
+                                    duration: 50
+                                });
+                            });
+                        </script>
                     </tr>
                 <?php } ?>
 
@@ -154,7 +172,6 @@ if ($c == 2) {
     </div>
 </div>
 <script>
-//    $('.thisone').affix();
 
     $('.answer-title').click(function () {
         var id = $(this).attr('id').substring(1);

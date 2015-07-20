@@ -36,6 +36,7 @@ $q_arr = QuestionCtrl::getQuestionsByCategory($c);
 $type = 'Pre-Test Result';
 if ($c == 2)
     $type = 'Post-Test Result';
+
 ?>
 
 <div class="clear-top hidden-xs"></div>
@@ -48,15 +49,15 @@ if ($c == 2)
     <div class="alert alert-info">
         <span class="glyphicon glyphicon-info-sign"></span> Your result is being marked..
     </div>
-    <?php };
-    foreach($q_arr as $ques=>$q) {
-        $selected = false;
-        ?>
+    <?php } ?>
+    <?php foreach($q_arr as $ques=>$q) { ?>
+        <?php $selected = false; ?>
     <h4><span class="label label-warning pull-left">Question <?=$ques+1?> of <?=count($q_arr)?> </span></h4><br/>
     <div class="panel panel-default">
         <div class="panel-body">
             <h4 class="survey-title"><?=htmlspecialchars_decode($q->getTitle())?> </h4>
-            <?php foreach($q->getOpts() as $opt=>$o) {
+            <?php foreach($q->getOpts() as $opt=>$o) { ?>
+                <?php
                 if ($arr[$ques]->getKtext() != '-')
                     $selected = true;
 
@@ -67,37 +68,35 @@ if ($c == 2)
                         $type = 'info';
                 } else
                     $type = 'default';
-
                 ?>
             <div class="answer-view alert alert-<?=$type?>">
                 <span class="key"><?=QuestionCtrl::getKText($opt)?>.</span><?=htmlspecialchars_decode($o->getText())?>
             </div>
-            <?php };
-            if ($done4) { ?>
+            <?php }; ?>
+            <?php if ($done4) { ?>
             <hr>
             <blockquote>
                 <?php if (!$selected) { ?>
                     <p><span class="g-red glyphicon glyphicon-remove-sign"></span> You did not answer this question.</p>
-                <? } else {
-                    if ($arr[$ques]->getRes() == 'success') { ?>
+                <? } else { ?>
+                    <?php if ($arr[$ques]->getRes() == 'success') { ?>
                         <p><span class="g-green glyphicon glyphicon-ok-sign"></span> You got your answer correct. </p>
                     <?php } else if ($arr[$ques]->getRes() == 'danger') { ?>
                         <p><span class="g-red glyphicon glyphicon-remove-sign"></span> You got your answer incorrect.</p>
-                <?php }
-                } ?>
+                <?php } ?>
+                <?php } ?>
             </blockquote>
             <?php } ?>
         </div>
     </div>
-    <?php };
-    if ($done4) { ?>
+    <?php } ?>
+    <?php if ($done4) { ?>
     <div class="panel panel-default">
         <div class="panel-body">
             <span>Correct: <strong><?=$correct?> / <?=count($arr)?></strong></span>
             <br>
             Mark: <strong><?=$mark?></strong> of <?=$total?>
             <span class="label label-info"><?=number_format($mark*100/$total, 1, '.', ',');?>%</span>
-
         </div>
     </div>
     <?php } ?>

@@ -1,5 +1,5 @@
 html {
-    background: url(../img/index_bg.jpg) no-repeat center center fixed;
+    background: url(../img/index_bg1.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -31,8 +31,13 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+.btn {
+    font-family: Bender;
+}
+
 .coral {
     color: rgb(200, 255, 203);
+    font-family: Bender;
 }
 
 .space {

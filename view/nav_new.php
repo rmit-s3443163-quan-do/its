@@ -114,8 +114,10 @@ if (isset($_GET['p']) && $_GET['p']!='') {
                 <?=$_COOKIE['uid']?><span style="margin-left: 10px" class="glyphicon glyphicon-chevron-down"></span>
             </div>
             <ul class="dropdown-menu">
-<!--                <li><a href="admin.php">Admin CP</a></li>-->
-<!--                <li role="separator" class="divider"></li>-->
+                <?php if (UserCtrl::isAdmin($_COOKIE['uid'])) { ?>
+                    <li><a href="admin.php">Admin CP</a></li>
+                    <li role="separator" class="divider"></li>
+                <?php } ?>
 <!--                <li><a href="change-password.php">Change Password</a></li>-->
                 <li><a href="login.php?a=logout">Logout</a></li>
             </ul>
@@ -169,20 +171,21 @@ if (isset($_GET['p']) && $_GET['p']!='') {
 </script>
 <style>
     .available-step {
-        background-color: rgb(50, 112, 145);
+        background-color: rgba(97, 125, 170, 0.68);
         /* border: 1px solid rgb(43, 128, 79); */
-        border-right: 1px solid rgba(32, 143, 202, 0.69);
+        border-right: 1px solid rgba(58, 79, 120, 1);
         color: gainsboro;
     }
 
     .disable-step, .disable-step:hover, .disable-step:active {
-        color: rgb(51, 72, 94);
+        color: rgb(120, 120, 120);
         cursor: default !important;
-        background-color: rgba(65, 90, 115, 1);
-        border-right: 1px solid rgb(51, 72, 94);
+        background-color: rgba(72, 82, 88, 0.55);
+        border-right: 1px solid rgba(0, 0, 0, 0.64);
     }
 
     .step {
+        font-family: Bender;
         margin-top: 35px;
         margin-bottom: 15px;
     }
@@ -198,7 +201,7 @@ if (isset($_GET['p']) && $_GET['p']!='') {
 
     .available-step:hover {
         color: white;
-        background-color: rgb(55, 124, 161);
+        background-color: rgba(136, 173, 233, 0.68);
         cursor: pointer;
     }
 
@@ -214,8 +217,8 @@ if (isset($_GET['p']) && $_GET['p']!='') {
         color: #ffffff;
         height: 81px;
         margin-top: -3px;
-        background-color: rgb(32, 143, 202);
-        border-right: 5px solid rgb(0, 197, 255);
+        background-color: rgb(71, 100, 160);
+        border-right: 5px solid rgb(117, 170, 225);
     }
 
     .nav-step p {

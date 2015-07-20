@@ -142,6 +142,7 @@
     <?php require_once($foot);?>
     </div>
     <script>
+
         $('.st').click(function () {
 
             if (!$(this).hasClass('disable-step')) {

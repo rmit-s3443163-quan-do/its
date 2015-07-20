@@ -14,8 +14,9 @@ body {
 }
 
 .panel.selected {
-    border: 1px solid rgb(43, 61, 79);
-    background-color: rgb(51, 72, 94);
+    /* color: aliceblue; */
+    border: 1px solid rgba(9, 30, 80, 0);
+    background-color: rgba(92, 121, 183, 0.8);
 }
 
 .success {
@@ -112,8 +113,10 @@ button:focus {
     margin: 15px 15px 0 0;
     font-size: 14px;
      
+    /* border-top-left-radius: 5px!important; */
+    /* border-bottom-left-radius: 5px !important; */
     border-right: 3px solid rgb(0, 197, 255);
-    background-color: rgba(0, 197, 255, 0.22);
+    background-color: rgba(90, 114, 143, 0.55);
 }
 
 .pn-pre {
@@ -215,8 +218,8 @@ a.disabled:hover {
     margin-right: 0;
     padding: 7px;
     text-align: center;
-    background-color: rgba(61, 116, 145, 0.45);
-    border: 1px solid rgba(63, 82, 102, 1);
+    background-color: rgba(56, 80, 120, 0.84);
+    border: 1px solid rgba(32, 45, 72, 0.63);
 }
 
 * {
@@ -303,11 +306,11 @@ span, p {
 }
 
 .g-green {
-    color: darkgreen;
+    color: rgb(0, 193, 0);
 }
 
 .g-red {
-    color: darkred;
+    color: rgb(236, 94, 27);
 }
 
 blockquote {
@@ -329,8 +332,8 @@ blockquote {
 }
 
 body {
-    background-color: #33485E;
-    color: #000;
+    background-color: #000000;
+    color: #FFF;
     background: url(../img/index_bg.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -344,13 +347,15 @@ td {
 
 .panel {
 
-    background-color: rgba(78, 105, 133, 0.56);
+    background-color: rgba(39, 49, 78, 0.73);
     color: white;
-    border: 1px solid rgb(77, 105, 135);
+    
+
+    border: 1px solid rgba(46, 89, 127, 0.63);
 }
 
 .answer:hover {
-    border: 1px solid rgb(127, 170, 215);
+    border: 1px solid rgba(92, 121, 183, 0.8);
 }
 
 .answer.selected:hover {
@@ -362,8 +367,8 @@ td {
     margin-bottom: 30px;
     color: white;
     /* outline: 1px solid rgb(64, 87, 113); */
-    border: 1px solid rgb(82, 108, 136);
-    background-color: rgba(79, 109, 139, 0.64);
+    border: 1px solid rgba(44, 55, 75, 0.82);
+    background-color: rgba(55, 68, 96, 0.3);
 }
 
 a {
@@ -381,8 +386,8 @@ a:hover, a:focus {
 
 .panel-default>.panel-heading, .panel-footer {
     color: #FFF2F2;
-    background-color: rgba(65, 90, 115, 0.76);
-    border-color: #4D6987;
+    background-color: rgba(65, 90, 115, 0.43);
+    border-color: #485676;
     background-image: none;
 }
 
@@ -396,8 +401,8 @@ a:hover, a:focus {
     font-size: 14px;
     font-weight: 400;
     line-height: 18px;
-    background-color: #415A73;
-    border-bottom: 1px solid #4A6783;
+    background-color: #26374D;
+    border-bottom: 1px solid #485676;
     border-radius: 5px 5px 0 0;
 }
 
@@ -411,11 +416,11 @@ a:hover, a:focus {
     padding: 1px;
     text-align: left;
     white-space: normal;
-    background-color: #415A73;
+    background-color: #1C2A3C;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     border: 1px solid #ccc;
-    border: 1px solid rgba(94, 128, 165, 1);
+    border: 1px solid rgba(57, 82, 110, 1);
     border-radius: 6px;
     -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
     box-shadow: 0 5px 10px rgba(0,0,0,.2);
@@ -452,18 +457,18 @@ a:hover, a:focus {
 
 .user {
     text-align: right;
-    width: 158px;
+    width: 160px;
     position: fixed;
     top: 0;
-    right: 30px;
+    right: 29px;
     padding: 5px;
     padding-left: 15px;
-    background-color: rgba(79, 109, 139, 0.86);
-    border: 1px solid rgb(93, 128, 163);
+    background-color: rgba(102, 127, 141, 0.37);
+    border: 1px solid rgba(84, 83, 110, 0.6);
     outline: 1px solid rgba(56, 61, 66, 0.53);
     color: rgb(216, 216, 216);
-    border-bottom-left-radius: 3px!important;
-    border-bottom-right-radius: 3px !important;
+    /* border-bottom-left-radius: 3px!important; */
+    /* border-bottom-right-radius: 3px !important; */
 }
 
 .user:hover {
@@ -472,7 +477,7 @@ a:hover, a:focus {
 
 .user-dd {
     position: fixed;
-    top: 30px;
+    top: 29px;
     right: 189px;
     max-width: 160px;
     list-style-type: none;
@@ -481,8 +486,8 @@ a:hover, a:focus {
 
 .dropdown-menu {
     z-index: 9999;
-    background-color: rgba(79, 109, 139, 0.86);
-    border: 1px solid rgb(68, 95, 121);
+    background-color: rgba(52, 58, 76, 1);
+    border: 1px solid rgb(69, 71, 95);
 }
 
 .dropdown-menu>li>a {
@@ -492,18 +497,18 @@ a:hover, a:focus {
 }
 
 .dropdown-menu .divider {
-    background-color: rgb(65, 91, 116);
+    background-color: rgb(69, 71, 95);
     
 }
 
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
-    background-color: #42525C;
+    background-color: rgba(130, 167, 220, 0.45);
     background-image: none;
     color: white;
 }
 
 hr {
-    border-top: 1px solid #78A3D1;
+    border-top: 1px solid #485676;
 }
 
 .leg {
@@ -538,4 +543,8 @@ hr {
 .legend-list li {
     margin-bottom: 10px;
     margin-top: 10px;
+}
+
+h1,h2,h3, .btn, .legend-list, .panel-heading, .user, .user-dd, .label, .footer {
+    font-family: Bender;
 }

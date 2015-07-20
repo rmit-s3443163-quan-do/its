@@ -62,6 +62,21 @@ class UserCtrl {
 
     /**
      * @return bool
+     */
+    public static function isAdmin($uid)
+    {
+        $db = DB::getConn();
+
+        $stm = $db->prepare('select type from Users where username=:id');
+        $stm->bindParam(':id', $uid);
+        $stm->execute();
+        $rs = $stm->fetchAll();
+
+        return $rs[0][0]==1903?true:false;
+    }
+
+    /**
+     * @return bool
      * @param User $user
      */
     public static function login($user) {

@@ -23,4 +23,5 @@
 <script src="./js/my.js" type="text/javascript"></script>
 <script src="js/chart.min.js"></script>
 
+<link rel="stylesheet" href="./css/MyFontsWebfontsKit.css">
 

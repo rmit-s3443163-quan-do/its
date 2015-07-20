@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/MyFontsWebfontsKit.css">
     <script src="js/jquery.cookie.js"></script>
     <script src="js/snabbt.min.js"></script>
     <link href="css/login-style.css" media="screen" rel="stylesheet" />
@@ -61,7 +62,7 @@
                         <div class="row">
                             <div class="right input-group">
                                 <div class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span> </div>
-                                <input id="user" type="text" placeholder="username" />
+                                <input autocapitalize="none" id="user" type="text" placeholder="username" />
                             </div>
 
                             <div class="right input-group">
