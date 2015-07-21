@@ -109,7 +109,7 @@ if (isset($_GET['p']) && $_GET['p']!='') {
 <div class="container hidden-xs" style="margin-top: 50px;"></div>
 <div class="container">
     <div class="row">
-        <li class="user-dd dropdown">
+        <li class="user-dd dropdown hidden-xs">
             <div class="user dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 <?=$_COOKIE['uid']?><span style="margin-left: 10px" class="glyphicon glyphicon-chevron-down"></span>
             </div>

@@ -182,7 +182,7 @@
         var src = $(('#preload')).attr('src');
         $('body').css('backgroundImage','url('+src+')');
     });
-    
+
 </script>
 </body>
 </html>

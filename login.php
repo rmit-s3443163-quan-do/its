@@ -11,12 +11,14 @@
             unset($_COOKIE['uid']);
             setcookie("uid", "", time() - 3600);
             echo '<script>window.location.href = "login.php";</script>';
+            $b=false;
         }
     }
 
-    if (isset($_COOKIE['uid']) && $_COOKIE['uid'] != '')
+    if (isset($_COOKIE['uid']) && $_COOKIE['uid'] != '') {
         echo '<script>window.location.href = "index.php";</script>';
-
+        $b= false;
+    }
     if (isset($_POST['u']) && isset($_POST['p'])) {
         $b = false;
         $u = $_POST['u'];

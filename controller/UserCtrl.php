@@ -72,7 +72,10 @@ class UserCtrl {
         $stm->execute();
         $rs = $stm->fetchAll();
 
-        return $rs[0][0]==1903?true:false;
+        if (count($rs)>0)
+            return $rs[0][0]==1903?true:false;
+        else
+            return false;
     }
 
     /**
