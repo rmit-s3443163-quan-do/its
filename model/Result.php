@@ -15,11 +15,11 @@ class Result {
 
     function __construct($ktext, $res, $point)
     {
-        $this->ktext = $ktext!=''?$ktext:'-';
-        $this->res = $res;
-        $this->point = $point;
+        $this->ktext = $ktext!=''?strip_tags($ktext):'-';
+        $this->res = strip_tags($res);
+        $this->point = strip_tags($point);
         if ($res == 'success')
-            $this->mark = $point;
+            $this->mark = strip_tags($point);
     }
 
     /**
@@ -35,7 +35,7 @@ class Result {
      */
     public function setMark($mark)
     {
-        $this->mark = $mark;
+        $this->mark = strip_tags($mark);
     }
 
     /**
@@ -51,7 +51,7 @@ class Result {
      */
     public function setPoint($point)
     {
-        $this->point = $point;
+        $this->point = strip_tags($point);
     }
 
 
@@ -68,7 +68,7 @@ class Result {
      */
     public function setKtext($ktext)
     {
-        $this->ktext = $ktext;
+        $this->ktext = strip_tags($ktext);
     }
 
     /**
@@ -84,7 +84,7 @@ class Result {
      */
     public function setRes($res)
     {
-        $this->res = $res;
+        $this->res = strip_tags($res);
     }
 
 

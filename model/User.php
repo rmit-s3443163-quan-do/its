@@ -15,8 +15,8 @@ class User {
 
     function __construct($username, $password)
     {
-        $this->username = $username;
-        $this->password = md5($password);
+        $this->username = strip_tags($username);
+        $this->password = strip_tags(md5($password));
     }
 
     /**
@@ -25,7 +25,7 @@ class User {
     function withType($username, $password, $type)
     {
         $tmp = new self($username, $password);
-        $tmp->setType($type);
+        $tmp->setType(strip_tags($type));
 
         return $tmp;
     }
@@ -44,7 +44,7 @@ class User {
      */
     public function setId($id)
     {
-        $this->id = $id;
+        $this->id = strip_tags($id);
     }
 
     /**
@@ -60,7 +60,7 @@ class User {
      */
     public function setPassword($password)
     {
-        $this->password = $password;
+        $this->password = strip_tags($password);
     }
 
     /**
@@ -94,7 +94,7 @@ class User {
      */
     public function setType($type)
     {
-        $this->type = $type;
+        $this->type = strip_tags($type);
     }
 
     /**
@@ -110,7 +110,7 @@ class User {
      */
     public function setUsername($username)
     {
-        $this->username = $username;
+        $this->username = strip_tags($username);
     }
 
 

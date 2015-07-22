@@ -1,16 +1,15 @@
 <?php
-
+session_start();
 require_once('./controller/UserCtrl.php');
 
 $b = (isset($_COOKIE['uid']) && $_COOKIE['uid']!='');
+$admin = (isset($_SESSION['admin']) && $_SESSION['admin']!='')?$_SESSION['admin']:'abort';
 
 if (!$b)
     echo '<script>window.location.href = "login.php";</script>';
-else if (UserCtrl::getType($_COOKIE['uid']) != 1903)
-    echo '<script>window.location.href = "index.php";</script>';
+else if (UserCtrl::getType($_COOKIE['uid']) != 1903 || $admin != '^f8fg3j5&(:c3')
+    echo '<script>window.location.href = "admin-login.php";</script>';
 else {
-
-
 
     $valid = ['admin', '0', '1', '2', '3', '4','5','10','11','12','13','14','15','16','17','18','20'];
     $page  = isset($_GET['p'])?$_GET['p']:(isset($_POST['p'])?$_POST['p']:null);

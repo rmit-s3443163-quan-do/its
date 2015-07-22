@@ -1,4 +1,5 @@
 <?php
+session_start();
 
     require_once('./controller/UserCtrl.php');
     require_once('./model/User.php');
@@ -9,6 +10,7 @@
         $a = $_GET['a'];
         if ($a == 'logout') {
             unset($_COOKIE['uid']);
+            unset($_SESSION['admin']);
             setcookie("uid", "", time() - 3600);
             echo '<script>window.location.href = "login.php";</script>';
             $b=false;

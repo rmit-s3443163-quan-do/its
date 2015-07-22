@@ -13,8 +13,8 @@ class Answer {
 
     function __construct($question, $answer)
     {
-        $this->answer = $answer;
-        $this->question = $question;
+        $this->answer = strip_tags($answer);
+        $this->question = strip_tags($question);
     }
 
     /**
@@ -59,7 +59,7 @@ class Answer {
      */
     public function setPoint($point)
     {
-        $this->point = $point;
+        $this->point = strip_tags($point);
     }
 
 
@@ -83,7 +83,7 @@ class Answer {
      */
     public function setAnswer($answer)
     {
-        $this->answer = $answer;
+        $this->answer = strip_tags($answer);
     }
 
     /**
@@ -99,7 +99,7 @@ class Answer {
      */
     public function setQuestion($question)
     {
-        $this->question = $question;
+        $this->question = strip_tags($question);
     }
 
 }
@@ -114,8 +114,8 @@ class Answers {
 
     function __construct($uid, $cate)
     {
-        $this->cate = $cate;
-        $this->uid = $uid;
+        $this->cate = strip_tags($cate);
+        $this->uid = strip_tags($uid);
     }
 
     /**
@@ -151,7 +151,7 @@ class Answers {
      * @param Answer $a
      */
     function addAns($a) {
-        $this->ans[] = $a;
+        $this->ans[] = strip_tags($a);
     }
 
     /**
@@ -167,7 +167,7 @@ class Answers {
      */
     public function setUid($uid)
     {
-        $this->uid = $uid;
+        $this->uid = strip_tags($uid);
     }
 
     /**
@@ -183,7 +183,7 @@ class Answers {
      */
     public function setAns($ans)
     {
-        $this->ans = $ans;
+        $this->ans = strip_tags($ans);
     }
 
     /**
@@ -199,7 +199,7 @@ class Answers {
      */
     public function setCate($cate)
     {
-        $this->cate = $cate;
+        $this->cate = strip_tags($cate);
     }
 
 

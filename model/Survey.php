@@ -20,7 +20,7 @@ class Survey {
      */
     public function __construct($title)
     {
-        $this->title = $title;
+        $this->title = strip_tags($title);
     }
 
     /**
@@ -36,7 +36,7 @@ class Survey {
      */
     public function setCount($count)
     {
-        $this->count = $count;
+        $this->count = strip_tags($count);
     }
 
 
@@ -54,7 +54,7 @@ class Survey {
      */
     public function setPercent($percent)
     {
-        $this->percent = $percent;
+        $this->percent = strip_tags($percent);
     }
 
     /**
@@ -70,7 +70,7 @@ class Survey {
      */
     public function setId($id)
     {
-        $this->id = $id;
+        $this->id = strip_tags($id);
     }
 
     /**
@@ -86,7 +86,7 @@ class Survey {
      */
     public function setTitle($title)
     {
-        $this->title = $title;
+        $this->title = strip_tags($title);
     }
 
     /**
@@ -102,7 +102,7 @@ class Survey {
      */
     public function setShow($show)
     {
-        $this->show = $show;
+        $this->show = strip_tags($show);
     }
 
 

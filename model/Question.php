@@ -20,10 +20,10 @@ class Question {
 
     function __construct($category, $point, $title, $explain)
     {
-        $this->category = $category;
-        $this->point = $point;
-        $this->title = $title;
-        $this->explain = $explain;
+        $this->category = strip_tags($category);
+        $this->point = strip_tags($point);
+        $this->title = strip_tags($title, '<img>');
+        $this->explain = strip_tags($explain, '<img>');
     }
 
     /**
@@ -74,7 +74,7 @@ class Question {
      */
     public function setCategory($category)
     {
-        $this->category = $category;
+        $this->category = strip_tags($category);
     }
 
     /**
@@ -90,7 +90,7 @@ class Question {
      */
     public function setPoint($point)
     {
-        $this->point = $point;
+        $this->point = strip_tags($point);
     }
 
     /**
@@ -109,7 +109,7 @@ class Question {
      */
     public function setExplain($explain)
     {
-        $this->explain = $explain;
+        $this->explain = strip_tags($explain);
     }
 
     public function getRs() {
@@ -191,7 +191,7 @@ class Question {
      */
     public function setId($id)
     {
-        $this->id = $id;
+        $this->id = strip_tags($id);
     }
 
 
@@ -246,7 +246,7 @@ class Question {
      */
     public function setTitle($title)
     {
-        $this->title = $title;
+        $this->title = strip_tags($title);
     }
 
 }

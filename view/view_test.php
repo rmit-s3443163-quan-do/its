@@ -45,18 +45,18 @@ if ($c == 2)
         <li><a href="index.php">Home</a></li>
         <li class="active"><?=$type?></li>
     </ol>
-    <?php if (!$done4) { ?>
+    <?php if (!$done4) : ?>
     <div class="alert alert-info">
         <span class="glyphicon glyphicon-info-sign"></span> Your result is being marked..
     </div>
-    <?php } ?>
-    <?php foreach($q_arr as $ques=>$q) { ?>
+    <?php endif; ?>
+    <?php foreach($q_arr as $ques=>$q) : ?>
         <?php $selected = false; ?>
     <h4><span class="label label-warning pull-left">Question <?=$ques+1?> of <?=count($q_arr)?> </span></h4><br/>
     <div class="panel panel-default">
         <div class="panel-body">
             <h4 class="survey-title"><?=htmlspecialchars_decode($q->getTitle())?> </h4>
-            <?php foreach($q->getOpts() as $opt=>$o) { ?>
+            <?php foreach($q->getOpts() as $opt=>$o) : ?>
                 <?php
                 if ($arr[$ques]->getKtext() != '-')
                     $selected = true;
@@ -72,25 +72,25 @@ if ($c == 2)
             <div class="answer-view alert alert-<?=$type?>">
                 <span class="key"><?=QuestionCtrl::getKText($opt)?>.</span><?=htmlspecialchars_decode($o->getText())?>
             </div>
-            <?php }; ?>
-            <?php if ($done4) { ?>
-            <hr>
-            <blockquote>
-                <?php if (!$selected) { ?>
-                    <p><span class="g-red glyphicon glyphicon-remove-sign"></span> You did not answer this question.</p>
-                <? } else { ?>
-                    <?php if ($arr[$ques]->getRes() == 'success') { ?>
-                        <p><span class="g-green glyphicon glyphicon-ok-sign"></span> You got your answer correct. </p>
-                    <?php } else if ($arr[$ques]->getRes() == 'danger') { ?>
-                        <p><span class="g-red glyphicon glyphicon-remove-sign"></span> You got your answer incorrect.</p>
-                <?php } ?>
-                <?php } ?>
-            </blockquote>
-            <?php } ?>
+            <?php endforeach; ?>
+<!--            --><?php //if ($done4) : ?>
+<!--            <hr>-->
+<!--            <blockquote>-->
+<!--                --><?php //if (!$selected) : ?>
+<!--                    <p><span class="g-red glyphicon glyphicon-remove-sign"></span> You did not answer this question.</p>-->
+<!--                --><?// else : ?>
+<!--                    --><?php //if ($arr[$ques]->getRes() == 'success') : ?>
+<!--                        <p><span class="g-green glyphicon glyphicon-ok-sign"></span> You got your answer correct. </p>-->
+<!--                    --><?php //elseif ($arr[$ques]->getRes() == 'danger') : ?>
+<!--                        <p><span class="g-red glyphicon glyphicon-remove-sign"></span> You got your answer incorrect.</p>-->
+<!--                    --><?php //endif; ?>
+<!--                --><?php //endif; ?>
+<!--            </blockquote>-->
+<!--            --><?php //endif; ?>
         </div>
     </div>
-    <?php } ?>
-    <?php if ($done4) { ?>
+    <?php endforeach; ?>
+    <?php if ($done4) : ?>
     <div class="panel panel-default">
         <div class="panel-body">
             <span>Correct: <strong><?=$correct?> / <?=count($arr)?></strong></span>
@@ -99,7 +99,7 @@ if ($c == 2)
             <span class="label label-info"><?=number_format($mark*100/$total, 1, '.', ',');?>%</span>
         </div>
     </div>
-    <?php } ?>
+    <?php endif; ?>
     <button id="back-to-top" type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-up"></span> Back to top</button>
 </div>
 <script>

@@ -22,10 +22,10 @@ class Vote {
      */
     public function __construct($survey, $uid, $rate, $comment)
     {
-        $this->survey = $survey;
-        $this->uid = $uid;
-        $this->rate = $rate;
-        $this->comment = $comment;
+        $this->survey = strip_tags($survey);
+        $this->uid = strip_tags($uid);
+        $this->rate = strip_tags($rate);
+        $this->comment = strip_tags($comment);
     }
 
 
@@ -42,7 +42,7 @@ class Vote {
      */
     public function setSurvey($survey)
     {
-        $this->survey = $survey;
+        $this->survey = strip_tags($survey);
     }
 
     /**
@@ -58,7 +58,7 @@ class Vote {
      */
     public function setUid($uid)
     {
-        $this->uid = $uid;
+        $this->uid = strip_tags($uid);
     }
 
     /**
@@ -74,7 +74,7 @@ class Vote {
      */
     public function setRate($rate)
     {
-        $this->rate = $rate;
+        $this->rate = strip_tags($rate);
     }
 
     /**
@@ -90,7 +90,7 @@ class Vote {
      */
     public function setComment($comment)
     {
-        $this->comment = $comment;
+        $this->comment = strip_tags($comment);
     }
 
 

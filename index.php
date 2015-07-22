@@ -1,4 +1,7 @@
 <?php
+    session_start();
+
+    unset($_SESSION['admin']);
 
     require_once('./controller/UserCtrl.php');
 

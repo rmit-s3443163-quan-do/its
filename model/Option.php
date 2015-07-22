@@ -14,9 +14,9 @@ class Option {
 
     function __construct($question, $text, $correct)
     {
-        $this->question = $question;
+        $this->question = strip_tags($question, '<img>') ;
         $this->correct = $correct==1?true:false;
-        $this->text = $text;
+        $this->text = strip_tags($text, '<img>');
     }
 
     /**
@@ -32,7 +32,7 @@ class Option {
      */
     public function setId($id)
     {
-        $this->id = $id;
+        $this->id = strip_tags($id);
     }
 
     /**
@@ -48,7 +48,7 @@ class Option {
      */
     public function setQuestion($question)
     {
-        $this->question = $question;
+        $this->question = strip_tags($question);
     }
 
     /**
@@ -72,7 +72,7 @@ class Option {
      */
     public function setCorrect($correct)
     {
-        $this->correct = $correct;
+        $this->correct = strip_tags($correct);
     }
 
     /**
@@ -88,7 +88,7 @@ class Option {
      */
     public function setText($text)
     {
-        $this->text = $text;
+        $this->text = strip_tags($text);
     }
 
 }
