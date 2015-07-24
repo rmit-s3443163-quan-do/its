@@ -151,7 +151,7 @@ class Answers {
      * @param Answer $a
      */
     function addAns($a) {
-        $this->ans[] = strip_tags($a);
+        $this->ans[] = $a;
     }
 
     /**

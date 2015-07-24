@@ -9,6 +9,7 @@
 require_once('./controller/QuestionCtrl.php');
 
 $uid = $_COOKIE['uid'];
+//echo $uid;
 $b = false;
 
 if (isset($_POST['c']) && $_POST['c']!='') {
